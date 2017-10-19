@@ -43,6 +43,11 @@ INSTALLED_APPS = [
 
 ]
 
+TVDB_API_KEY = 'C9D85668BADC5AD4'
+TVDB_USER_KEY = '04565F600F78B2C0'
+TVDB_USERNAME = 'nicolascarrara'
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
