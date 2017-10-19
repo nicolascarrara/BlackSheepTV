@@ -38,9 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blacksheep',
-    'rest_framework',
+    'coreapi',
 
 ]
+
+TVDB_API_KEY = 'C9D85668BADC5AD4'
+TVDB_USER_KEY = '04565F600F78B2C0'
+TVDB_USERNAME = 'nicolascarrara'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

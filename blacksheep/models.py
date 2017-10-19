@@ -51,4 +51,4 @@ class Saison(models.Model):
 
 class Episode(models.Model):
     titre = models.CharField(max_length=64)
-    synopsis = models.TextField()
+    synopsis = models.TextField

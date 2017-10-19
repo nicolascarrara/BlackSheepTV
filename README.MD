@@ -27,4 +27,4 @@
 
  Paquets Installés :
  - bs4
- - djangorestframework
+ - coreapi
