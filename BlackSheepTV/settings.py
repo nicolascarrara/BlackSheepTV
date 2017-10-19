@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blacksheep',
-    'restembed.core',
-    'rest_framework',
+    'coreapi',
 
 ]
 

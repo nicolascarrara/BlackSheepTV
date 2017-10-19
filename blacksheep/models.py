@@ -28,24 +28,21 @@ class Film(models.Model):
         from django.urls import reverse
         return reverse('musiques:morceau-detail', args=[str(self.id)])"""
 
+
 class Acteur(models.Model):
     titre = models.CharField(max_length=64)
-
 
 
 class Genre(models.Model):
     titre = models.CharField(max_length=64)
 
 
-
 class Pays(models.Model):
     titre = models.CharField(max_length=64)
 
 
-
 class Producteur(models.Model):
     titre = models.CharField(max_length=64)
-
 
 
 class Saison(models.Model):
@@ -54,6 +51,4 @@ class Saison(models.Model):
 
 class Episode(models.Model):
     titre = models.CharField(max_length=64)
-    synopsis = models.CharField()
-    
-
+    synopsis = models.TextField
