@@ -23,3 +23,8 @@
  - www.allocine.fr
  - www.rottentomatoes.com
  - fr.wikipedia.org
+
+
+ Paquets Installés :
+ - bs4
+ - djangorestframework
