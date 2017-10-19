@@ -13,13 +13,16 @@
         <h1>Black Sheep TV</h1>
         <ul class="nav nav-pills">
             <li>
+                <span class="glyphicon glyphicon-picture"></span>
+            </li>
+            <li>
                 <a href="{% url 'blacksheep:accueil' %}">Accueil</a>
             </li>
             <li>
-                <a href="#">Film</a>
+                <a href="{% url 'blacksheep:film-list' %}">Film</a>
             </li>
             <li>
-                <a href="#">Serie</a>
+                <a href="{% url 'blacksheep:serie-list' %}">Serie</a>
             </li>
 
         </ul>
@@ -28,7 +31,16 @@
         {% block contenu %}{% endblock %}
     </main>
     <footer>
-        
+        <div>
+            <section>
+                contact
+            </section>
+        </div>
+        <div>
+            <section>
+                Mention légal
+            </section>
+        </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
