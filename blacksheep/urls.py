@@ -1,7 +1,5 @@
 from django.conf.urls import url, include
-from . import views
-
-from .views import accueil, FilmListView, SerieListView, FilmDetailView, SerieDetailView, SaisonDetailView, EpisodeDetailView
+from .views import accueil, FilmListView, SerieListView, FilmDetailView, SerieDetailView, SaisonDetailView, EpisodeDetailView,test
 
 
 

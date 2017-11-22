@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
 from BlackSheepTV import settings
+from django.views.generic import DetailView, CreateView, UpdateView, ListView, DeleteView
+from blacksheep.models import Film, Serie,Saison,Episode
 import requests
 
 # Create your views here.

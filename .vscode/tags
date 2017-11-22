@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALLOWED_HOSTS	../BlackSheepTV/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
+AUTH_PASSWORD_VALIDATORS	../BlackSheepTV/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:88
+BASE_DIR	../BlackSheepTV/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
+BlacksheepConfig	../blacksheep/apps.py	/^class BlacksheepConfig(AppConfig):$/;"	kind:class	line:4
+DATABASES	../BlackSheepTV/settings.py	/^DATABASES = {$/;"	kind:variable	line:77
+DEBUG	../BlackSheepTV/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
+INSTALLED_APPS	../BlackSheepTV/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
+LANGUAGE_CODE	../BlackSheepTV/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:107
+MIDDLEWARE	../BlackSheepTV/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
+ROOT_URLCONF	../BlackSheepTV/settings.py	/^ROOT_URLCONF = 'BlackSheepTV.urls'$/;"	kind:variable	line:53
+SECRET_KEY	../BlackSheepTV/settings.py	/^SECRET_KEY = 'm99f8^mqfsq6g%@_pt)hpq2gnug&mrbse35f$94c6^nglbc^z!'$/;"	kind:variable	line:23
+STATIC_URL	../BlackSheepTV/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:121
+TEMPLATES	../BlackSheepTV/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:55
+TIME_ZONE	../BlackSheepTV/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:109
+USE_I18N	../BlackSheepTV/settings.py	/^USE_I18N = True$/;"	kind:variable	line:111
+USE_L10N	../BlackSheepTV/settings.py	/^USE_L10N = True$/;"	kind:variable	line:113
+USE_TZ	../BlackSheepTV/settings.py	/^USE_TZ = True$/;"	kind:variable	line:115
+WSGI_APPLICATION	../BlackSheepTV/settings.py	/^WSGI_APPLICATION = 'BlackSheepTV.wsgi.application'$/;"	kind:variable	line:71
+__init__.py	../BlackSheepTV/__init__.py	1;"	kind:file	line:1
+__init__.py	../blacksheep/__init__.py	1;"	kind:file	line:1
+__init__.py	../blacksheep/migrations/__init__.py	1;"	kind:file	line:1
+admin.py	../blacksheep/admin.py	1;"	kind:file	line:1
+app_name	../blacksheep/urls.py	/^app_name = 'blacksheep'$/;"	kind:variable	line:6
+application	../BlackSheepTV/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	../blacksheep/apps.py	1;"	kind:file	line:1
+manage.py	../manage.py	1;"	kind:file	line:1
+models.py	../blacksheep/models.py	1;"	kind:file	line:1
+name	../blacksheep/apps.py	/^    name = 'blacksheep'$/;"	kind:variable	line:5
+settings.py	../BlackSheepTV/settings.py	1;"	kind:file	line:1
+tests.py	../blacksheep/tests.py	1;"	kind:file	line:1
+urlpatterns	../BlackSheepTV/urls.py	/^urlpatterns = [$/;"	kind:variable	line:22
+urlpatterns	../blacksheep/urls.py	/^urlpatterns = [$/;"	kind:variable	line:7
+urls.py	../BlackSheepTV/urls.py	1;"	kind:file	line:1
+urls.py	../blacksheep/urls.py	1;"	kind:file	line:1
+views.py	../blacksheep/views.py	1;"	kind:file	line:1
+wsgi.py	../BlackSheepTV/wsgi.py	1;"	kind:file	line:1
