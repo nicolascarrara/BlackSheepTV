@@ -35,3 +35,31 @@ def test(request):
     )
     client = coreapi.Client(auth=auth)"""
     return render(request, data, 'blacksheep/test.html')
+
+
+class FilmListView(ListView):
+    model = Film
+
+    def get_context_data(self, **kwargs):
+        context = super(FilmListView, self).get_context_data(**kwargs)
+        context['templates'] = "blacksheep/listFilm.html"
+        return context
+
+
+class SerieListView(ListView):
+    model = Serie
+
+    def get_context_data(self, **kwargs):
+        context = super(SerieListView, self).get_context_data(**kwargs)
+        context['templates'] = "blacksheep/listSerie.html"
+        return context
+
+
+class FilmDetailView(DetailView):
+    model = Film
+    template_name = "blacksheep/detailFilm.html"
+
+
+class SerieDetailView(DetailView):
+    model = Serie
+    template_name = "blacksheep/detailSerie.html"
