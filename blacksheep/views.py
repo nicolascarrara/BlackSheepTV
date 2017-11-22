@@ -63,3 +63,13 @@ class FilmDetailView(DetailView):
 class SerieDetailView(DetailView):
     model = Serie
     template_name = "blacksheep/detailSerie.html"
+
+
+class SaisonDetailView(DetailView):
+    model = Saison
+    template_name = "blacksheep/detailSaison.html"
+
+
+class EpisodeDetailView(DetailView):
+    model = Episode
+    template_name = "blacksheep/detailEpisode.html"
