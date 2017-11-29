@@ -14,30 +14,11 @@ def accueil(request):
 
 
 def test(request):
-    parameters = {'apikey': "C9D85668BADC5AD4",
-                  'userkey': "04565F600F78B2C0", 'username': "nicolascarrara"}
+    parameters ={"apikey": "C9D85668BADC5AD4","userkey": "04565F600F78B2C0","username": "nicolascarrara"}
     response = requests.post(
-        "https://api.thetvdb.com/login", params=parameters)
+        "https://api.thetvdb.com/login", json=parameters)
     data = response.json()
-    """
-    decoders = [
-        codecs.JSONCodec()
-    ]
-    client = coreapi.Client(decoders=decoders)
-    schema = client.get('https://api.thetvdb.com/login')
-
-    action = ['api-token-auth', 'obtain-token']
-    params = {'apikey': "C9D85668BADC5AD4",
-              'userkey': "04565F600F78B2C0", 'username': "nicolascarrara"}
-    result = client.action(schema, action, params)
-
-    auth = coreapi.auth.TokenAuthentication(
-        scheme='JWT',
-        token=result['token']
-    )
-    client = coreapi.Client(auth=auth)"""
-    return render(request, data, 'blacksheep/test.html')
-
+    return HttpResponse(data['token'])
 
 class FilmListView(ListView):
     model = Film
