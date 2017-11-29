@@ -1,12 +1,12 @@
 from django.conf.urls import url, include
-from .views import rechercheFilm, rechercheSerie,accueil, FilmListView, SerieListView, FilmDetailView, SerieDetailView, SaisonDetailView, EpisodeDetailView,test
+from .views import rechercheFilm, rechercheSerie,accueil, FilmListView, SerieListView, FilmDetailView, SerieDetailView, SaisonDetailView, EpisodeDetailView,loginAPI
 
 
 
 app_name = 'blacksheep'
 urlpatterns = [
     url(r'^$', accueil, name='accueil'),
-    url(r'^test/', test, name='test'),
+    url(r'^loginAPI/', loginAPI, name='loginAPI'),
     url(r'^film$', FilmListView.as_view(), name='film-list'),
     url(r'^film/search', rechercheFilm, name='film-search'),
     url(r'^detailFilm/(?P<pk>\d+)$', FilmDetailView.as_view(), name='film-detail'),
