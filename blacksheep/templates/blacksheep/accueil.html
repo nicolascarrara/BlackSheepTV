@@ -1,48 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <title>Black Sheep TV</title>
-</head>
-<body>
-    <header class="container">
-        <h1>Black Sheep TV</h1>
-        <ul class="nav nav-pills">
-            <li>
-                <span class="glyphicon glyphicon-picture"></span>
-            </li>
-            <li>
-                <a href="{% url 'blacksheep:accueil' %}">Accueil</a>
-            </li>
-            <li>
-                <a href="{% url 'blacksheep:film-list' %}">Film</a>
-            </li>
-            <li>
-                <a href="{% url 'blacksheep:serie-list' %}">Serie</a>
-            </li>
-
-        </ul>
-    </header>
-    <main>
-        {% block contenu %}{% endblock %}
-    </main>
-    <footer>
-        <div>
-            <section>
-                contact
-            </section>
+{% extends 'blacksheep/baseModele.html' %}
+{% block  contenu %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>Bienvenue sur BlackSheepTV, le site de malade frr</h1>
+        <p></br></p>
+        <div class="text-center"><p><a class="btn btn-primary btn-lg" href="{% url 'blacksheep:film-list' %}" role="button">Liste des films</a></p>
+            <p><a class="btn btn-primary btn-lg" href="{% url 'blacksheep:film-list' %}" role="button">Liste des séries</a></p>
         </div>
-        <div>
-            <section>
-                Mention légal
-            </section>
-        </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
-</html>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     
+{% endblock %}
