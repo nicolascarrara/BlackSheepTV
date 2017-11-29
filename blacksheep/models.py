@@ -7,14 +7,18 @@ from django.db import models
 
 
 class Serie(models.Model):
-    nom = models.CharField(max_length=64)
-
-    """def __str__(self):
-        return'{self.nom}'.format(self=self)
-
-    def get_absolute_url(self):
-        from django.urls import reverse
-        return reverse('musiques:artiste-detail', args=[str(self.id)])"""
+    firstAired = models.CharField(max_length=10)
+    firstAired.default='2000-0-0'
+    id = models.CharField(max_length=10)
+    id.primary_key=True
+    network = models.CharField(max_length=30)
+    network.default=''
+    overview = models.CharField(max_length=600)
+    overview.default=''
+    seriesName = models.CharField(max_length=64)
+    seriesName.default=''
+    status = models.CharField(max_length=20)
+    status.default=''
 
 
 class Film(models.Model):

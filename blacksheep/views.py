@@ -13,13 +13,13 @@ def accueil(request):
     return render(request, 'blacksheep/accueil.html')
 
 
-def loginAPI(request):
+def test(request):
     parameters ={"apikey": "C9D85668BADC5AD4","userkey": "04565F600F78B2C0","username": "nicolascarrara"}
     response = requests.post(
         "https://api.thetvdb.com/login", json=parameters)
     data = response.json()
     request.session['tokenapi'] = data['token']
-    return HttpResponse(data['token'])
+    return data['token']
 
 class FilmListView(ListView):
     model = Film
