@@ -75,3 +75,57 @@ class SaisonDetailView(DetailView):
 class EpisodeDetailView(DetailView):
     model = Episode
     template_name = "blacksheep/detailEpisode.html"
+
+
+
+def rechercheFilm(request):
+
+    query = request.GET.get('query')
+
+    if not query:
+
+        films = Film.objects.all()
+
+    else:
+
+        films = Film.objects.filter(titre_icontains=query)
+
+    """if not films.exists():
+
+        films = Film.objects.filter(realisateur__icontains=query)"""
+
+    title = "Résultats pour la requête %s"%query
+
+    context = {
+
+        'films': films
+
+    }
+
+    return render(request, 'blacksheep/film_search.html', context)
+
+def rechercheSerie(request):
+
+    query = request.GET.get('query')
+
+    if not query:
+
+        series = Serie.objects.all()
+
+    else:
+
+        series = Serie.objects.filter(titre_icontains=query)
+
+    """if not films.exists():
+
+        films = Film.objects.filter(realisateur__icontains=query)"""
+
+    title = "Résultats pour la requête %s"%query
+
+    context = {
+
+        'series': series
+
+    }
+
+    return render(request, 'blacksheep/serie_search.html', context)
