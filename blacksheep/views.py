@@ -5,7 +5,7 @@ from BlackSheepTV import settings
 from django.views.generic import DetailView, CreateView, UpdateView, ListView, DeleteView
 from blacksheep.models import Film, Serie,Saison,Episode
 import requests
-import urllib.request
+import urllib
 
 # Create your views here.
 
@@ -29,9 +29,6 @@ def search(request):
     req.add_header('Authorization','Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTIwNjA5NzUsImlkIjoiQmxhY2tTaGVlcFRWIiwib3JpZ19pYXQiOjE1MTE5NzQ1NzUsInVzZXJpZCI6NDkwMTk4LCJ1c2VybmFtZSI6Im5pY29sYXNjYXJyYXJhIn0.ihUfnS-288J8hTSbDhdJyfBijjCfn2EfoSYtxSzFQIFbtRs2hkKzR05Xw0_dhg4u-Udp7rx-PyGyWnOpvcr0yXYv996OIBZhc9eOXDwuo9ARHOcXBNqeo5V7oJR_yqgjDUCupeewbg6OTlSfXadWwihSJBG1D8fW5j7jRP39Qkwu0kUKYEXIrxy9fKqL_pZBgR2qZnjpDpjAHYTE-CeR47N0Je-rrxeJgi8nJD_TMtI-fGlZze8QUmt-lYTn--_q84YCvaktlwaEFmvSeZU3tB56XqIgX48kqVWE0eT_D0tM-3LLNvptWtlumjl1Navc1kseOPolj_gleI23KooKxw')
     resp = urllib.request.urlopen(req)
     content = resp.read()
-    """response = requests.get(
-        "https://api.thetvdb.com/search/series?name=fringe", json=parameters)
-    data = response.json()"""
     return HttpResponse(content)
 
 class FilmListView(ListView):
@@ -72,11 +69,11 @@ class EpisodeDetailView(DetailView):
     template_name = "blacksheep/detailEpisode.html"
 
 
-
 def rechercheFilm(request):
 
     query = request.GET.get('query')
 
+    
     if not query:
 
         films = Film.objects.all()
@@ -102,24 +99,32 @@ def rechercheFilm(request):
 def rechercheSerie(request):
 
     query = request.GET.get('query')
+    series=''
 
     if not query:
 
-        series = Serie.objects.all()
+        search(request)
 
     else:
+        query=urllib.request.pathname2url(query)
+        req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
+        req.add_header('Accept', 'application/json')
+        req.add_header('Accept-Language', 'fr')
+        req.add_header('Authorization','Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTIwNjA5NzUsImlkIjoiQmxhY2tTaGVlcFRWIiwib3JpZ19pYXQiOjE1MTE5NzQ1NzUsInVzZXJpZCI6NDkwMTk4LCJ1c2VybmFtZSI6Im5pY29sYXNjYXJyYXJhIn0.ihUfnS-288J8hTSbDhdJyfBijjCfn2EfoSYtxSzFQIFbtRs2hkKzR05Xw0_dhg4u-Udp7rx-PyGyWnOpvcr0yXYv996OIBZhc9eOXDwuo9ARHOcXBNqeo5V7oJR_yqgjDUCupeewbg6OTlSfXadWwihSJBG1D8fW5j7jRP39Qkwu0kUKYEXIrxy9fKqL_pZBgR2qZnjpDpjAHYTE-CeR47N0Je-rrxeJgi8nJD_TMtI-fGlZze8QUmt-lYTn--_q84YCvaktlwaEFmvSeZU3tB56XqIgX48kqVWE0eT_D0tM-3LLNvptWtlumjl1Navc1kseOPolj_gleI23KooKxw')
+        resp = urllib.request.urlopen(req)
+        content = resp.read()
+        #series = content
+        return HttpResponse(content)
 
-        series = Serie.objects.filter(titre_icontains=query)
+    #if not series.exists():
 
-    """if not films.exists():
-
-        films = Film.objects.filter(realisateur__icontains=query)"""
+        
 
     title = "Résultats pour la requête %s"%query
 
     context = {
 
-        'series': series
+        'series': query
 
     }
 
