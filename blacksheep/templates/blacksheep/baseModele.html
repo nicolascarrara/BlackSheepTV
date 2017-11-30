@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="fr" >
     <head>
-        <meta charset="utf-8" >           
+        <meta charset="utf-8" >
             <title>BlackSheepTV</title>
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,6 +13,7 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="{%url 'blacksheep:accueil' %}"><img src="{% static 'images/logo.png' %}" alt="" height="30"></a>
+                        <span id="connected" class="" aria-hidden="true"></span>
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
@@ -31,16 +32,16 @@
                         </li>
                     </ul>
                 </div>
-            </nav> 
+            </nav>
         </header>
         <section>
             {% block contenu %}
             {% endblock %}
-        </section>   
+        </section>
         <footer class="text-center">
             <em> <span class="glyphicon glyphicon-copyright-mark"></span> ZICKLER Amaël, CARRARA Nicolas, MATHYS Thibault LP2017-2018</em> <span class="glyphicon glyphicon-ice-lolly-tasted"></span>
         </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
