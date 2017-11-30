@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from .views import rechercheFilm, rechercheSerie,accueil, FilmListView, SerieListView, FilmDetailView, SerieDetailView, SaisonDetailView, EpisodeDetailView,loginAPI
+from .views import rechercheFilmAPI,rechercheFilm, rechercheSerie,accueil, FilmListView, SerieListView, FilmDetailView, SerieDetailView, SaisonDetailView, EpisodeDetailView,loginAPI
 
 
 
@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^detailFilm/(?P<pk>\d+)$', FilmDetailView.as_view(), name='film-detail'),
     url(r'^serie$', SerieListView.as_view(), name='serie-list'),
     url(r'^serie/search', rechercheSerie, name='serie-search'),
+    url(r'^serie/apisearch', rechercheFilmAPI, name='serie-search-api'),
     url(r'^detailSerie/(?P<pk>\d+)$',
         SerieDetailView.as_view(), name='serie-detail'),
     url(r'^detailSerie/(?P<pk>\d+)/saison/(?P<pk2>\d+)$',

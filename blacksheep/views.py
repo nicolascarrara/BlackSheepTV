@@ -13,13 +13,13 @@ def accueil(request):
     return render(request, 'blacksheep/accueil.html')
 
 
-def test(request):
+def loginAPI(request):
     parameters ={"apikey": "C9D85668BADC5AD4","userkey": "04565F600F78B2C0","username": "nicolascarrara"}
     response = requests.post(
         "https://api.thetvdb.com/login", json=parameters)
     data = response.json()
     request.session['tokenapi'] = data['token']
-    return data['token']
+    return HttpResponse(data['token'])
 
 class FilmListView(ListView):
     model = Film
@@ -59,11 +59,21 @@ class EpisodeDetailView(DetailView):
     template_name = "blacksheep/detailEpisode.html"
 
 
+def rechercheFilmAPI(request):
+    r = http.request('GET', 'https://api.thetvdb.com/search/series?name=fringe' )
+    token = " Bearer "+request.session['tokenapi']
+    url = "https://api.thetvdb.com/search/series?name=fringe"
+    parameters ={"Authorization": token, 'url':"https://api.thetvdb.com/search/series?name=fringe"}
+    response = requests.post(json=parameters)
+    data = response.json()
+    return HttpResponse(data['Error'])
+
 
 def rechercheFilm(request):
 
     query = request.GET.get('query')
 
+    
     if not query:
 
         films = Film.objects.all()
