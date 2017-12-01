@@ -117,7 +117,9 @@ def rechercheSerie(request):
             resp = urllib.request.urlopen(req)
             string = resp.read().decode('utf-8')
             content = json.loads(string)
-            
+            series=content['data'][0]
+            #query = Serie(firstAired = series['firstAired'] , id = series['id'], network=series['network'] , overview= series['overview'],seriesName=series['seriesName'],status=series['status'] ,banner=series['banner'] )
+            #query.save()
            
 
 
@@ -125,7 +127,7 @@ def rechercheSerie(request):
 
     context = {
 
-        'series': content['data'][0],
+        'series': series,
         'title': title
 
     }

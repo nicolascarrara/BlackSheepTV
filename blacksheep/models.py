@@ -19,6 +19,8 @@ class Serie(models.Model):
     seriesName.default=''
     status = models.CharField(max_length=20)
     status.default=''
+    banner = models.CharField(max_length=20)
+    banner.default=''
 
 
 class Film(models.Model):
