@@ -26,7 +26,7 @@ def search(request):
     req = urllib.request.Request('https://api.thetvdb.com/search/series?name=Breaking%20Bad')
     req.add_header('Accept', 'application/json')
     req.add_header('Accept-Language', 'fr')
-    req.add_header('Authorization','Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTIwNjA5NzUsImlkIjoiQmxhY2tTaGVlcFRWIiwib3JpZ19pYXQiOjE1MTE5NzQ1NzUsInVzZXJpZCI6NDkwMTk4LCJ1c2VybmFtZSI6Im5pY29sYXNjYXJyYXJhIn0.ihUfnS-288J8hTSbDhdJyfBijjCfn2EfoSYtxSzFQIFbtRs2hkKzR05Xw0_dhg4u-Udp7rx-PyGyWnOpvcr0yXYv996OIBZhc9eOXDwuo9ARHOcXBNqeo5V7oJR_yqgjDUCupeewbg6OTlSfXadWwihSJBG1D8fW5j7jRP39Qkwu0kUKYEXIrxy9fKqL_pZBgR2qZnjpDpjAHYTE-CeR47N0Je-rrxeJgi8nJD_TMtI-fGlZze8QUmt-lYTn--_q84YCvaktlwaEFmvSeZU3tB56XqIgX48kqVWE0eT_D0tM-3LLNvptWtlumjl1Navc1kseOPolj_gleI23KooKxw')
+    req.add_header('Authorization','Bearer '+request.session['tokenapi'])
     resp = urllib.request.urlopen(req)
     content = resp.read()
     return HttpResponse(content)
@@ -73,7 +73,7 @@ def rechercheFilm(request):
 
     query = request.GET.get('query')
 
-    
+
     if not query:
 
         films = Film.objects.all()
@@ -110,7 +110,7 @@ def rechercheSerie(request):
         req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
         req.add_header('Accept', 'application/json')
         req.add_header('Accept-Language', 'fr')
-        req.add_header('Authorization','Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTIwNjA5NzUsImlkIjoiQmxhY2tTaGVlcFRWIiwib3JpZ19pYXQiOjE1MTE5NzQ1NzUsInVzZXJpZCI6NDkwMTk4LCJ1c2VybmFtZSI6Im5pY29sYXNjYXJyYXJhIn0.ihUfnS-288J8hTSbDhdJyfBijjCfn2EfoSYtxSzFQIFbtRs2hkKzR05Xw0_dhg4u-Udp7rx-PyGyWnOpvcr0yXYv996OIBZhc9eOXDwuo9ARHOcXBNqeo5V7oJR_yqgjDUCupeewbg6OTlSfXadWwihSJBG1D8fW5j7jRP39Qkwu0kUKYEXIrxy9fKqL_pZBgR2qZnjpDpjAHYTE-CeR47N0Je-rrxeJgi8nJD_TMtI-fGlZze8QUmt-lYTn--_q84YCvaktlwaEFmvSeZU3tB56XqIgX48kqVWE0eT_D0tM-3LLNvptWtlumjl1Navc1kseOPolj_gleI23KooKxw')
+        req.add_header('Authorization','Bearer '+request.session['tokenapi'])
         resp = urllib.request.urlopen(req)
         content = resp.read()
         #series = content
@@ -118,7 +118,7 @@ def rechercheSerie(request):
 
     #if not series.exists():
 
-        
+
 
     title = "Résultats pour la requête %s"%query
 
