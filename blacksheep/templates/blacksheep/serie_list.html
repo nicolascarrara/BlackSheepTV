@@ -1,7 +1,7 @@
 {% extends "blacksheep/baseModele.html" %}
 {% block contenu %}
 
-{% for serie in object_list %}
+{% for serie in series %}
     <li>{{ serie.seriesName }} - <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt="banniere {{ serie.seriesName }} "></li>
 {% empty %}
     <li>No articles yet.</li>

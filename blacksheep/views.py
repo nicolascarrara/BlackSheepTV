@@ -91,13 +91,13 @@ def rechercheFilm(request):
             string = resp.read().decode('utf-8')
             content = json.loads(string)
             #films=content['data'][0]
-            res=[]
+            films=[]
             for film in content['results']:
                 movie=Film()
                 movie.titre=film['title']
                 movie.id=film['id']
                 movie.image=film['poster_path']
-                res.append(movie)
+                films.append(movie)
             #query = Film(id = series['firstAired'] , titre = series['id'] )
             #query.save()
 
@@ -106,7 +106,7 @@ def rechercheFilm(request):
 
     context = {
 
-        'films': res
+        'films': films
 
     }
     return render(request, 'blacksheep/film_search.html', context)
@@ -120,29 +120,37 @@ def rechercheSerie(request):
         series = Serie.objects.all()
 
     else:
-        series = Serie.objects.filter(seriesName=query)
-
-        if not series.exists():
-            query = urllib.request.pathname2url(query)
-            req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
-            req.add_header('Accept', 'application/json')
-            req.add_header('Accept-Language', 'fr')
-            req.add_header('Authorization','Bearer '+request.session['tokenapi'])
-            resp = urllib.request.urlopen(req)
-            string = resp.read().decode('utf-8')
-            content = json.loads(string)
-            series=content['data'][0]
-            query = Serie(firstAired = series['firstAired'] , id = series['id'], network=series['network'] , overview= series['overview'],seriesName=series['seriesName'],status=series['status'] ,banner=series['banner'] )
-            query.save()
-
-
+        #series = Serie.objects.filter(seriesName=query)
+        query = urllib.request.pathname2url(query)
+        req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
+        req.add_header('Accept', 'application/json')
+        req.add_header('Accept-Language', 'fr')
+        req.add_header('Authorization','Bearer '+request.session['tokenapi'])
+        resp = urllib.request.urlopen(req)
+        string = resp.read().decode('utf-8')
+        content = json.loads(string)
+        series=[]
+        for serie in content['data']:
+            tvserie=Serie()
+            tvserie.id=serie['id']
+            tvserie.seriesName=serie['seriesName']
+            tvserie.network=serie['network']
+            tvserie.overview=serie['overview']
+            tvserie.status=serie['status']
+            tvserie.banner=serie['banner']
+            tvserie.firstAired=serie['firstAired']
+            series.append(tvserie)
+            if Serie.objects.filter(id=tvserie.id):
+                pass
+            else:
+                query = Serie(firstAired = tvserie.firstAired , id = tvserie.id, network=tvserie.network , overview= tvserie.overview,seriesName=tvserie.seriesName,status=tvserie.status ,banner=tvserie.banner )
+                query.save()
 
     title = "Résultats pour la requête %s"%query
 
     context = {
 
-        'series': series,
-        'title': title
+        'series': series
 
     }
     return render(request, 'blacksheep/serie_search.html', context)

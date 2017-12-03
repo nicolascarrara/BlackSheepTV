@@ -9,7 +9,17 @@
       <span class="help-block" id="helpBlock">Trouvez la série de vos rêves en tapant son titre ou le nom de son réalisateur.</span>
     </form>
   </div>
-  <p style="text-align:center">{{ series.seriesName }}</p>
-  <p style="text-align:center">{{ series.overview }}</p>
+
+
+  {% for serie in series %}
+      <li><p style="text-align:center">{{ serie.seriesName }}</p> </li>
+      {% if serie.banner %}
+        <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt="">
+      {% else %}
+          No athletes.
+      {% endif %}
+  {% empty %}
+      <li>Aucun résultat.</li>
+  {% endfor %}
 
 {% endblock %}
