@@ -73,7 +73,7 @@ class EpisodeDetailView(DetailView):
 def rechercheFilm(request):
 
     query = request.GET.get('query')
-
+    content=''
 
     if not query:
 
@@ -81,20 +81,34 @@ def rechercheFilm(request):
 
     else:
 
-        films = Film.objects.filter(titre_icontains=query)
+        films = Film.objects.filter(titre=query)
 
-    """if not films.exists():
+        if not films.exists():
 
-        films = Film.objects.filter(realisateur__icontains=query)"""
+            query = urllib.request.pathname2url(query)
+            req = urllib.request.Request('https://api.themoviedb.org/3/search/movie?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&query='+query)
+            resp = urllib.request.urlopen(req)
+            string = resp.read().decode('utf-8')
+            content = json.loads(string)
+            #films=content['data'][0]
+            res=[]
+            for film in content['results']:
+                movie=Film()
+                movie.titre=film['title']
+                movie.id=film['id']
+                movie.image=film['poster_path']
+                res.append(movie)
+            #query = Film(id = series['firstAired'] , titre = series['id'] )
+            #query.save()
+
 
     title = "Résultats pour la requête %s"%query
 
     context = {
 
-        'films': films
+        'films': res
 
     }
-
     return render(request, 'blacksheep/film_search.html', context)
 
 def rechercheSerie(request):
@@ -118,14 +132,6 @@ def rechercheSerie(request):
             string = resp.read().decode('utf-8')
             content = json.loads(string)
             series=content['data'][0]
-            """req = urllib.request.Request('https://api.thetvdb.com/series/'+str(series['id'])+'/images/query?keyType=seasons')
-            req.add_header('Accept', 'application/json')
-            req.add_header('Accept-Language', 'fr')
-            req.add_header('Authorization','Bearer '+request.session['tokenapi'])
-            resp = urllib.request.urlopen(req)
-            string = resp.read().decode('utf-8')
-            content = json.loads(string)
-            image=content['data'][0]"""
             query = Serie(firstAired = series['firstAired'] , id = series['id'], network=series['network'] , overview= series['overview'],seriesName=series['seriesName'],status=series['status'] ,banner=series['banner'] )
             query.save()
 

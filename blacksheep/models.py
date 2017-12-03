@@ -25,6 +25,8 @@ class Serie(models.Model):
 
 class Film(models.Model):
     titre = models.CharField(max_length=64)
+    image = models.CharField(max_length=64)
+    image.default=''
     """ artiste = models.ForeignKey(Artiste, on_delete=models.CASCADE, null=True)
 
     def __str__(self):

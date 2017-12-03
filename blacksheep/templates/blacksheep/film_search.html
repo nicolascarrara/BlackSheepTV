@@ -4,9 +4,15 @@
     <form class="col-md-6 col-md-offset-3 text-center" action="{% url 'blacksheep:film-search' %}" method="get" accept-charset="utf-8">
       <div class="form-group">
           <label for="searchForm">Chercher un film</label>
-          <input id="searchForm" class="form-control">
+          <input id="searchForm" class="form-control" name="query">
       </div>
       <span class="help-block" id="helpBlock">Trouvez le film de vos rêves en tapant son titre ou le nom du réalisateur.</span>
     </form>
   </div>
+  {% for film in films %}
+      <li>{{ film.titre }} </li>
+      <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="">
+  {% empty %}
+      <li>No articles yet.</li>
+  {% endfor %}
 {% endblock %}
