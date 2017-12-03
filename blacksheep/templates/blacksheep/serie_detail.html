@@ -1,5 +1,14 @@
 {% extends "blacksheep/baseModele.html" %}
 {% block contenu %}
-
-serie
+<h1>{{ serie.seriesName }}</h1>
+<p>{% if serie.banner %}
+  <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt="">
+{% else %}
+    Pas d'image disponible
+{% endif %}</p>
+<p>Synopsis : {{ serie.overview }}</p>
+<p>Network : {{ serie.network }}</p>
+<p>Date sortie : {{ serie.firstAired }}</p>
+<p>Statut : {{ serie.status }} </p>
+<p>Id : {{ serie.id }}</p>
 {% endblock %}

@@ -52,12 +52,12 @@ class SerieListView(ListView):
 
 class FilmDetailView(DetailView):
     model = Film
-    template_name = "blacksheep/detailFilm.html"
+    template_name = "blacksheep/film_detail.html"
 
 
 class SerieDetailView(DetailView):
     model = Serie
-    template_name = "blacksheep/detailSerie.html"
+    template_name = "blacksheep/serie_detail.html"
 
 
 class SaisonDetailView(DetailView):
@@ -86,7 +86,7 @@ def rechercheFilm(request):
         if not films.exists():
 
             query = urllib.request.pathname2url(query)
-            req = urllib.request.Request('https://api.themoviedb.org/3/search/movie?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&query='+query)
+            req = urllib.request.Request('https://api.themoviedb.org/3/search/movie?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr&query='+query)
             resp = urllib.request.urlopen(req)
             string = resp.read().decode('utf-8')
             content = json.loads(string)
@@ -97,11 +97,13 @@ def rechercheFilm(request):
                 movie.titre=film['title']
                 movie.id=film['id']
                 movie.image=film['poster_path']
+                movie.note=film['vote_average']
+                movie.synopsis=film['overview']
                 films.append(movie)
                 if Film.objects.filter(id=movie.id):
                     pass
                 else:
-                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image)
+                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note)
                     query.save()
 
 
