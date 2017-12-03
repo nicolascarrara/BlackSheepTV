@@ -46,7 +46,7 @@ class SerieListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(SerieListView, self).get_context_data(**kwargs)
-        context['templates'] = "blacksheep/listSerie.html"
+        context['templates'] = "serie_list.html"
         return context
 
 
@@ -118,8 +118,16 @@ def rechercheSerie(request):
             string = resp.read().decode('utf-8')
             content = json.loads(string)
             series=content['data'][0]
-            #query = Serie(firstAired = series['firstAired'] , id = series['id'], network=series['network'] , overview= series['overview'],seriesName=series['seriesName'],status=series['status'] ,banner=series['banner'] )
-            #query.save()
+            """req = urllib.request.Request('https://api.thetvdb.com/series/'+str(series['id'])+'/images/query?keyType=seasons')
+            req.add_header('Accept', 'application/json')
+            req.add_header('Accept-Language', 'fr')
+            req.add_header('Authorization','Bearer '+request.session['tokenapi'])
+            resp = urllib.request.urlopen(req)
+            string = resp.read().decode('utf-8')
+            content = json.loads(string)
+            image=content['data'][0]"""
+            query = Serie(firstAired = series['firstAired'] , id = series['id'], network=series['network'] , overview= series['overview'],seriesName=series['seriesName'],status=series['status'] ,banner=series['banner'] )
+            query.save()
 
 
 
