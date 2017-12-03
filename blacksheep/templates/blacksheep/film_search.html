@@ -12,7 +12,7 @@
   {% for film in films %}
       <li>{{ film.titre }} </li>
       {% if film.image %}
-        <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="">
+        <a href="{% url 'blacksheep:film-detail' film.id %}"> <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt=""></a>
       {% else %}
           Pas d'image disponible
       {% endif %}

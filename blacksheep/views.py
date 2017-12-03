@@ -117,13 +117,11 @@ def rechercheFilm(request):
     return render(request, 'blacksheep/film_search.html', context)
 
 def rechercheSerie(request):
-
+    series=""
     query = request.GET.get('query')
     content = ''
-
     if not query:
         series = Serie.objects.all()
-
     else:
         #series = Serie.objects.filter(seriesName=query)
         query = urllib.request.pathname2url(query)
@@ -131,28 +129,38 @@ def rechercheSerie(request):
         req.add_header('Accept', 'application/json')
         req.add_header('Accept-Language', 'fr')
         req.add_header('Authorization','Bearer '+request.session['tokenapi'])
-        resp = urllib.request.urlopen(req)
-        string = resp.read().decode('utf-8')
-        content = json.loads(string)
-        series=[]
-        for serie in content['data']:
-            tvserie=Serie()
-            tvserie.id=serie['id']
-            tvserie.seriesName=serie['seriesName']
-            tvserie.network=serie['network']
-            tvserie.overview=serie['overview']
-            tvserie.status=serie['status']
-            tvserie.banner=serie['banner']
-            tvserie.firstAired=serie['firstAired']
-            series.append(tvserie)
-            if Serie.objects.filter(id=tvserie.id):
-                pass
-            else:
-                query = Serie(firstAired = tvserie.firstAired , id = tvserie.id, network=tvserie.network , overview= tvserie.overview,seriesName=tvserie.seriesName,status=tvserie.status ,banner=tvserie.banner )
-                query.save()
+        try:
+            resp = urllib.request.urlopen(req)
+            test='ok'
+
+        except Exception as e:
+            test=False
+        if(test!='ok'):
+            pass
+        else:
+            string = resp.read().decode('utf-8')
+            content = json.loads(string)
+            series=[]
+            for serie in content['data']:
+                tvserie=Serie()
+                tvserie.id=serie['id']
+                tvserie.seriesName=serie['seriesName']
+                tvserie.network=serie['network']
+                tvserie.overview=serie['overview']
+                tvserie.status=serie['status']
+                tvserie.banner=serie['banner']
+                tvserie.firstAired=serie['firstAired']
+                series.append(tvserie)
+                if Serie.objects.filter(id=tvserie.id):
+                    pass
+                else:
+                    query = Serie(firstAired = tvserie.firstAired , id = tvserie.id, network=tvserie.network , overview= tvserie.overview,seriesName=tvserie.seriesName,status=tvserie.status ,banner=tvserie.banner )
+                    query.save()
 
     title = "Résultats pour la requête %s"%query
-
+    if series=='':
+        series=""
+        #series = Serie.objects.all()
     context = {
 
         'series': series
