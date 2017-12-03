@@ -98,8 +98,11 @@ def rechercheFilm(request):
                 movie.id=film['id']
                 movie.image=film['poster_path']
                 films.append(movie)
-            #query = Film(id = series['firstAired'] , titre = series['id'] )
-            #query.save()
+                if Film.objects.filter(id=movie.id):
+                    pass
+                else:
+                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image)
+                    query.save()
 
 
     title = "Résultats pour la requête %s"%query

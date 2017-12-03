@@ -11,8 +11,12 @@
   </div>
   {% for film in films %}
       <li>{{ film.titre }} </li>
-      <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="">
+      {% if film.image %}
+        <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="">
+      {% else %}
+          Pas d'image disponible
+      {% endif %}
   {% empty %}
-      <li>No articles yet.</li>
+      <li>Aucun résultat.</li>
   {% endfor %}
 {% endblock %}
