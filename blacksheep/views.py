@@ -6,6 +6,7 @@ from django.views.generic import DetailView, CreateView, UpdateView, ListView, D
 from blacksheep.models import Film, Serie,Saison,Episode
 import requests
 import urllib
+import json
 
 # Create your views here.
 
@@ -36,7 +37,7 @@ class FilmListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(FilmListView, self).get_context_data(**kwargs)
-        context['templates'] = "blacksheep/listFilm.html"
+        context['templates'] = "blacksdataheep/listFilm.html"
         return context
 
 
@@ -99,24 +100,26 @@ def rechercheFilm(request):
 def rechercheSerie(request):
 
     query = request.GET.get('query')
-    series=''
+    content = ''
 
     if not query:
-
-        search(request)
+        series = Serie.objects.all()
 
     else:
-        query=urllib.request.pathname2url(query)
-        req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
-        req.add_header('Accept', 'application/json')
-        req.add_header('Accept-Language', 'fr')
-        req.add_header('Authorization','Bearer '+request.session['tokenapi'])
-        resp = urllib.request.urlopen(req)
-        content = resp.read()
-        #series = content
-        return HttpResponse(content)
+        series = Serie.objects.filter(seriesName=query)
 
-    #if not series.exists():
+        if not series.exists():
+            query = urllib.request.pathname2url(query)
+            req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
+            req.add_header('Accept', 'application/json')
+            req.add_header('Accept-Language', 'fr')
+            req.add_header('Authorization','Bearer '+request.session['tokenapi'])
+            resp = urllib.request.urlopen(req)
+            string = resp.read().decode('utf-8')
+            content = json.loads(string)
+            series=content['data'][0]
+            #query = Serie(firstAired = series['firstAired'] , id = series['id'], network=series['network'] , overview= series['overview'],seriesName=series['seriesName'],status=series['status'] ,banner=series['banner'] )
+            #query.save()
 
 
 
@@ -124,8 +127,8 @@ def rechercheSerie(request):
 
     context = {
 
-        'series': query
+        'series': series,
+        'title': title
 
     }
-
     return render(request, 'blacksheep/serie_search.html', context)
