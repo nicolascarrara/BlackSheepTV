@@ -13,12 +13,4 @@
   {% empty %}
     <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de série existant ?</p>
 
-    <div class="card">
-      <img class="card-img-top" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="image {{ film.titre }}">
-      <div class="card-body">
-        <h4 class="card-title">{{ film.titre }}</h4>
-        <a href="{% url 'blacksheep:film-detail' film.id %}" class="btn btn-primary">Voir détails</a>
-      </div>
-    </div>
-
 {% endfor %}
