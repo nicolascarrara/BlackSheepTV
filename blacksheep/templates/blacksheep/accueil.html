@@ -20,7 +20,7 @@ $(document).ready(function(){
        type : 'GET',
        dataType : 'html',
        success: function(g) {
-            $('#connected').attr('class', 'glyphicon glyphicon-ok');
+            //$('#connected').attr('class', 'glyphicon glyphicon-ok');
             $.ajax({
                url : 'film/discoverAPI',
                type : 'GET',
@@ -34,7 +34,7 @@ $(document).ready(function(){
             });
         },
         error: function() {
-            $('#connected').attr('class', 'glyphicon glyphicon-remove');
+          //  $('#connected').attr('class', 'glyphicon glyphicon-remove');
         }
     });
 

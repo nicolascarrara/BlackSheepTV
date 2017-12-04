@@ -1,8 +1,9 @@
 td{
     text-align: center;
 }
-
-
+body{
+width: 100%;
+}
 footer{
     position: fixed;
     bottom: 0;
@@ -24,14 +25,15 @@ footer{
 div.thumbnail:hover{
     background-color: #ddd !important;
 }
-a{
+a h4{
   text-decoration: none !important;
   color: rgb(34,34,34)!important;
 }
-h4{
-  color: : rgb(34, 34, 34) !important;
+section{
+  width: 100%!important;
 }
 .minifilm {
+  margin: 2%!important;
   text-align: center !important;
   -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
