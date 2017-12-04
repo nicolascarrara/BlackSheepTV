@@ -9,6 +9,9 @@
         </div>
     </div>
 </div>
+<div id ="discover">
+
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -18,15 +21,25 @@ $(document).ready(function(){
        dataType : 'html',
        success: function(g) {
             $('#connected').attr('class', 'glyphicon glyphicon-ok');
+            $.ajax({
+               url : 'film/discoverAPI',
+               type : 'GET',
+               dataType : 'html',
+               success: function(g) {
+                    $('#discover').html(g);
+                },
+                error: function() {
+                    alert('nok')
+                }
+            });
         },
         error: function() {
             $('#connected').attr('class', 'glyphicon glyphicon-remove');
         }
     });
 
-
-
 });
+
 </script>
 
 {% endblock %}

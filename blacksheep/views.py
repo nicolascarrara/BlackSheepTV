@@ -23,6 +23,32 @@ def loginAPI(request):
     request.session['tokenapi'] = data['token']
     return HttpResponse(data['token'])
 
+def discoverAPI(request):
+    req = urllib.request.Request('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&language=fr&api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec')
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    films=[]
+    for film in content['results']:
+        movie=Film()
+        movie.titre=film['title']
+        movie.id=film['id']
+        movie.image=film['poster_path']
+        movie.note=film['vote_average']
+        movie.synopsis=film['overview']
+        films.append(movie)
+        if Film.objects.filter(id=movie.id):
+            pass
+        else:
+            query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note)
+            query.save()
+    context = {
+
+        'object_list': films
+
+    }
+    return render(request, 'blacksheep/v_filmList.html', context)
+
 class FilmListView(ListView):
     model = Film
 
@@ -34,7 +60,7 @@ class SerieListView(ListView):
 class FilmDetailView(DetailView):
     model = Film
     template_name = "blacksheep/film_detail.html"
-    
+
 
 
 class SerieDetailView(DetailView):
@@ -88,7 +114,7 @@ def rechercheFilm(request):
                     query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note)
                     query.save()
 
-                    
+
     context = {
 
         'object_list': films
