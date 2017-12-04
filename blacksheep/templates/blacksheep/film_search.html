@@ -9,14 +9,5 @@
       <span class="help-block" id="helpBlock">Trouvez le film de vos rêves en tapant son titre ou le nom du réalisateur.</span>
     </form>
   </div>
-  {% for film in films %}
-      <li>{{ film.titre }} </li>
-      {% if film.image %}
-        <a href="{% url 'blacksheep:film-detail' film.id %}"> <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt=""></a>
-      {% else %}
-          Pas d'image disponible
-      {% endif %}
-  {% empty %}
-        <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de film existant ?</p>
-  {% endfor %}
+  {% include 'blacksheep/v_filmList.html' %}
 {% endblock %}
