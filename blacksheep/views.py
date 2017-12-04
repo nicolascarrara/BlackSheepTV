@@ -73,7 +73,7 @@ def rechercheFilm(request):
 
     query = request.GET.get('query')
 
-    
+
     if not query:
 
         films = Film.objects.all()
@@ -95,6 +95,9 @@ def rechercheFilm(request):
     }
 
     return render(request, 'blacksheep/film_search.html', context)
+
+def serieAPI(nom):
+    context=nom
 
 def rechercheSerie(request):
 
@@ -118,7 +121,7 @@ def rechercheSerie(request):
 
     #if not series.exists():
 
-        
+
 
     title = "Résultats pour la requête %s"%query
 
