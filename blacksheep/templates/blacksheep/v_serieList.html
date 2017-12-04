@@ -1,0 +1,16 @@
+{% for serie in object_list %}
+{% if forloop.first %}<div class="row">{% endif %}
+<div class="col-sm-12 col-lg-6">
+  <p style="text-align:center">{{ serie.seriesName }}</p>
+  {% if serie.banner %}
+    <a href="{% url 'blacksheep:serie-detail' serie.id %}">  <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt=""> </a>
+  {% else %}
+      {% load static %}
+      <a href="{% url 'blacksheep:serie-detail' serie.id %}">  <img src="{% static 'images/imgserienotfound.png' %}" alt=""> </a>
+  {% endif %}
+  </div>
+  {% if forloop.counter|divisibleby:2 %}</div><div class="row">{% endif %}
+  {% empty %}
+    <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de série existant ?</p>
+
+{% endfor %}

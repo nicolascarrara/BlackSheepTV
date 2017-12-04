@@ -23,36 +23,18 @@ def loginAPI(request):
     request.session['tokenapi'] = data['token']
     return HttpResponse(data['token'])
 
-def search(request):
-    req = urllib.request.Request('https://api.thetvdb.com/search/series?name=Breaking%20Bad')
-    req.add_header('Accept', 'application/json')
-    req.add_header('Accept-Language', 'fr')
-    req.add_header('Authorization','Bearer '+request.session['tokenapi'])
-    resp = urllib.request.urlopen(req)
-    content = resp.read()
-    return HttpResponse(content)
-
 class FilmListView(ListView):
     model = Film
-
-    def get_context_data(self, **kwargs):
-        context = super(FilmListView, self).get_context_data(**kwargs)
-        context['templates'] = "blacksdataheep/listFilm.html"
-        return context
 
 
 class SerieListView(ListView):
     model = Serie
 
-    def get_context_data(self, **kwargs):
-        context = super(SerieListView, self).get_context_data(**kwargs)
-        context['templates'] = "serie_list.html"
-        return context
-
 
 class FilmDetailView(DetailView):
     model = Film
     template_name = "blacksheep/film_detail.html"
+    
 
 
 class SerieDetailView(DetailView):
@@ -61,13 +43,13 @@ class SerieDetailView(DetailView):
 
 
 class SaisonDetailView(DetailView):
-    model = Saison
-    template_name = "blacksheep/detailSaison.html"
+    model = Film
+    template_name = "blacksheep/saison_detail.html"
 
 
 class EpisodeDetailView(DetailView):
-    model = Episode
-    template_name = "blacksheep/detailEpisode.html"
+    model = Film
+    template_name = "blacksheep/episode_detail.html"
 
 
 def rechercheFilm(request):
@@ -91,7 +73,6 @@ def rechercheFilm(request):
             resp = urllib.request.urlopen(req)
             string = resp.read().decode('utf-8')
             content = json.loads(string)
-            #films=content['data'][0]
             films=[]
             for film in content['results']:
                 movie=Film()
@@ -107,12 +88,10 @@ def rechercheFilm(request):
                     query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note)
                     query.save()
 
-
-    title = "Résultats pour la requête %s"%query
-
+                    
     context = {
 
-        'films': films
+        'object_list': films
 
     }
     return render(request, 'blacksheep/film_search.html', context)
@@ -127,7 +106,6 @@ def rechercheSerie(request):
     if not query:
         series = Serie.objects.all()
     else:
-        #series = Serie.objects.filter(seriesName=query)
         query = urllib.request.pathname2url(query)
         req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
         req.add_header('Accept', 'application/json')
@@ -161,13 +139,12 @@ def rechercheSerie(request):
                     query = Serie(firstAired = tvserie.firstAired , id = tvserie.id, network=tvserie.network , overview= tvserie.overview,seriesName=tvserie.seriesName,status=tvserie.status ,banner=tvserie.banner )
                     query.save()
 
-    title = "Résultats pour la requête %s"%query
     if series=='':
         series=""
-        #series = Serie.objects.all()
+
     context = {
 
-        'series': series
+        'object_list': series
 
     }
     return render(request, 'blacksheep/serie_search.html', context)

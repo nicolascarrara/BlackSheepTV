@@ -1,15 +1,6 @@
 {% extends "blacksheep/baseModele.html" %}
 {% block contenu %}
 
-{% for serie in object_list %}
-<li><p style="text-align:center">{{ serie.seriesName }}</p> </li>
-{% if serie.banner %}
-  <a href="{% url 'blacksheep:serie-detail' serie.id %}"> <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt=""> </a>
-{% else %}
-    Pas d'image disponible
-{% endif %}
-{% empty %}
-  <p>Ooops aucune série disponible, essayez de lancer une recherche !</p>
-{% endfor %}
+{% include 'blacksheep/v_serieList.html' %}
 
 {% endblock %}
