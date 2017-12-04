@@ -1,5 +1,12 @@
 {% extends "blacksheep/baseModele.html" %}
 {% block contenu %}
-
-film
+<h1>{{ film.titre }}</h1>
+<p>{% if film.image %}
+  <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="">
+{% else %}
+    Pas d'image disponible
+{% endif %}</p>
+<p>Synopsis : {{ film.synopsis }}</p>
+<p>Note : {{ film.note }}</p>
+<p>Id : {{ film.id }}</p>
 {% endblock %}

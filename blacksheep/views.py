@@ -6,6 +6,7 @@ from django.views.generic import DetailView, CreateView, UpdateView, ListView, D
 from blacksheep.models import Film, Serie,Saison,Episode
 import requests
 import urllib
+import json
 
 # Create your views here.
 
@@ -26,7 +27,7 @@ def search(request):
     req = urllib.request.Request('https://api.thetvdb.com/search/series?name=Breaking%20Bad')
     req.add_header('Accept', 'application/json')
     req.add_header('Accept-Language', 'fr')
-    req.add_header('Authorization','Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTIwNjA5NzUsImlkIjoiQmxhY2tTaGVlcFRWIiwib3JpZ19pYXQiOjE1MTE5NzQ1NzUsInVzZXJpZCI6NDkwMTk4LCJ1c2VybmFtZSI6Im5pY29sYXNjYXJyYXJhIn0.ihUfnS-288J8hTSbDhdJyfBijjCfn2EfoSYtxSzFQIFbtRs2hkKzR05Xw0_dhg4u-Udp7rx-PyGyWnOpvcr0yXYv996OIBZhc9eOXDwuo9ARHOcXBNqeo5V7oJR_yqgjDUCupeewbg6OTlSfXadWwihSJBG1D8fW5j7jRP39Qkwu0kUKYEXIrxy9fKqL_pZBgR2qZnjpDpjAHYTE-CeR47N0Je-rrxeJgi8nJD_TMtI-fGlZze8QUmt-lYTn--_q84YCvaktlwaEFmvSeZU3tB56XqIgX48kqVWE0eT_D0tM-3LLNvptWtlumjl1Navc1kseOPolj_gleI23KooKxw')
+    req.add_header('Authorization','Bearer '+request.session['tokenapi'])
     resp = urllib.request.urlopen(req)
     content = resp.read()
     return HttpResponse(content)
@@ -36,7 +37,7 @@ class FilmListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(FilmListView, self).get_context_data(**kwargs)
-        context['templates'] = "blacksheep/listFilm.html"
+        context['templates'] = "blacksdataheep/listFilm.html"
         return context
 
 
@@ -45,18 +46,18 @@ class SerieListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(SerieListView, self).get_context_data(**kwargs)
-        context['templates'] = "blacksheep/listSerie.html"
+        context['templates'] = "serie_list.html"
         return context
 
 
 class FilmDetailView(DetailView):
     model = Film
-    template_name = "blacksheep/detailFilm.html"
+    template_name = "blacksheep/film_detail.html"
 
 
 class SerieDetailView(DetailView):
     model = Serie
-    template_name = "blacksheep/detailSerie.html"
+    template_name = "blacksheep/serie_detail.html"
 
 
 class SaisonDetailView(DetailView):
@@ -72,6 +73,7 @@ class EpisodeDetailView(DetailView):
 def rechercheFilm(request):
 
     query = request.GET.get('query')
+    content=''
 
 
     if not query:
@@ -80,11 +82,31 @@ def rechercheFilm(request):
 
     else:
 
-        films = Film.objects.filter(titre_icontains=query)
+        films = Film.objects.filter(titre=query)
 
-    """if not films.exists():
+        if not films.exists():
 
-        films = Film.objects.filter(realisateur__icontains=query)"""
+            query = urllib.request.pathname2url(query)
+            req = urllib.request.Request('https://api.themoviedb.org/3/search/movie?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr&query='+query)
+            resp = urllib.request.urlopen(req)
+            string = resp.read().decode('utf-8')
+            content = json.loads(string)
+            #films=content['data'][0]
+            films=[]
+            for film in content['results']:
+                movie=Film()
+                movie.titre=film['title']
+                movie.id=film['id']
+                movie.image=film['poster_path']
+                movie.note=film['vote_average']
+                movie.synopsis=film['overview']
+                films.append(movie)
+                if Film.objects.filter(id=movie.id):
+                    pass
+                else:
+                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note)
+                    query.save()
+
 
     title = "Résultats pour la requête %s"%query
 
@@ -93,42 +115,59 @@ def rechercheFilm(request):
         'films': films
 
     }
-
     return render(request, 'blacksheep/film_search.html', context)
 
 def serieAPI(nom):
     context=nom
 
 def rechercheSerie(request):
-
+    series=""
     query = request.GET.get('query')
-    series=''
-
+    content = ''
     if not query:
-
-        search(request)
-
+        series = Serie.objects.all()
     else:
-        query=urllib.request.pathname2url(query)
+        #series = Serie.objects.filter(seriesName=query)
+        query = urllib.request.pathname2url(query)
         req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
         req.add_header('Accept', 'application/json')
         req.add_header('Accept-Language', 'fr')
-        req.add_header('Authorization','Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTIwNjA5NzUsImlkIjoiQmxhY2tTaGVlcFRWIiwib3JpZ19pYXQiOjE1MTE5NzQ1NzUsInVzZXJpZCI6NDkwMTk4LCJ1c2VybmFtZSI6Im5pY29sYXNjYXJyYXJhIn0.ihUfnS-288J8hTSbDhdJyfBijjCfn2EfoSYtxSzFQIFbtRs2hkKzR05Xw0_dhg4u-Udp7rx-PyGyWnOpvcr0yXYv996OIBZhc9eOXDwuo9ARHOcXBNqeo5V7oJR_yqgjDUCupeewbg6OTlSfXadWwihSJBG1D8fW5j7jRP39Qkwu0kUKYEXIrxy9fKqL_pZBgR2qZnjpDpjAHYTE-CeR47N0Je-rrxeJgi8nJD_TMtI-fGlZze8QUmt-lYTn--_q84YCvaktlwaEFmvSeZU3tB56XqIgX48kqVWE0eT_D0tM-3LLNvptWtlumjl1Navc1kseOPolj_gleI23KooKxw')
-        resp = urllib.request.urlopen(req)
-        content = resp.read()
-        #series = content
-        return HttpResponse(content)
+        req.add_header('Authorization','Bearer '+request.session['tokenapi'])
+        try:
+            resp = urllib.request.urlopen(req)
+            test='ok'
 
-    #if not series.exists():
-
-
+        except Exception as e:
+            test=False
+        if(test!='ok'):
+            pass
+        else:
+            string = resp.read().decode('utf-8')
+            content = json.loads(string)
+            series=[]
+            for serie in content['data']:
+                tvserie=Serie()
+                tvserie.id=serie['id']
+                tvserie.seriesName=serie['seriesName']
+                tvserie.network=serie['network']
+                tvserie.overview=serie['overview']
+                tvserie.status=serie['status']
+                tvserie.banner=serie['banner']
+                tvserie.firstAired=serie['firstAired']
+                series.append(tvserie)
+                if Serie.objects.filter(id=tvserie.id):
+                    pass
+                else:
+                    query = Serie(firstAired = tvserie.firstAired , id = tvserie.id, network=tvserie.network , overview= tvserie.overview,seriesName=tvserie.seriesName,status=tvserie.status ,banner=tvserie.banner )
+                    query.save()
 
     title = "Résultats pour la requête %s"%query
-
+    if series=='':
+        series=""
+        #series = Serie.objects.all()
     context = {
 
-        'series': query
+        'series': series
 
     }
-
     return render(request, 'blacksheep/serie_search.html', context)
