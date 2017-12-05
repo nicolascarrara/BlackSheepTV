@@ -15,6 +15,7 @@ class Serie(models.Model):
     network.default=''
     overview = models.CharField(max_length=600)
     overview.default=''
+    overview.null=True
     seriesName = models.CharField(max_length=64)
     seriesName.default=''
     status = models.CharField(max_length=20)
