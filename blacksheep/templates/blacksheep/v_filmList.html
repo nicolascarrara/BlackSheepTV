@@ -1,16 +1,17 @@
+
 {% for film in object_list %}
 
-{% if forloop.first %}<div class="row">{% endif %}
-<div class="col-sm-6 col-md-4 col-lg-3">
+
+<div class="col-xs-12 col-sm-4 col-lg-2">
   <a href="{% url 'blacksheep:film-detail' film.id %}" class="btn">
   <div class="thumbnail">
       <div class="text-center">
-    <h4>{{ film.titre }}</h4>
+    <h4 class="filmtitle">{{ film.titre | truncatechars:20}}</h4>
   {% if film.image %}
-    <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="image {{ film.titre }}"  class="img-rounded minifilm">
+    <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="image {{ film.titre }}"  class="img-fluid img-thumbnail minifilm">
   {% else %}
       {% load static %}
-        <img src="{% static 'images/imgfilmnotfound.png' %}" alt="image non trouvée"  class="img-rounded minifilm">
+        <img src="{% static 'images/imgfilmnotfound.png' %}" alt="image non trouvée"  class="img-fluid img-thumbnail minifilm">
   {% endif %}
       <br><br>
       <p> Voir détails</p>
@@ -19,8 +20,11 @@
 </a>
 </div>
 
-  {% if forloop.counter|divisibleby:4 %}</div><div class="row">{% endif %}
+
+
+
   {% empty %}
+
     <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de série existant ?</p>
 
 {% endfor %}
