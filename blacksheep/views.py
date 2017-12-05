@@ -30,19 +30,22 @@ def discoverAPI(request):
     string = resp.read().decode('utf-8')
     content = json.loads(string)
     films=[]
+    i=0
     for film in content['results']:
-        movie=Film()
-        movie.titre=film['title']
-        movie.id=film['id']
-        movie.image=film['poster_path']
-        movie.note=film['vote_average']
-        movie.synopsis=film['overview']
-        films.append(movie)
-        if Film.objects.filter(id=movie.id):
-            pass
-        else:
-            query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note)
-            query.save()
+        if i<18:
+            i=i+1
+            movie=Film()
+            movie.titre=film['title']
+            movie.id=film['id']
+            movie.image=film['poster_path']
+            movie.note=film['vote_average']
+            movie.synopsis=film['overview']
+            films.append(movie)
+            if Film.objects.filter(id=movie.id):
+                pass
+            else:
+                query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note)
+                query.save()
     context = {
 
         'object_list': films
