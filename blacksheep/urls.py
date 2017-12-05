@@ -1,9 +1,5 @@
 from django.conf.urls import url, include
-<<<<<<< HEAD
-from .views import serieAPI,rechercheFilm, rechercheSerie,accueil, FilmListView, SerieListView, FilmDetailView, SerieDetailView, SaisonDetailView, EpisodeDetailView,loginAPI,search
-=======
 from .views import rechercheFilm, rechercheSerie,accueil, FilmListView, SerieListView, FilmDetailView, SerieDetailView, SaisonDetailView, EpisodeDetailView,loginAPI
->>>>>>> d0945d1937597bb65b766ebc843fbd0788b9e39e
 
 
 
@@ -16,7 +12,6 @@ urlpatterns = [
     url(r'^detailFilm/(?P<pk>\d+)$', FilmDetailView.as_view(), name='film-detail'),
     url(r'^serie/$', SerieListView.as_view(), name='serie-list'),
     url(r'^serie/search/$', rechercheSerie, name='serie-search'),
-    url(r'^serie/search/api/.*/', serieAPI, name='serieAPI'),
     url(r'^detailSerie/(?P<pk>\d+)$',
         SerieDetailView.as_view(), name='serie-detail'),
     url(r'^detailSerie/(?P<pk>\d+)/saison/(?P<pk2>\d+)$',
