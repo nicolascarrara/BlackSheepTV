@@ -3,6 +3,7 @@
 <html lang="fr" >
     <head>
         <meta charset="utf-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <title>BlackSheepTV</title>
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -35,8 +36,11 @@
             </nav>
         </header>
         <section>
+          
             {% block contenu %}
             {% endblock %}
+
+
         </section>
         <footer class="text-center">
             <em> <span class="glyphicon glyphicon-copyright-mark"></span> ZICKLER Amaël, CARRARA Nicolas, MATHYS Thibault LP2017-2018</em> <span class="glyphicon glyphicon-ice-lolly-tasted"></span>

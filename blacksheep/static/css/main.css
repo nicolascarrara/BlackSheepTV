@@ -1,8 +1,9 @@
-td{ 
+td{
     text-align: center;
 }
-
-
+body{
+width: 100%;
+}
 footer{
     position: fixed;
     bottom: 0;
@@ -19,4 +20,32 @@ footer{
 }
 .dropdown-menu li a {
     color : rgb(34, 34, 34)!important;
+}
+
+div.thumbnail:hover{
+    background-color: #ddd !important;
+}
+a h4{
+  text-decoration: none !important;
+  color: rgb(34,34,34)!important;
+}
+section{
+  width: 100%!important;
+}
+.minifilm {
+  text-align: center !important;
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden !important;
+}
+
+.minifilm:hover{
+overflow: hidden !important;
+  -webkit-transform: scale(1.02)!important;
+        -moz-transform: scale(1.02)!important;
+        -o-transform: scale(1.02)!important;
+        transform: scale(1.02)!important;
 }
