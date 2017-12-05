@@ -26,6 +26,21 @@ def loginAPI(request):
     return HttpResponse(data['token'])
 
 def discoverAPI(request):
+    req = urllib.request.Request('https://api.themoviedb.org/3/genre/movie/list?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr')
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    for genree in content['genres']:
+        genre=Genre()
+        genre.name=genree['name']
+        genre.id=genree['id']
+        if Genre.objects.filter(name=genre.name):
+            pass
+        else:
+            query = Genre(name = genre.name, id=genre.id)
+            query.save()
+
+    i=0
     req = urllib.request.Request('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&language=fr&api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec')
     resp = urllib.request.urlopen(req)
     string = resp.read().decode('utf-8')
