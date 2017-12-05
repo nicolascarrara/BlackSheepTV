@@ -64,7 +64,7 @@ def FilmList(request):
     except EmptyPage:
         films = paginator.page(paginator.num_pages)
 
-    return render(request, 'blacksheep/film_list.html', {'object_list': films})
+    return render(request, 'blacksheep/film_list.html', {'object_list': films,'range':paginator.page_range})
 
 
 

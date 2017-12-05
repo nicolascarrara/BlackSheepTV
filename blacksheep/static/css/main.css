@@ -3,6 +3,9 @@ td{
 }
 body{
 width: 100%;
+padding-bottom:30px;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
 }
 footer{
     position: fixed;
@@ -50,4 +53,8 @@ overflow: hidden !important;
         -moz-transform: scale(1.02)!important;
         -o-transform: scale(1.02)!important;
         transform: scale(1.02)!important;
+}
+
+.pages{
+  margin-bottom: 10px!important;
 }
