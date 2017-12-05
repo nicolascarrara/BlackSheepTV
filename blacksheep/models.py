@@ -32,14 +32,9 @@ class Film(models.Model):
     note.default='0'
     image = models.CharField(max_length=64)
     image.null=True
-    """ artiste = models.ForeignKey(Artiste, on_delete=models.CASCADE, null=True)
-
-    def __str__(self):
-        return'{self.titre}'.format(self=self)
-
-    def get_absolute_url(self):
-        from django.urls import reverse
-        return reverse('musiques:morceau-detail', args=[str(self.id)])"""
+    genre = models.CharField(max_length=64)
+    genre.default=''
+    genre.null=True
 
 
 class Acteur(models.Model):
@@ -47,7 +42,8 @@ class Acteur(models.Model):
 
 
 class Genre(models.Model):
-    titre = models.CharField(max_length=64)
+    name = models.CharField(max_length=64)
+    name.default=''
 
 
 class Pays(models.Model):

@@ -4,7 +4,7 @@ from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
 from BlackSheepTV import settings
 from django.views.generic import DetailView, CreateView, UpdateView, ListView, DeleteView
-from blacksheep.models import Film, Serie,Saison,Episode
+from blacksheep.models import Film, Serie,Saison,Episode,Genre
 import requests
 import urllib
 import json
@@ -109,7 +109,6 @@ def rechercheFilm(request):
     query = request.GET.get('query')
     content=''
 
-
     if not query:
 
         films_list = Film.objects.all()
@@ -139,6 +138,11 @@ def rechercheFilm(request):
             films=[]
             for film in content['results']:
                 movie=Film()
+                for genre in film['genre_ids']:
+                    if i==0:
+                        movie.genre=genre
+                    else:
+                        movie.genre=movie.genre+'/'+genre
                 movie.titre=film['title']
                 movie.id=film['id']
                 movie.image=film['poster_path']
@@ -154,7 +158,8 @@ def rechercheFilm(request):
 
     context = {
 
-        'object_list': films
+        'object_list': films,
+        'range':paginator.page_range
 
     }
     return render(request, 'blacksheep/film_search.html', context)
