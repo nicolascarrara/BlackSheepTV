@@ -6,6 +6,7 @@ from BlackSheepTV import settings
 from django.views.generic import DetailView, CreateView, UpdateView, ListView, DeleteView
 from blacksheep.models import Film, Serie,Saison,Episode,Genre
 import requests
+import string
 import urllib
 import json
 
@@ -87,6 +88,15 @@ class FilmDetailView(DetailView):
     model = Film
     template_name = "blacksheep/film_detail.html"
 
+    def get_object(self):
+        object = super().get_object()
+        i=0
+        for genre in object.genre.split('/'):
+            if i==0:
+                object.genre = Genre.objects.filter(id=genre).values_list('name',flat=True)
+            else:
+                object.genre=object.genre+'/'+Genre.objects.filter(id=genre).values_list('name',flat=True)
+        return object
 
 
 class SerieDetailView(DetailView):
@@ -111,18 +121,7 @@ def rechercheFilm(request):
 
     if not query:
 
-        films_list = Film.objects.all()
-        paginator = Paginator(films_list, 18)
-
-        page = request.GET.get('page')
-        try:
-            films = paginator.page(page)
-        except PageNotAnInteger:
-            # If page is not an integer, deliver first page.
-            films = paginator.page(1)
-        except EmptyPage:
-            # If page is out of range (e.g. 9999), deliver last page of results.
-            films = paginator.page(paginator.num_pages)
+        films = Film.objects.all()
 
     else:
 
@@ -138,11 +137,13 @@ def rechercheFilm(request):
             films=[]
             for film in content['results']:
                 movie=Film()
+                i=0
                 for genre in film['genre_ids']:
                     if i==0:
                         movie.genre=genre
+                        i=i+1
                     else:
-                        movie.genre=movie.genre+'/'+genre
+                        movie.genre=str(movie.genre)+'/'+str(genre)
                 movie.titre=film['title']
                 movie.id=film['id']
                 movie.image=film['poster_path']
@@ -152,9 +153,20 @@ def rechercheFilm(request):
                 if Film.objects.filter(id=movie.id):
                     pass
                 else:
-                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note)
+                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre)
                     query.save()
 
+    paginator = Paginator(films, 18)
+
+    page = request.GET.get('page')
+    try:
+        films = paginator.page(page)
+    except PageNotAnInteger:
+                # If page is not an integer, deliver first page.
+        films = paginator.page(1)
+    except EmptyPage:
+                # If page is out of range (e.g. 9999), deliver last page of results.
+        films = paginator.page(paginator.num_pages)
 
     context = {
 
