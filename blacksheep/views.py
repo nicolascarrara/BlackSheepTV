@@ -26,21 +26,24 @@ def loginAPI(request):
     return HttpResponse(data['token'])
 
 def discoverAPI(request):
-    req = urllib.request.Request('https://api.themoviedb.org/3/genre/movie/list?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr')
-    resp = urllib.request.urlopen(req)
-    string = resp.read().decode('utf-8')
-    content = json.loads(string)
-    for genree in content['genres']:
-        genre=Genre()
-        genre.name=genree['name']
-        genre.id=genree['id']
-        if Genre.objects.filter(name=genre.name):
-            pass
-        else:
-            query = Genre(name = genre.name, id=genre.id)
-            query.save()
+    genres=Genre.objects.all()
+    if genres!='':
+        pass
+    else:
+        req = urllib.request.Request('https://api.themoviedb.org/3/genre/movie/list?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr')
+        resp = urllib.request.urlopen(req)
+        string = resp.read().decode('utf-8')
+        content = json.loads(string)
+        for genree in content['genres']:
+            genre=Genre()
+            genre.name=genree['name']
+            genre.id=genree['id']
+            if Genre.objects.filter(name=genre.name):
+                pass
+            else:
+                query = Genre(name = genre.name, id=genre.id)
+                query.save()
 
-    i=0
     req = urllib.request.Request('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&language=fr&api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec')
     resp = urllib.request.urlopen(req)
     string = resp.read().decode('utf-8')
@@ -51,6 +54,13 @@ def discoverAPI(request):
         if i<18:
             i=i+1
             movie=Film()
+            j=0
+            for genre in film['genre_ids']:
+                if j==0:
+                    movie.genre=genre
+                    j=j+1
+                else:
+                    movie.genre=str(movie.genre)+'/'+str(genre)
             movie.titre=film['title']
             movie.id=film['id']
             movie.image=film['poster_path']
@@ -60,7 +70,7 @@ def discoverAPI(request):
             if Film.objects.filter(id=movie.id):
                 pass
             else:
-                query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note)
+                query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre)
                 query.save()
     context = {
 
@@ -106,11 +116,14 @@ class FilmDetailView(DetailView):
     def get_object(self):
         object = super().get_object()
         i=0
-        for genre in object.genre.split('/'):
-            if i==0:
-                object.genre = Genre.objects.filter(id=genre).values_list('name',flat=True)
-            else:
-                object.genre=object.genre+'/'+Genre.objects.filter(id=genre).values_list('name',flat=True)
+        if object.genre!='':
+            lesgenre=object.genre.split('/')
+            for genre in lesgenre:
+                if i==0:
+                    object.genre = Genre.objects.get(id=genre).name
+                    i=i+1
+                else:
+                    object.genre=str(object.genre)+'/'+str(Genre.objects.get(id=genre).name)
         return object
 
 
