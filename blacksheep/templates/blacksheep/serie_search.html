@@ -9,17 +9,5 @@
       <span class="help-block" id="helpBlock">Trouvez la série de vos rêves en tapant son titre ou le nom de son réalisateur.</span>
     </form>
   </div>
-
-
-  {% for serie in object_list %}
-      <li><p style="text-align:center">{{ serie.seriesName }}</p> </li>
-      {% if serie.banner %}
-        <a href="{% url 'blacksheep:serie-detail' serie.id %}">  <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt=""> </a>
-      {% else %}
-          Pas d'image disponible
-      {% endif %}
-  {% empty %}
-      <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de série existant ?</p>
-  {% endfor %}
-
+  {% include 'blacksheep/v_serieList.html' %}
 {% endblock %}

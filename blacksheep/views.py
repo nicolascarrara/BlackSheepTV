@@ -51,9 +51,8 @@ def discoverAPI(request):
     return render(request, 'blacksheep/v_filmList.html', context)
 
 def FilmList(request):
-    model = Film
     films_list = Film.objects.all()
-    paginator = Paginator(films_list, 10)
+    paginator = Paginator(films_list, 18)
     page = request.GET.get('page')
     try:
         films = paginator.page(page)
@@ -64,9 +63,22 @@ def FilmList(request):
 
     return render(request, 'blacksheep/film_list.html', {'object_list': films})
 
-class SerieListView(ListView):
-    model = Serie
 
+
+def SerieList(request):
+    series_list = Serie.objects.all()
+    paginator = Paginator(series_list, 18)
+    page = request.GET.get('page')
+    try:
+        series = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        series = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        series = paginator.page(paginator.num_pages)
+
+    return render(request, 'blacksheep/serie_list.html', {'object_list': series})
 
 class FilmDetailView(DetailView):
     model = Film
@@ -98,7 +110,7 @@ def rechercheFilm(request):
     if not query:
 
         films_list = Film.objects.all()
-        paginator = Paginator(films_list, 10)
+        paginator = Paginator(films_list, 18)
 
         page = request.GET.get('page')
         try:
@@ -151,8 +163,20 @@ def rechercheSerie(request):
     series=""
     query = request.GET.get('query')
     content = ''
+
     if not query:
-        series = Serie.objects.all()
+        series_list = Serie.objects.all()
+        paginator = Paginator(series_list, 10)
+        page = request.GET.get('page')
+        try:
+            series = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            series = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            series = paginator.page(paginator.num_pages)
+
     else:
         query = urllib.request.pathname2url(query)
         req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
