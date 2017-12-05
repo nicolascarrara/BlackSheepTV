@@ -11,7 +11,7 @@
   </div>
 
 
-  {% for serie in series %}
+  {% for serie in object_list %}
       <li><p style="text-align:center">{{ serie.seriesName }}</p> </li>
       {% if serie.banner %}
         <a href="{% url 'blacksheep:serie-detail' serie.id %}">  <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt=""> </a>
