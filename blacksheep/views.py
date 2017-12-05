@@ -67,7 +67,7 @@ def FilmList(request):
 
 def SerieList(request):
     series_list = Serie.objects.all()
-    paginator = Paginator(series_list, 10)
+    paginator = Paginator(series_list, 18)
     page = request.GET.get('page')
     try:
         series = paginator.page(page)
@@ -110,7 +110,7 @@ def rechercheFilm(request):
     if not query:
 
         films_list = Film.objects.all()
-        paginator = Paginator(films_list, 10)
+        paginator = Paginator(films_list, 18)
 
         page = request.GET.get('page')
         try:
