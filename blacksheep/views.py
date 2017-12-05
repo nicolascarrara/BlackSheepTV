@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
 from BlackSheepTV import settings
@@ -49,9 +50,21 @@ def discoverAPI(request):
     }
     return render(request, 'blacksheep/v_filmList.html', context)
 
-class FilmListView(ListView):
+def FilmList(request):
     model = Film
+    films_list = Film.objects.all()
+    paginator = Paginator(films_list, 10)
+    page = request.GET.get('page')
+    try:
+        films = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        films = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        films = paginator.page(paginator.num_pages)
 
+    return render(request, 'blacksheep/film_list.html', {'object_list': films})
 
 class SerieListView(ListView):
     model = Serie
@@ -86,8 +99,19 @@ def rechercheFilm(request):
 
     if not query:
 
-        films = Film.objects.all()
+        films_list = Film.objects.all()
+        paginator = Paginator(films_list, 10)
 
+        page = request.GET.get('page')
+        try:
+            films = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            films = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            films = paginator.page(paginator.num_pages)
+            
     else:
 
         films = Film.objects.filter(titre=query)
