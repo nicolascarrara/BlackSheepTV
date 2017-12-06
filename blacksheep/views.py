@@ -96,7 +96,7 @@ def FilmList(request):
 
 def SerieList(request):
     series_list = Serie.objects.all()
-    paginator = Paginator(series_list, 18)
+    paginator = Paginator(series_list, 10)
     page = request.GET.get('page')
     try:
         series = paginator.page(page)
@@ -107,7 +107,7 @@ def SerieList(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         series = paginator.page(paginator.num_pages)
 
-    return render(request, 'blacksheep/serie_list.html', {'object_list': series})
+    return render(request, 'blacksheep/serie_list.html', {'object_list': series,'range':paginator.page_range})
 
 class FilmDetailView(DetailView):
     model = Film
@@ -213,18 +213,7 @@ def rechercheSerie(request):
     content = ''
 
     if not query:
-        series_list = Serie.objects.all()
-        paginator = Paginator(series_list, 10)
-        page = request.GET.get('page')
-        try:
-            series = paginator.page(page)
-        except PageNotAnInteger:
-            # If page is not an integer, deliver first page.
-            series = paginator.page(1)
-        except EmptyPage:
-            # If page is out of range (e.g. 9999), deliver last page of results.
-            series = paginator.page(paginator.num_pages)
-
+        series = Serie.objects.all()
     else:
         query = urllib.request.pathname2url(query)
         req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
@@ -262,9 +251,18 @@ def rechercheSerie(request):
     if series=='':
         series=""
 
-    context = {
+    paginator = Paginator(series, 10)
+    page = request.GET.get('page')
+    try:
+        series = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        series = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        series = paginator.page(paginator.num_pages)
 
-        'object_list': series
+    context = {'object_list': series,'range':paginator.page_range}
 
-    }
+
     return render(request, 'blacksheep/serie_search.html', context)
