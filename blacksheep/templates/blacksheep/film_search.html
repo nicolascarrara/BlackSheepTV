@@ -4,16 +4,18 @@
     <form class="col-md-6 col-md-offset-3 text-center" action="{% url 'blacksheep:film-search' %}" method="get" accept-charset="utf-8">
       <div class="form-group">
           <label for="searchForm">Chercher un film</label>
+          {% if query %}
+          <input id="searchForm" class="form-control" name="query" value="{{ query}}">
+          {% else %}
           <input id="searchForm" class="form-control" name="query">
-          <select id="ValueGenre"  onchange="submit()" class="form-control" name="genre">
+
+          {% endif %}
+          <select id="ValueGenre" class="form-control" name="genre">
+            <option value="">Choix genre</option>
           {% for genre in genres %}
             {% if param %}
               {% if param.id == genre.id %}
                 <option value="{{ param.id }}" selected='selected' >{{ param.name }}</option>
-              {% endif %}
-            {% else %}
-              {% if forloop.first %}
-                <option value="">Choix genre</option>
               {% endif %}
             {% endif %}
             {% if param.id != genre.id %}
@@ -21,7 +23,8 @@
             {% endif %}
 
           {% endfor %}
-          </select>
+        </select>
+        <input type="submit" value="Rechercher" class="form-control">
       </div>
       <span class="help-block" id="helpBlock">Trouvez le film de vos rêves en tapant son titre ou le nom du réalisateur.</span>
     </form>

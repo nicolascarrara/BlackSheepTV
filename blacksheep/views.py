@@ -147,9 +147,15 @@ def rechercheFilm(request):
     query = request.GET.get('query')
     querygenre = request.GET.get('genre')
     content=''
-    liste_param.append(query)
-    liste_param.append(querygenre)
     list_genre = Genre.objects.all()
+    if query != '':
+        search=query
+    else:
+        search=''
+    if querygenre:
+        paramgenre=Genre()
+        paramgenre=Genre.objects.get(id=querygenre)
+        liste_param.append(paramgenre)
     if not query and not querygenre:
 
         films = Film.objects.all()
@@ -157,28 +163,25 @@ def rechercheFilm(request):
 
     elif not query and querygenre!='':
         films = Film.objects.filter(genre__contains=querygenre)
-        paramgenre=Genre()
-        paramgenre=Genre.objects.get(id=querygenre)
-        liste_param.append(paramgenre)
+
     else:
 
         if querygenre != '':
             paramgenre=Genre()
             paramgenre=Genre.objects.get(id=querygenre)
             liste_param.append(paramgenre)
-            films = Film.objects.filter(titre__contains=query,genre__contains=querygenre)
+            films = Film.objects.filter(titre__icontains=query,genre__contains=paramgenre.id)
             if films=='':
-                films = Film.objects.filter(titre__contains=query,genre__contains='%'+querygenre)
+                films = Film.objects.filter(titre__icontains=query,genre__contains='%'+paramgenre.id)
             if films=='':
-                films = Film.objects.filter(titre__contains=query,genre__contains='%'+querygenre+'%')
+                films = Film.objects.filter(titre__icontains=query,genre__contains='%'+paramgenre.id+'%')
             if films=='':
-                films = Film.objects.filter(titre__contains=query,genre__contains=querygenre+'%')
+                films = Film.objects.filter(titre__icontains=query,genre__contains=paramgenre.id+'%')
         else :
-            films = Film.objects.filter(titre__contains=query)
+            films = Film.objects.filter(titre__icontains=query)
             paramgenre=''
 
         if not films.exists():
-
             query = urllib.request.pathname2url(query)
             req = urllib.request.Request('https://api.themoviedb.org/3/search/movie?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr&query='+query)
             resp = urllib.request.urlopen(req)
@@ -189,7 +192,7 @@ def rechercheFilm(request):
                 movie=Film()
                 i=0
                 if querygenre != '':
-                    if querygenre in film['genre_ids']:
+                    if paramgenre.id in film['genre_ids']:
                         for genre in film['genre_ids']:
                             if i==0:
                                 movie.genre=genre
@@ -249,7 +252,8 @@ def rechercheFilm(request):
         'object_list': films,
         'range':paginator.page_range,
         'genres':list_genre,
-        'param': paramgenre
+        'param': paramgenre,
+        'query':search
 
     }
     return render(request, 'blacksheep/film_search.html', context)
