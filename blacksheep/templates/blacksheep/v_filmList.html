@@ -1,5 +1,14 @@
-<div class="row">
+<div class="row container">
 
+  <select>
+  {% for genre in genres %}
+    <option value="{{ genre.id }}">{{ genre.name }}</option>
+  {% endfor %}
+  </select>
+
+</div>
+
+<div class="row">
 
 {% for film in object_list %}
 

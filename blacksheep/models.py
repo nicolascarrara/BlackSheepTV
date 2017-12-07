@@ -35,6 +35,10 @@ class Film(models.Model):
     genre = models.CharField(max_length=64)
     genre.default=''
     genre.null=True
+    date_sortie=models.DateField()
+    date_sortie.allow_future = True
+    date_sortie.default='1900-01-01'
+
 
 
 class Acteur(models.Model):
