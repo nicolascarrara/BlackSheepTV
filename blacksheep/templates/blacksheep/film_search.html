@@ -5,7 +5,23 @@
       <div class="form-group">
           <label for="searchForm">Chercher un film</label>
           <input id="searchForm" class="form-control" name="query">
-          
+          <select id="ValueGenre"  onchange="submit()" class="form-control" name="genre">
+          {% for genre in genres %}
+            {% if param %}
+              {% if param.id == genre.id %}
+                <option value="{{ param.id }}" selected='selected' >{{ param.name }}</option>
+              {% endif %}
+            {% else %}
+              {% if forloop.first %}
+                <option value="">Choix genre</option>
+              {% endif %}
+            {% endif %}
+            {% if param.id != genre.id %}
+              <option value="{{ genre.id }}">{{ genre.name }}</option>
+            {% endif %}
+
+          {% endfor %}
+          </select>
       </div>
       <span class="help-block" id="helpBlock">Trouvez le film de vos rêves en tapant son titre ou le nom du réalisateur.</span>
     </form>

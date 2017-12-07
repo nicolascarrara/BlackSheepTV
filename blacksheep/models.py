@@ -36,6 +36,7 @@ class Film(models.Model):
     genre.default=''
     genre.null=True
     date_sortie=models.DateField()
+    date_sortie.null=True
     date_sortie.allow_future = True
     date_sortie.default='1900-01-01'
 

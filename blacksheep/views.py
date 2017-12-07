@@ -23,23 +23,20 @@ def loginAPI(request):
     return HttpResponse(data['token'])
 
 def discoverAPI(request):
-    genres=Genre.objects.all()
-    if genres!='':
-        pass
-    else:
-        req = urllib.request.Request('https://api.themoviedb.org/3/genre/movie/list?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr')
-        resp = urllib.request.urlopen(req)
-        string = resp.read().decode('utf-8')
-        content = json.loads(string)
-        for genree in content['genres']:
-            genre=Genre()
-            genre.name=genree['name']
-            genre.id=genree['id']
-            if Genre.objects.filter(name=genre.name):
-                pass
-            else:
-                query = Genre(name = genre.name, id=genre.id)
-                query.save()
+
+    req = urllib.request.Request('https://api.themoviedb.org/3/genre/movie/list?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr')
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    for genree in content['genres']:
+        genre=Genre()
+        genre.name=genree['name']
+        genre.id=genree['id']
+        if Genre.objects.filter(name=genre.name):
+            pass
+        else:
+            query = Genre(name = genre.name, id=genre.id)
+            query.save()
 
     req = urllib.request.Request('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&language=fr&api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec')
     resp = urllib.request.urlopen(req)
@@ -146,17 +143,39 @@ class EpisodeDetailView(DetailView):
 
 
 def rechercheFilm(request):
-
+    liste_param=[]
     query = request.GET.get('query')
+    querygenre = request.GET.get('genre')
     content=''
-
-    if not query:
+    liste_param.append(query)
+    liste_param.append(querygenre)
+    list_genre = Genre.objects.all()
+    if not query and not querygenre:
 
         films = Film.objects.all()
+        paramgenre=''
 
+    elif not query and querygenre!='':
+        films = Film.objects.filter(genre__contains=querygenre)
+        paramgenre=Genre()
+        paramgenre=Genre.objects.get(id=querygenre)
+        liste_param.append(paramgenre)
     else:
 
-        films = Film.objects.filter(titre=query)
+        if querygenre != '':
+            paramgenre=Genre()
+            paramgenre=Genre.objects.get(id=querygenre)
+            liste_param.append(paramgenre)
+            films = Film.objects.filter(titre__contains=query,genre__contains=querygenre)
+            if films=='':
+                films = Film.objects.filter(titre__contains=query,genre__contains='%'+querygenre)
+            if films=='':
+                films = Film.objects.filter(titre__contains=query,genre__contains='%'+querygenre+'%')
+            if films=='':
+                films = Film.objects.filter(titre__contains=query,genre__contains=querygenre+'%')
+        else :
+            films = Film.objects.filter(titre__contains=query)
+            paramgenre=''
 
         if not films.exists():
 
@@ -169,25 +188,50 @@ def rechercheFilm(request):
             for film in content['results']:
                 movie=Film()
                 i=0
-                for genre in film['genre_ids']:
-                    if i==0:
-                        movie.genre=genre
-                        i=i+1
-                    else:
-                        movie.genre=str(movie.genre)+'/'+str(genre)
-                movie.titre=film['title']
-                movie.id=film['id']
-                movie.image=film['poster_path']
-                movie.note=film['vote_average']
-                movie.synopsis=film['overview']
-                movie.date_sortie=film['release_date']
-                films.append(movie)
-                if Film.objects.filter(id=movie.id):
-                    pass
+                if querygenre != '':
+                    if querygenre in film['genre_ids']:
+                        for genre in film['genre_ids']:
+                            if i==0:
+                                movie.genre=genre
+                                i=i+1
+                            else:
+                                movie.genre=str(movie.genre)+'/'+str(genre)
+                        movie.titre=film['title']
+                        movie.id=film['id']
+                        movie.image=film['poster_path']
+                        movie.note=film['vote_average']
+                        movie.synopsis=film['overview']
+                        movie.date_sortie=film['release_date']
+                        films.append(movie)
+                        if Film.objects.filter(id=movie.id):
+                            pass
+                        else:
+                            query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
+                            query.save()
                 else:
-                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
-                    query.save()
-
+                    paramgenre=''
+                    for genre in film['genre_ids']:
+                        if i==0:
+                            movie.genre=genre
+                            i=i+1
+                        else:
+                            movie.genre=str(movie.genre)+'/'+str(genre)
+                            movie.titre=film['title']
+                            movie.id=film['id']
+                            movie.image=film['poster_path']
+                            movie.note=film['vote_average']
+                            movie.synopsis=film['overview']
+                            if film['release_date']=='':
+                                    pass
+                            else:
+                                movie.date_sortie=film['release_date']
+                            if movie not in (films):
+                                films.append(movie)
+                                if Film.objects.filter(id=movie.id):
+                                    pass
+                                else:
+                                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
+                                    query.save()
     paginator = Paginator(films, 18)
 
     page = request.GET.get('page')
@@ -203,7 +247,9 @@ def rechercheFilm(request):
     context = {
 
         'object_list': films,
-        'range':paginator.page_range
+        'range':paginator.page_range,
+        'genres':list_genre,
+        'param': paramgenre
 
     }
     return render(request, 'blacksheep/film_search.html', context)
