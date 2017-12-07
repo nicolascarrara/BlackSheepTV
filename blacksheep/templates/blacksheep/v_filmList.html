@@ -1,12 +1,3 @@
-<div class="row container">
-
-  <select>
-  {% for genre in genres %}
-    <option value="{{ genre.id }}">{{ genre.name }}</option>
-  {% endfor %}
-  </select>
-
-</div>
 
 <div class="row">
 
@@ -35,7 +26,7 @@
 
   {% empty %}
 
-    <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de série existant ?</p>
+    <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de film existant ?</p>
 
 {% endfor %}
 </div>
