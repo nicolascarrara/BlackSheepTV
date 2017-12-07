@@ -1,15 +1,12 @@
 from django.shortcuts import render
+from django import forms
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
 from BlackSheepTV import settings
 from django.views.generic import DetailView, CreateView, UpdateView, ListView, DeleteView
 from blacksheep.models import Film, Serie,Saison,Episode,Genre
-import requests
-import string
-import urllib
-import json
-
+import requests,string,urllib,json,time
 # Create your views here.
 
 
@@ -66,11 +63,12 @@ def discoverAPI(request):
             movie.image=film['poster_path']
             movie.note=film['vote_average']
             movie.synopsis=film['overview']
+            movie.date_sortie=film['release_date']
             films.append(movie)
             if Film.objects.filter(id=movie.id):
                 pass
             else:
-                query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre)
+                query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
                 query.save()
     context = {
 
@@ -81,6 +79,9 @@ def discoverAPI(request):
 
 def FilmList(request):
     films_list = Film.objects.all()
+    film_form=[]
+    #filmyear=forms.ModelChoiceField(queryset=Film.objects.values_list('date_sortie', flat = True).distinct(), empty_label="Année de sortie")
+    list_genre = Genre.objects.all()
     paginator = Paginator(films_list, 18)
     page = request.GET.get('page')
     try:
@@ -90,7 +91,7 @@ def FilmList(request):
     except EmptyPage:
         films = paginator.page(paginator.num_pages)
 
-    return render(request, 'blacksheep/film_list.html', {'object_list': films,'range':paginator.page_range})
+    return render(request, 'blacksheep/film_list.html', {'object_list': films,'range':paginator.page_range,'genres':list_genre})
 
 
 
@@ -116,14 +117,16 @@ class FilmDetailView(DetailView):
     def get_object(self):
         object = super().get_object()
         i=0
-        if object.genre!='':
+        if object.genre!='' and object.genre!="\n":
             lesgenre=object.genre.split('/')
             for genre in lesgenre:
                 if i==0:
                     object.genre = Genre.objects.get(id=genre).name
                     i=i+1
                 else:
-                    object.genre=str(object.genre)+'/'+str(Genre.objects.get(id=genre).name)
+                    object.genre=str(object.genre)+' / '+str(Genre.objects.get(id=genre).name)
+        else:
+            object.genre=''
         return object
 
 
@@ -177,11 +180,12 @@ def rechercheFilm(request):
                 movie.image=film['poster_path']
                 movie.note=film['vote_average']
                 movie.synopsis=film['overview']
+                movie.date_sortie=film['release_date']
                 films.append(movie)
                 if Film.objects.filter(id=movie.id):
                     pass
                 else:
-                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre)
+                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
                     query.save()
 
     paginator = Paginator(films, 18)

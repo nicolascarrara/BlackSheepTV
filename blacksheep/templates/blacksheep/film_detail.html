@@ -1,17 +1,22 @@
 {% extends "blacksheep/baseModele.html" %}
-{% block contenu %}
-<h1>{{ film.titre }}</h1>
-<p>{% if film.image %}
-  <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="">
-{% else %}
-    Pas d'image disponible
-{% endif %}</p>
-<p>Synopsis : {{ film.synopsis }}</p>
-<p>Note : {{ film.note }}</p>
-<p>Id : {{ film.id }}</p>
-{% if film.genre %}
-  Genre : {{ film.genre }}
-{% else %}
-<p>Genre : Inconnu </p>
-{% endif %}
+  {% block contenu %}
+    <h1>{{ film.titre }}</h1>
+    <p>{% if film.image %}
+          <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="">
+        {% else %}
+          Pas d'image disponible
+        {% endif %}</p>
+    <p>Synopsis : {{ film.synopsis }}</p>
+    <p>Note : {{ film.note }}</p>
+    <p>Id : {{ film.id }}</p>
+    {% if film.date_sortie|date:'d/m/Y' != '01/01/1900' %}
+      <p>Date sortie : {{ film.date_sortie|date:'d/m/Y' }}</p>
+    {% else %}
+      <p>Date sortie : Inconnue</p>
+    {% endif %}
+    {% if film.genre == '' %}
+      <p>Genre : Inconnu </p>
+    {% else %}
+      <p>Genre : {{ film.genre }}</p>
+    {% endif %}
 {% endblock %}
