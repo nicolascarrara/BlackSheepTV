@@ -107,11 +107,7 @@ def SerieList(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         series = paginator.page(paginator.num_pages)
 
-<<<<<<< HEAD
     return render(request, 'blacksheep/serie_list.html', {'object_list': series, 'range':paginator.page_range})
-=======
-    return render(request, 'blacksheep/serie_list.html', {'object_list': series,'range':paginator.page_range})
->>>>>>> 1b1a4825e4dadb868ce79c52a4297436e7d27e94
 
 class FilmDetailView(DetailView):
     model = Film
@@ -218,10 +214,6 @@ def rechercheSerie(request):
 
     if not query:
         series = Serie.objects.all()
-<<<<<<< HEAD
-
-=======
->>>>>>> 1b1a4825e4dadb868ce79c52a4297436e7d27e94
     else:
         query = urllib.request.pathname2url(query)
         req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
@@ -259,34 +251,16 @@ def rechercheSerie(request):
     if series=='':
         series=""
 
-<<<<<<< HEAD
-
-    paginator = Paginator(series_list, 10)
-=======
     paginator = Paginator(series, 10)
->>>>>>> 1b1a4825e4dadb868ce79c52a4297436e7d27e94
     page = request.GET.get('page')
     try:
         series = paginator.page(page)
     except PageNotAnInteger:
-<<<<<<< HEAD
         series = paginator.page(1)
     except EmptyPage:
-        series = paginator.page(paginator.num_pages)
-
-    context = {
-
-        'object_list': series,
-        'range':paginator.page_range
-=======
-        # If page is not an integer, deliver first page.
-        series = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
         series = paginator.page(paginator.num_pages)
 
     context = {'object_list': series,'range':paginator.page_range}
 
->>>>>>> 1b1a4825e4dadb868ce79c52a4297436e7d27e94
 
     return render(request, 'blacksheep/serie_search.html', context)
