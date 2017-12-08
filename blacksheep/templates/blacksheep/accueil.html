@@ -10,7 +10,7 @@
     </div>
 </div>
 <div id ="discover">
-
+<div class="loader"></div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
@@ -31,7 +31,7 @@ $(document).ready(function(){
                 error: function() {
                     $('#discover').html('')
                 }
-            }); 
+            });
         },
         error: function() {
           //  $('#connected').attr('class', 'glyphicon glyphicon-remove');
