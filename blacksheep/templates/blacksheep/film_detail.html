@@ -1,10 +1,12 @@
 {% extends "blacksheep/baseModele.html" %}
   {% block contenu %}
+
     <h1>{{ film.titre }}</h1>
     <p>{% if film.image %}
           <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="">
         {% else %}
-          Pas d'image disponible
+        {% load static %}
+          <img src="{% static 'images/imgfilmnotfound.png' %}" alt="image non trouvée"  class="img-fluid img-thumbnail minifilm">
         {% endif %}</p>
     <p>Synopsis : {{ film.synopsis }}</p>
     <p>Note : {{ film.note }}</p>
@@ -19,4 +21,25 @@
     {% else %}
       <p>Genre : {{ film.genre }}</p>
     {% endif %}
+    <div id="trailer">
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+id="{{ film.id }}"
+    $.ajax({
+  url: "/blacksheep/film/film_trailer",
+  type: "get",
+  data: {id : id},
+  dataType: "html",
+  success: function(g) {
+      $('#trailer').html('<h4>Bande annonce :</h4>'+g)
+   },
+   error: function() {
+
+
+   }
+});
+
+</script>
 {% endblock %}

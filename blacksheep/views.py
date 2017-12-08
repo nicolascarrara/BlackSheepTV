@@ -74,6 +74,25 @@ def discoverAPI(request):
     }
     return render(request, 'blacksheep/v_filmList.html', context)
 
+def TrailerFilmAPI(request):
+    query = request.GET.get('id')
+    req = urllib.request.Request('https://api.themoviedb.org/3/movie/'+query+'/videos?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr')
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    key=''
+    for trailer in content['results']:
+        if trailer['site']=="YouTube":
+            if key =='':
+                key=trailer['key']
+    context = {
+
+        'trailer': key
+
+    }
+    return render(request, 'blacksheep/film_trailer.html', context)
+
+
 def FilmList(request):
     films_list = Film.objects.all()
     film_form=[]
