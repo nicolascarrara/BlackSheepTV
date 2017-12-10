@@ -1,9 +1,4 @@
 {% extends "blacksheep/baseModele.html" %} {% block contenu %}
-<style>
-  body {
-    background-color: #f2f2f2;
-  }
-</style>
 <div class="text-center">
   <h1>{{ serie.seriesName }}</h1>
 </div>
@@ -17,22 +12,34 @@
     <div class="col-8">
       <p>
         <h3>Synopsis :</h3> {{ serie.overview }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
       <p>
         <h3>Network :</h3> {{ serie.network }}</p>
+    </div>
+    <div class="col-sm-6">
       <p>
         <h3>Date sortie  :</h3> {{ serie.firstAired }}</p>
+    </div>
+    <div class="col-sm-6">
       <p>
         <h3>Status  :</h3> {{ serie.status }}</p>
-      <p>
+    </div>
+    <p>
+      <div class="col-sm-6">
         <div id="saison">
           <div class="loader"></div>
         </div>
-        <div id="episode">
+      </div>
+  </div>
+  <div id="episode">
 
-        </div>
-    </div>
   </div>
 </div>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
   id = "{{ serie.id }}"
