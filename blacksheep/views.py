@@ -123,7 +123,7 @@ def SerieList(request):
     except EmptyPage:
         series = paginator.page(paginator.num_pages)
 
-    return render(request, 'blacksheep/serie_list.html', {'object_list': series})
+    return render(request, 'blacksheep/serie_list.html', {'object_list': series,'range':paginator.page_range})
 
 def SaisonDetailAPI(request):
     query = request.GET.get('id')
