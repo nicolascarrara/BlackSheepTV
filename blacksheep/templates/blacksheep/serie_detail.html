@@ -1,14 +1,76 @@
-{% extends "blacksheep/baseModele.html" %}
-{% block contenu %}
-<h1>{{ serie.seriesName }}</h1>
-<p>{% if serie.banner %}
-  <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt="">
-{% else %}
-    Pas d'image disponible
-{% endif %}</p>
-<p>Synopsis : {{ serie.overview }}</p>
-<p>Network : {{ serie.network }}</p>
-<p>Date sortie : {{ serie.firstAired }}</p>
-<p>Statut : {{ serie.status }} </p>
-<p>Id : {{ serie.id }}</p>
+{% extends "blacksheep/baseModele.html" %} {% block contenu %}
+<style>
+  body {
+    background-color: #f2f2f2;
+  }
+</style>
+<div class="text-center">
+  <h1>{{ serie.seriesName }}</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-4 pull-right">
+      <p>{% if serie.banner %}
+        <img class="img-fluid img-thumbnail" src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt=""> {% else %} {% load static %}
+        <img class="img-fluid img-thumbnail" src="{% static 'images/imgserienotfound.png' %}" alt="" class="img-fluid img-thumbnail minifilm"> {% endif %}</p>
+    </div>
+    <div class="col-8">
+      <p>
+        <h3>Synopsis :</h3> {{ serie.overview }}</p>
+      <p>
+        <h3>Network :</h3> {{ serie.network }}</p>
+      <p>
+        <h3>Date sortie  :</h3> {{ serie.firstAired }}</p>
+      <p>
+        <h3>Status  :</h3> {{ serie.status }}</p>
+      <p>
+        <div id="saison">
+          <div class="loader"></div>
+        </div>
+        <div id="episode">
+
+        </div>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  id = "{{ serie.id }}"
+  $.ajax({
+    url: "/blacksheep/detailSerie/saison/",
+    type: "get",
+    data: {
+      id: id
+    },
+    dataType: "html",
+    success: function(g) {
+      $('#saison').html('<h3>Saisons :</h3>' + g)
+    },
+    error: function() {
+
+
+    }
+  });
+
+  function searchepisode(saison) {
+    $('#episode').html('<div class="loader"></div>')
+    id = "{{ serie.id }}"
+    $.ajax({
+      url: "/blacksheep/detailSerie/episode/",
+      type: "get",
+      data: {
+        id: id,
+        saison: saison
+      },
+      dataType: "html",
+      success: function(g) {
+        $('#episode').html(g)
+      },
+      error: function() {
+
+
+      }
+    });
+  }
+</script>
 {% endblock %}

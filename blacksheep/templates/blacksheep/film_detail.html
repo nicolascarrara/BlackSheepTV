@@ -4,38 +4,36 @@
     background-color: #f2f2f2;
   }
 </style>
-<div class="bg-color">
-  <div class="text-center">
-    <h1>{{ film.titre }}</h1>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-6 pull-right">
-        <p>{% if film.image %}
-          <img class="img-thumbnail" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt=""> {% else %} {% load static %}
-          <img class="img-thumbnail" src="{% static 'images/imgfilmnotfound.png' %}" alt="image non trouvée" class="img-fluid img-thumbnail minifilm"> {% endif %}</p>
-      </div>
-      <div class="col-6">
-        <p>
-          <h3>Synopsis :</h3> {{ film.synopsis }}</p>
-        <p>
-          <h3>Note :</h3> {{ film.note }}</p>
-        {% if film.date_sortie|date:'d/m/Y' != '01/01/1900' %}
-        <p>
-          <h3>Date sortie :</h3> {{ film.date_sortie|date:'d/m/Y' }}</p>
-        {% else %}
-        <p>
-          <h3>Date sortie : </h3>Inconnue</p>
-        {% endif %} {% if film.genre == '' %}
-        <p>
-          <h3>Genre :</h3> Inconnu </p>
-        {% else %}
-        <p>
-          <h3>Genre :</h3> {{ film.genre }}</p>
-        {% endif %}
-        <div id="trailer">
-          <div class="loader"></div>
-        </div>
+<div class="text-center">
+  <h1>{{ film.titre }}</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-6 pull-right">
+      <p>{% if film.image %}
+        <img class="img-thumbnail" src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt=""> {% else %} {% load static %}
+        <img class="img-thumbnail" src="{% static 'images/imgfilmnotfound.png' %}" alt="image non trouvée" class="img-fluid img-thumbnail minifilm"> {% endif %}</p>
+    </div>
+    <div class="col-6">
+      <p>
+        <h3>Synopsis :</h3> {{ film.synopsis }}</p>
+      <p>
+        <h3>Note :</h3> {{ film.note }}</p>
+      {% if film.date_sortie|date:'d/m/Y' != '01/01/1900' %}
+      <p>
+        <h3>Date sortie :</h3> {{ film.date_sortie|date:'d/m/Y' }}</p>
+      {% else %}
+      <p>
+        <h3>Date sortie : </h3>Inconnue</p>
+      {% endif %} {% if film.genre == '' %}
+      <p>
+        <h3>Genre :</h3> Inconnu </p>
+      {% else %}
+      <p>
+        <h3>Genre :</h3> {{ film.genre }}</p>
+      {% endif %}
+      <div id="trailer">
+        <div class="loader"></div>
       </div>
     </div>
   </div>

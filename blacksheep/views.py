@@ -125,6 +125,36 @@ def SerieList(request):
 
     return render(request, 'blacksheep/serie_list.html', {'object_list': series})
 
+def SaisonDetailAPI(request):
+    query = request.GET.get('id')
+    req = urllib.request.Request('https://api.thetvdb.com/series/' + query + '/episodes/summary')
+    req.add_header('Accept', 'application/json')
+    #req.add_header('Accept-Language', 'fr')
+    req.add_header('Authorization','Bearer '+request.session['tokenapi'])
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    content['data']['airedSeasons'].sort()
+    context = {
+        'infosaison': content['data']
+    }
+    return render(request, 'blacksheep/saison_detail.html', context)
+
+def EpisodeDetailAPI(request):
+    serie = request.GET.get('id')
+    saison = request.GET.get('saison')
+    req = urllib.request.Request('https://api.thetvdb.com/series/' + serie + '/episodes/query?airedSeason='+saison)
+    req.add_header('Accept', 'application/json')
+    req.add_header('Accept-Language', 'fr')
+    req.add_header('Authorization','Bearer '+request.session['tokenapi'])
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    context = {
+        'episodes': content['data']
+    }
+    return render(request, 'blacksheep/episode_detail.html', context)
+
 class FilmDetailView(DetailView):
     model = Film
     template_name = "blacksheep/film_detail.html"
@@ -148,17 +178,6 @@ class FilmDetailView(DetailView):
 class SerieDetailView(DetailView):
     model = Serie
     template_name = "blacksheep/serie_detail.html"
-
-
-class SaisonDetailView(DetailView):
-    model = Film
-    template_name = "blacksheep/saison_detail.html"
-
-
-class EpisodeDetailView(DetailView):
-    model = Film
-    template_name = "blacksheep/episode_detail.html"
-
 
 def rechercheFilm(request):
     liste_param=[]
