@@ -1,21 +1,17 @@
 {% for serie in object_list %}
 <div class="col-sm-12 col-lg-6">
-    <a href="{% url 'blacksheep:serie-detail' serie.id %}" class="btn">
-        <div class="thumbnail">
-            <div class="text-center">
-                <h4 class="filmtitle">{{ serie.seriesName}}</h4>
-  {% if serie.banner %}
-                    <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt="" class="img-fluid img-thumbnail minifilm">
-  {% else %}
-      {% load static %}
-                    <img src="{% static 'images/imgserienotfound.png' %}" alt="" class="img-fluid img-thumbnail minifilm">
-  {% endif %}
-            </div>
-        </div>
-    </a>
+  <a href="{% url 'blacksheep:serie-detail' serie.id %}" class="btn">
+    <div class="thumbnail">
+      <div class="text-center">
+        <h4 class="filmtitle">{{ serie.seriesName}}</h4> {% if serie.banner %}
+        <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt="" class="img-fluid img-thumbnail minifilm"> {% else %} {% load static %}
+        <img src="{% static 'images/imgserienotfound.png' %}" alt="" class="img-fluid img-thumbnail minifilm"> {% endif %}
+      </div>
+    </div>
+  </a>
 </div>
-  {% empty %}
-    <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de série existant ?</p>
+{% empty %}
+<p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de série existant ?</p>
 
 {% endfor %}
 
@@ -27,10 +23,7 @@
 
       <span class="current">
           Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
-      </span>
-
-      {% if object_list.has_next %}
-          <a href="?page={{ object_list.next_page_number }}">next</a>
-      {% endif %}
+      </span> {% if object_list.has_next %}
+  <a href="?page={{ object_list.next_page_number }}">next</a> {% endif %}
   </span>
 </div>
