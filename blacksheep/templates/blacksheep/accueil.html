@@ -1,45 +1,49 @@
-{% extends 'blacksheep/baseModele.html' %}
-{% block  contenu %}
+{% extends 'blacksheep/baseModele.html' %} {% block contenu %}
 <div class="container">
-    <div class="jumbotron">
-        <h1>Bienvenue sur BlackSheepTV</h1>
-        <p></br></p>
-        <div class="text-center"><p><a class="btn btn-primary btn-lg" href="{% url 'blacksheep:film-list' %}" role="button">Liste des films</a></p>
-            <p><a class="btn btn-primary btn-lg" href="{% url 'blacksheep:serie-list' %}" role="button">Liste des séries</a></p>
-        </div>
-    </div>
-</div>
-<div id ="discover">
+  <div class="jumbotron">
+    <h1>Bienvenue sur BlackSheepTV</h1>
+    <p>
+      </br>
+    </p>
+    <div class="text-center">
+      <div class="row">
+        {% load static %}
+        <img class="pull-right" src="{% static 'images/lunette.jpg' %}" alt="">
+        <p><a class="sol-sm-6 btn btn-primary btn-lg" href="{% url 'blacksheep:film-list' %}" role="button">Liste des films</a></p>
+        <p><a class="btn btn-primary btn-lg" href="{% url 'blacksheep:serie-list' %}" role="button">Liste des séries</a></p>
+      </div>
 
+    </div>
+  </div>
+</div>
+<div id="discover">
+  <div class="center">
+    <p class="loader"></p>
+  </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
+  $(document).ready(function() {
     $.ajax({
-       url : 'loginAPI',
-       type : 'GET',
-       dataType : 'html',
-       success: function(g) {
-            //$('#connected').attr('class', 'glyphicon glyphicon-ok');
-            $.ajax({
-               url : 'film/discoverAPI',
-               type : 'GET',
-               dataType : 'html',
-               success: function(g) {
-                    $('#discover').html(g);
-                },
-                error: function() {
-                    $('#discover').html('')
-                }
-            }); 
-        },
-        error: function() {
-          //  $('#connected').attr('class', 'glyphicon glyphicon-remove');
-        }
+      url: 'loginAPI',
+      type: 'GET',
+      dataType: 'html',
+      success: function(g) {
+        $.ajax({
+          url: 'film/discoverAPI',
+          type: 'GET',
+          dataType: 'html',
+          success: function(g) {
+            $('#discover').html(g);
+          },
+          error: function() {
+            $('#discover').html('')
+          }
+        });
+      },
+      error: function() {}
     });
 
-});
-
+  });
 </script>
-
 {% endblock %}

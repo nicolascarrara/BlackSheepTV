@@ -1,5 +1,12 @@
-{% extends "blacksheep/baseModele.html" %}
-{% block contenu %}
-
-episode
-{% endblock %}
+ {% for episode in episodes %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    {% if episode.episodeName %}
+    <h3 class="panel-title">Saison {{episode.airedSeason}} Episode {{episode.airedEpisodeNumber}} : {{episode.episodeName}} </h3> {%else%}
+    <h3 class="panel-title">Saison {{episode.airedSeason}} Episode {{episode.airedEpisodeNumber}} : Titre inconnu </h3> {%endif%}
+  </div>
+  <div class="panel-body">
+    {% if episode.overview %} {{episode.overview}} {% else %} Description indisponible pour cet épisode. {%endif%}
+  </div>
+</div>
+{% endfor %}

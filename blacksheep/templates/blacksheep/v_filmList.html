@@ -1,5 +1,5 @@
-
 <div class="row">
+<<<<<<< HEAD
 
 {% for film in object_list %}
 
@@ -68,4 +68,27 @@
 </div>
 {% endif %}
 
+=======
+   {% for film in object_list %}
+   <div class="col-xs-12 col-sm-4 col-lg-2">
+      <a href="{% url 'blacksheep:film-detail' film.id %}" class="btn">
+         <div class="thumbnail">
+            <div class="text-center">
+               <h4 class="filmtitle">{{ film.titre | truncatechars:15}}</h4>
+               {% if film.image %}
+               <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="image {{ film.titre }}"  class="img-fluid img-thumbnail minifilm">
+               {% else %}
+               {% load static %}
+               <img src="{% static 'images/imgfilmnotfound.png' %}" alt="image non trouvée"  class="img-fluid img-thumbnail minifilm">
+               {% endif %}
+               <br><br>
+               <p> Voir détails</p>
+            </div>
+         </div>
+      </a>
+   </div>
+   {% empty %}
+   <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de film existant ?</p>
+   {% endfor %}
+>>>>>>> a929e9b265b972a9c42898477ace36aae8ea5c35
 </div>

@@ -215,7 +215,6 @@ def rechercheFilm(request):
                                 else:
                                     query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
                                     query.save()
-    paginator = Paginator(films, 18)
 
     else:
 

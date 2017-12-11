@@ -1,23 +1,24 @@
 <div class="row">
+<<<<<<< HEAD
 {% for serie in object_list %}
 <div class="col-sm-12 col-lg-6">
+=======
+  {% for serie in object_list %}
+  <div class="col-sm-12 col-lg-6">
+>>>>>>> a929e9b265b972a9c42898477ace36aae8ea5c35
     <a href="{% url 'blacksheep:serie-detail' serie.id %}" class="btn">
-        <div class="thumbnail">
-            <div class="text-center">
-                <h4 class="filmtitle">{{ serie.seriesName}}</h4>
-  {% if serie.banner %}
-                    <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt="" class="img-fluid img-thumbnail minifilm">
-  {% else %}
-      {% load static %}
-                    <img src="{% static 'images/imgserienotfound.png' %}" alt="" class="img-fluid img-thumbnail minifilm">
-  {% endif %}
-            </div>
+      <div class="thumbnail">
+        <div class="text-center">
+          <h4 class="filmtitle">{{ serie.seriesName}}</h4> {% if serie.banner %}
+          <img src="https://www.thetvdb.com/banners/{{ serie.banner }}" alt="" class="img-fluid img-thumbnail minifilm"> {% else %} {% load static %}
+          <img src="{% static 'images/imgserienotfound.png' %}" alt="" class="img-fluid img-thumbnail minifilm"> {% endif %}
         </div>
+      </div>
     </a>
-</div>
+  </div>
   {% empty %}
-    <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de série existant ?</p>
 
+<<<<<<< HEAD
 {% endfor %}
 </div>
 
@@ -60,3 +61,9 @@
 {% endif %}
 
 </div>
+=======
+  <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de série existant ?</p>
+
+  {% endfor %}
+</div>
+>>>>>>> a929e9b265b972a9c42898477ace36aae8ea5c35
