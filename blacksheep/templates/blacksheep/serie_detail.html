@@ -25,7 +25,13 @@
     </div>
     <div class="col-sm-6">
       <p>
-        <h3>Status  :</h3> {{ serie.status }}</p>
+        <h3>Statut  :</h3>
+        {% if serie.status == 'Ended' %}
+          Diffusion terminée
+        {% elif serie.status == 'Continuing' %}
+          En cours de diffusion
+        {% endif %}
+      </p>
     </div>
     <p>
       <div class="col-sm-6">
