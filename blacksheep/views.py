@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from BlackSheepTV import settings
 from django.views.generic import DetailView, CreateView, UpdateView, ListView, DeleteView
 from blacksheep.models import Film, Serie,Saison,Episode,Genre
-import requests,string,urllib,json,time
+import requests,string,urllib,json,time,datetime
 # Create your views here.
 
 
@@ -183,6 +183,7 @@ def rechercheFilm(request):
     liste_param=[]
     query = request.GET.get('query')
     querygenre = request.GET.get('genre')
+    querydate = request.GET.get('date')
     content=''
     list_genre = Genre.objects.all()
     if query != '':
@@ -200,7 +201,6 @@ def rechercheFilm(request):
 
     elif not query and querygenre!='':
         films = Film.objects.filter(genre__contains=querygenre)
-
     else:
 
         if querygenre != '':
@@ -278,19 +278,32 @@ def rechercheFilm(request):
     try:
         films = paginator.page(page)
     except PageNotAnInteger:
-                # If page is not an integer, deliver first page.
         films = paginator.page(1)
     except EmptyPage:
-                # If page is out of range (e.g. 9999), deliver last page of results.
         films = paginator.page(paginator.num_pages)
 
+    if querydate!='':
+        swap=[]
+        for film in films:
+            if isinstance(film.date_sortie, datetime.date):
+                pass
+            else:
+                film.date_sortie = datetime.datetime.strptime(film.date_sortie,'%Y-%m-%d')
+            if film.date_sortie.strftime('%Y')==querydate:
+                swap.append(film)
+        films=swap
+        paramdate=querydate
+    else:
+        paramdate=''
     context = {
 
         'object_list': films,
         'range':paginator.page_range,
         'genres':list_genre,
         'param': paramgenre,
-        'query':search
+        'query':search,
+        'paramdate':str(paramdate),
+        'rangeannee': range(1900,2020)
 
     }
     return render(request, 'blacksheep/film_search.html', context)
