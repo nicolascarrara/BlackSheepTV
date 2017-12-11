@@ -5,7 +5,7 @@
       <div class="form-group">
           <label for="searchForm">Chercher un film</label>
           <input id="searchForm" class="form-control" name="query">
-          <select id="ValueGenre"  onchange="submit()" class="form-control" name="genre">
+          <select id="ValueGenre" class="form-control" name="genre">
           {% for genre in genres %}
             {% if param %}
               {% if param.id == genre.id %}
@@ -22,6 +22,7 @@
 
           {% endfor %}
           </select>
+          <input type="submit" value="Rechercher" >
       </div>
       <span class="help-block" id="helpBlock">Trouvez le film de vos rêves en tapant son titre ou le nom du réalisateur.</span>
     </form>
