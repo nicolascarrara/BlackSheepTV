@@ -272,6 +272,18 @@ def rechercheFilm(request):
                                 else:
                                     query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
                                     query.save()
+
+    if querydate!='':
+        swap=[]
+        for film in films:
+            if not isinstance(film.date_sortie, datetime.date):
+                film.date_sortie = datetime.datetime.strptime(film.date_sortie,'%Y-%m-%d')
+            if str(film.date_sortie.strftime('%Y'))==str(querydate):
+                swap.append(film)
+        films=swap
+        paramdate=querydate
+    else:
+        paramdate=''
     paginator = Paginator(films, 18)
 
     page = request.GET.get('page')
@@ -281,20 +293,6 @@ def rechercheFilm(request):
         films = paginator.page(1)
     except EmptyPage:
         films = paginator.page(paginator.num_pages)
-
-    if querydate!='':
-        swap=[]
-        for film in films:
-            if isinstance(film.date_sortie, datetime.date):
-                pass
-            else:
-                film.date_sortie = datetime.datetime.strptime(film.date_sortie,'%Y-%m-%d')
-            if film.date_sortie.strftime('%Y')==querydate:
-                swap.append(film)
-        films=swap
-        paramdate=querydate
-    else:
-        paramdate=''
     context = {
 
         'object_list': films,
@@ -302,11 +300,13 @@ def rechercheFilm(request):
         'genres':list_genre,
         'param': paramgenre,
         'query':search,
-        'paramdate':str(paramdate),
+        #'paramdate':str(paramdate),
         'rangeannee': range(1900,2020)
 
     }
     return render(request, 'blacksheep/film_search.html', context)
+
+
 
 def serieAPI(nom):
     context=nom
