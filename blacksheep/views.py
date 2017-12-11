@@ -300,7 +300,7 @@ def rechercheFilm(request):
         'genres':list_genre,
         'param': paramgenre,
         'query':search,
-        #'paramdate':str(paramdate),
+        'paramdate':str(paramdate),
         'rangeannee': range(1900,2020)
 
     }
