@@ -1,0 +1,1227 @@
+[
+{
+  "model": "blacksheep.serie",
+  "pk": "182061",
+  "fields": {
+    "firstAired": "2010-09-12",
+    "network": "Showcase (CA)",
+    "overview": "Depuis trop longtemps, Bo est une succube qui s'ignore, aspirant l'\u00e9nergie sexuelle de ses proies pour restaurer ses propres forces. Quand elle d\u00e9couvre sa vraie nature et l'existence d'une communaut\u00e9 secr\u00e8te dont elle est issue, la jeune femme pr\u00e9f\u00e8re garder son ind\u00e9pendance, refusant de se plier aux r\u00e8gles de ce monde compos\u00e9 de deux clans rivaux. Alors qu'elle apprend encore \u00e0 ma\u00eetriser ses instincts meurtriers, Bo peut compter sur son amie Kenzi pour l'aider \u00e0 s'adapter au mode de vie des humains. Ensemble, elles tentent de voler au secours de la veuve et de l'orphelin. Bo ne perd pas pour autant de vue son objectif : d\u00e9couvrir le secret de ses origines.",
+    "seriesName": "Lost Girl",
+    "status": "Ended",
+    "banner": "graphical/182061-g3.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "250498",
+  "fields": {
+    "firstAired": "2011-07-26",
+    "network": "Disney XD",
+    "overview": "LEGO Star Wars est une s\u00e9rie de t\u00e9l\u00e9vision racontant des histoires de l'univers Star Wars en utilisant les caract\u00e8res distinctifs du monde de LEGO et le style d'animation des jeux LEGO Star Wars. \u00c0 partir de 2005; le premier film \"La Revanche des briques\" a \u00e9t\u00e9 cr\u00e9\u00e9e afin de co\u00efncider avec la sortie en salles de La Revanche des Sith.",
+    "seriesName": "LEGO Star Wars",
+    "status": "Continuing",
+    "banner": "graphical/250498-g2.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "252297",
+  "fields": {
+    "firstAired": "2011-09-30",
+    "network": "",
+    "overview": "Le journaliste am\u00e9ricain Nick Orton est entra\u00een\u00e9 dans le monde des dieux et des monstres chinois pendant une recherche pour le manuscrit perdu depuis longtemps \u00abHsi Yu Chi\u00bb (Le Voyage vers l'Ouest) de Wu Cheng En. Il est accompagn\u00e9 dans son voyage par un singe humano\u00efde avec une force incroyable et des pouvoirs magiques, un humano\u00efde de porc-homme, et son fr\u00e8re d'armes, un ex-cannibale. Bas\u00e9 sur l'une des plus grandes histoires de l'histoire chinoise.",
+    "seriesName": "Monkey King: The Lost Empire",
+    "status": "Ended",
+    "banner": ""
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "257837",
+  "fields": {
+    "firstAired": "2012-04-03",
+    "network": "TV Tokyo",
+    "overview": "Rock Lee, l\u2019apprenti ninja aux sourcils broussailleux, n\u2019a qu\u2019un objectif : devenir un grand ninja \u2026 qui ignore le ninjutsu ! Mais il s\u2019entra\u00eene tr\u00e8s dur au taijutsu sous la houlette de son ma\u00eetre Ga\u00ef, entour\u00e9 de ses condisciples, TenTen et Neji ainsi que de ses camarades du village cach\u00e9 de Konoha. Suivez le quotidien d\u00e9lirant de celui qui se fait appeler \u201cle resplendissant fauve de jade du village cach\u00e9 de Konoha\u201d !",
+    "seriesName": "Naruto SD: Rock Lee no seishun Full-Power ninden",
+    "status": "Ended",
+    "banner": "graphical/257837-g.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "268592",
+  "fields": {
+    "firstAired": "2014-03-19",
+    "network": "The CW",
+    "overview": "Apr\u00e8s une apocalypse caus\u00e9e par l'Homme lors d'une troisi\u00e8me Guerre Mondiale, les 318 survivants recens\u00e9s se r\u00e9fugient dans des stations spatiales et parviennent \u00e0 y vivre et \u00e0 se reproduire, atteignant le nombre de 4000. Mais 97 ans plus tard, le vaisseau m\u00e8re, The Ark, est en piteux \u00e9tat. Une centaine de jeunes d\u00e9linquants emprisonn\u00e9s au fil des ann\u00e9es pour des crimes ou des trahisons sont choisis comme cobayes par les autorit\u00e9s pour redescendre sur Terre et tester les chances de survie. D\u00e8s leur arriv\u00e9e, ils d\u00e9couvrent un nouveau monde dangereux mais fascinant...",
+    "seriesName": "Les 100",
+    "status": "Continuing",
+    "banner": "graphical/268592-g11.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "283338",
+  "fields": {
+    "firstAired": "",
+    "network": "",
+    "overview": null,
+    "seriesName": "Le Club des 100 Watts",
+    "status": "Ended",
+    "banner": ""
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "283468",
+  "fields": {
+    "firstAired": "2014-10-03",
+    "network": "Disney XD",
+    "overview": "Situ\u00e9e entre \"La Revanche des Sith\" (Episode III) et \"La Guerre des Etoiles\" (Episode IV), \"Star Wars Rebels\" se d\u00e9roule \u00e0 une \u00e9poque o\u00f9 l'Empire tente d'asseoir son emprise sur l'univers, traquant jusqu'au fin fond de tous les syst\u00e8mes les derniers chevaliers Jedi et les membres de la r\u00e9sistance... ",
+    "seriesName": "Star Wars Rebels",
+    "status": "Continuing",
+    "banner": "graphical/283468-g8.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "284855",
+  "fields": {
+    "firstAired": "1971-08-18",
+    "network": "",
+    "overview": "L'histoire pivotait autour de Centour, un g\u00e9nie provenant d'un autre monde, le pays des g\u00e9nies, et qui \u00e9tait un joueur de tours poss\u00e9dant un bracelet magique. Dans le but de jouer ses tours, il se d\u00e9guisait en scientifique, en enqu\u00eateur (le d\u00e9tective Toutalaloupe) ou dans d'autres personnages. Lorsqu'il mettait la pagaille dans une pi\u00e8ce \u00e0 l'aide de son bracelet, il laissait souvent comme \"signature\" des empreintes de pieds color\u00e9s un peu partout. Verbo, un autre g\u00e9nie, fut envoy\u00e9 sur terre, plus pr\u00e9cis\u00e9ment au Qu\u00e9bec, pour contrecarrer les machinations de Centour. Verbo s'\u00e9tait fait ami avec Pico et avec sa famille, son p\u00e8re Philibert et sa m\u00e8re Cyb\u00e8le. Afin de l'aider, Verbo utilisait un petit instrument aide-m\u00e9moire qui s'appelait M\u00e9mo. C'est en faisant une phrase grammaticalement parfaite que Verbo parvenait \u00e0 d\u00e9jouer Centour et \u00e0 remettre les choses dans leur \u00e9tat initial.",
+    "seriesName": "Les 100 tours de Centour",
+    "status": "Ended",
+    "banner": "graphical/284855-g.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "286193",
+  "fields": {
+    "firstAired": "2015-09-10",
+    "network": "HBO Nordic",
+    "overview": "Tommy Conley, d\u00e9tective new-yorkais, est envoy\u00e9 aupr\u00e8s de la police su\u00e9doise pour les conseiller sur une s\u00e9rie de meurtres qui frappe Stockholm depuis pr\u00e8s d\u2019un an. Il doit faire \u00e9quipe avec le d\u00e9tective Mikael Eklund, un nationaliste qui a en horreur tout ce qui touche \u00e0 la culture am\u00e9ricaine. Les deux hommes se d\u00e9testent, mais doivent apprendre \u00e0 travailler ensemble afin de stopper les meurtres.",
+    "seriesName": "100 Code",
+    "status": "Ended",
+    "banner": "graphical/286193-g2.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "288031",
+  "fields": {
+    "firstAired": "",
+    "network": "",
+    "overview": null,
+    "seriesName": "100% comestible",
+    "status": "Ended",
+    "banner": ""
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "293192",
+  "fields": {
+    "firstAired": "1988-09-05",
+    "network": "V",
+    "overview": "100 Limite (parfois \u00e9crit 100 LiMiTE) \u00e9tait une \u00e9mission de t\u00e9l\u00e9vision humoristique qu\u00e9b\u00e9coise, diffus\u00e9e de 1988 \u00e0 1992, couvrant l'actualit\u00e9 de la semaine \u00e0 l'aide de sketches et faux reportages, suivis d'une partie talk show avec un artiste invit\u00e9.",
+    "seriesName": "100 Limite",
+    "status": "Ended",
+    "banner": ""
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "298856",
+  "fields": {
+    "firstAired": "2014-01-01",
+    "network": "France 5",
+    "overview": "La France regorge de tr\u00e9sors naturels, architecturaux, historiques, gastronomiques et humains susceptibles de satisfaire toutes les envies de voyages, de balades, de connaissances et de rencontres.\r\n",
+    "seriesName": "Les 100 lieux qu'il faut voir",
+    "status": "Continuing",
+    "banner": ""
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "301773",
+  "fields": {
+    "firstAired": "2006-12-01",
+    "network": "Dailymotion",
+    "overview": "Vous croyez encore que Star Wars c\u2019est l\u2019histoire du bien contre le mal ? Que nenni !\r\nEntre Vador, adorateur de Carlos, des soir\u00e9es mousses au \"Banana Club, embassadeur d' \"Optic 2000\" et Luc, son fils, puceau \u00e0 27 ans et adorateur d' \"Atol\" ; tout va mal !...",
+    "seriesName": "Star Wars D\u00e9conne",
+    "status": "Ended",
+    "banner": ""
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "317397",
+  "fields": {
+    "firstAired": "2016-04-06",
+    "network": "\u00c9vasion",
+    "overview": "Un tour d'horizon des actualit\u00e9s de l'industrie, des destinations tendance et des s\u00e9jours inusit\u00e9s.",
+    "seriesName": "AZIMUT, le mag t\u00e9l\u00e9 100 pour cent voyage",
+    "status": "Continuing",
+    "banner": ""
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "321285",
+  "fields": {
+    "firstAired": "2017-04-05",
+    "network": "TV Tokyo",
+    "overview": "L\u2019intr\u00e9pide Boruto Uzumaki a Naruto pour Papa. Sarada Uchiwa est dot\u00e9e d\u2019un potentiel extraordinaire : quoi de plus normal pour la fille de Sasuke et de Sakura ? Quant au flegmatique Mitsuki, qui a-t-il pour p\u00e8re ?\r\nTout trois vont devoir affronter les premi\u00e8res \u00e9preuves de l\u2019adolescence. En l\u2019absence de son p\u00e8re, accapar\u00e9 par son r\u00f4le de chef, Boruto saura-t-il suivre le bon chemin ? Quel nouveau danger plane sur Konoha et le monde ninja ?",
+    "seriesName": "Boruto - Naruto Next Generations",
+    "status": "Continuing",
+    "banner": "graphical/321285-g2.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "322948",
+  "fields": {
+    "firstAired": "2016-03-01",
+    "network": "YouTube",
+    "overview": "Cette webs\u00e9rie pr\u00e9sente les d\u00e9boires de Yannick, un jeune homme socialement m\u00e9sadapt\u00e9 qui d\u00e9couvre qu'il est l'h\u00e9ritier de son oncle excentrique... et multimillionnaire! Le d\u00e9funt, mot sans amis et sans liens de famille, ne veut pas que son neveu finisse comme lui. Pour recevoir l'h\u00e9ritage, c'est fort simple : Yannick doit avoir \" 100 amis \" d'ici la fin de l'ann\u00e9e. Malheureusement, comme personne ne l'aime, cette r\u00e8gle semble impossible \u00e0 surmonter. Il trouve cependant une faille! Les amis Facebook comptent. Il en a pr\u00e9sentement 90, il ne lui en reste donc que dix \u00e0 trouver.",
+    "seriesName": "100 amis",
+    "status": "Continuing",
+    "banner": "graphical/322948-g.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "330710",
+  "fields": {
+    "firstAired": "2017-07-03",
+    "network": "YouTube",
+    "overview": "Une s\u00e9rie anim\u00e9e centr\u00e9e sur les personnages f\u00e9minins de la saga Star Wars.",
+    "seriesName": "Star Wars : Forces du destin",
+    "status": "Continuing",
+    "banner": "graphical/330710-g2.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "336932",
+  "fields": {
+    "firstAired": "2016-08-24",
+    "network": "YouTube",
+    "overview": "Le but de cette cha\u00eene est de vous faire d\u00e9couvrir Star Wars au-del\u00e0 de ce que vous avez pu y voir dans les films ! Vous retrouverez donc :\r\n- Des critiques de Films/Comics/ Romans...\r\n- Des pr\u00e9sentation de Personnages/Organisations/Cr\u00e9atures...\r\n- La Chronologie de l'Univers \u00c9tendu L\u00e9gende de SW (-12 000 000 000 ; +138)\r\n- Du LP Narratif sur Empire at War !",
+    "seriesName": "Star Wars Absolute",
+    "status": "Continuing",
+    "banner": "graphical/336932-g.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "337001",
+  "fields": {
+    "firstAired": "2015-02-27",
+    "network": "YouTube",
+    "overview": "Cha\u00eene YouTube enti\u00e8rement centr\u00e9e sur Star Wars, les vid\u00e9os traitent d'un personnage,  d'un vaisseau, d'une plan\u00e8te, d'un peuple ou autre, bref vous trouverez ici le meilleur de notre \"galaxie lointaine, tr\u00e8s lointaine\"...",
+    "seriesName": "L'Instant Star Wars",
+    "status": "Continuing",
+    "banner": "graphical/337001-g.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "338210",
+  "fields": {
+    "firstAired": "",
+    "network": "",
+    "overview": null,
+    "seriesName": "Naruto Ka\u00ef",
+    "status": "",
+    "banner": ""
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "72244",
+  "fields": {
+    "firstAired": "2003-11-01",
+    "network": "Cartoon Network",
+    "overview": "Dans une galaxie tr\u00e8s lointaine, se noue un drame. Le chaos r\u00e8gne et une guerre impitoyable se d\u00e9clare entre la R\u00e9publique et les forces s\u00e9paratistes men\u00e9es par les sinistres Sith du c\u00f4t\u00e9 obscur de la Force. La Guerre des Clones bat son plein...\r\nLes chevaliers Jedi, garants de la paix et de la justice dans le monde, se battent pour sauver la d\u00e9mocratie et la R\u00e9publique, contre notamment le comte Dooku, Dark Sidious, ou encore Assajj Ventress.\r\nPour les combattre, Obi-Wan Kenobi et son apprenti, Anakin Skywalker vont user de toutes leurs ressources...\r\nCette s\u00e9rie fait le lien entre l'\u00e9pisode II et l'\u00e9pisode III.",
+    "seriesName": "Star Wars : Clone Wars",
+    "status": "Ended",
+    "banner": "graphical/17291-g.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "72775",
+  "fields": {
+    "firstAired": "1986-10-11",
+    "network": "TV Asahi",
+    "overview": "Seiya est un jeune chevalier qui vient d'obtenir l'armure de bronze de P\u00e9gase au Sanctuaire, en Gr\u00e8ce. Orphelin de naissance, et \u00e0 la recherche de sa soeur, il accepte de participer \u00e0 un grand tournoi de combats entre divers chevaliers afin de faire parler de lui, esp\u00e9rant ainsi que sa soeur pourra le voir \u00e0 la t\u00e9l\u00e9. Ce tournoi est organis\u00e9 par Saori Kido, qui s'av\u00e8rera \u00eatre en fait la r\u00e9incarnation d'Ath\u00e9na, que Seiya et ses amis, Shiry\u00fb, Hy\u00f4ga, Shun et Ikki devront prot\u00e9ger au p\u00e9ril de leurs vies...",
+    "seriesName": "Les chevaliers du Zodiaque",
+    "status": "Ended",
+    "banner": "graphical/72775-g5.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "73181",
+  "fields": {
+    "firstAired": "1998-04-03",
+    "network": "TV Tokyo",
+    "overview": "Kain Blueriver est un mercenaire : il accepte des missions et les m\u00e8ne \u00e0 bien. Accompagn\u00e9 de Canary, l'hologramme de l'ordinateur central de son vaisseau, il \u00e9cume l'univers pour rechercher l'amusement, le frisson et l'argent (ce en quoi il est tr\u00e8s semblable \u00e0 une certaine jeune sorci\u00e8re Lina Inverse de Slayers...). Il passe donc des jours heureux jusqu'\u00e0 l'arriv\u00e9e de la jeune Millenium Nocturne, Millie pour les intimes, qui va chambouler sa vie. De cette rencontre na\u00eetra des sentiments amoureux.\r\nR\u00e9alisant missions sur missions, nos trois jeunes gens (Canary peut prendre en effet une forme solide, a des sentiments et est dot\u00e9 d'un caract\u00e8re tr\u00e8s marqu\u00e9) vont affronter la plus forte mafia de l'univers : le Nightmare dirig\u00e9 par le puissant StarGazer (PDG de l'entreprise du m\u00eame nom). Plut\u00f4t s\u00fbr d'eux gr\u00e2ce \u00e0 l'\u00e9p\u00e9e unique de Kain, la psychoblade aliment\u00e9e par l'esprit du jeune homme, et surtout gr\u00e2ce au lostship, vaisseau surpuissant ayant travers\u00e9 les \u00e2ges gr\u00e2ce \u00e0 une technologie inconnue, l'affrontement se fera de plus en plus rude.\r\nMais le fait que le Nightmare ait lui aussi pu s'approprier 3 lostships risque de changer le rapport de forces avec Kain. Par ailleurs, qui est donc ce StarGazer et quelles sont ses relations avec la d\u00e9funte grand-m\u00e8re de Kain ? L'univers est-il en danger de tomber dans l'escarcelle du Nightmare ?",
+    "seriesName": "Lost Universe",
+    "status": "Ended",
+    "banner": "graphical/73181-g2.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "73739",
+  "fields": {
+    "firstAired": "2004-09-22",
+    "network": "ABC (US)",
+    "overview": "Apr\u00e8s le crash de leur avion sur une \u00eele perdue, les survivants doivent apprendre \u00e0 cohabiter et survivre dans cet environnement hostile. Bien vite, ils se rendent compte qu'une menace semble planer sur l'\u00eele...",
+    "seriesName": "Lost, les disparus",
+    "status": "Ended",
+    "banner": "graphical/73739-g4.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "74796",
+  "fields": {
+    "firstAired": "2004-10-05",
+    "network": "TV Tokyo",
+    "overview": "Le personnage principal se nomme Ichigo Kurosaki, un adolescent de 15 ans qui vient de rentrer au lyc\u00e9e. Sa particularit\u00e9, outre le fait d'avoir des cheveux orange et d'avoir un go\u00fbt tr\u00e8s prononc\u00e9 pour la bagarre h\u00e9rit\u00e9 visiblement de son p\u00e8re, est qu'il peut voir et toucher les morts. R\u00e9guli\u00e8rement, Ichigo rencontre donc des fant\u00f4mes \u00e0 qui il essaie de rendre service pour certains. \r\nUn soir, un Shinigami (d\u00e9signant un \u00eatre spirituel et pouvant \u00eatre traduit par \"dieu de la mort\") rentre dans sa chambre. Les Shinigami sont charg\u00e9s de guider les bonnes \u00e2mes (les \"Plus\") vers le Paradis ou plut\u00f4t la \"Soul Society\" et d'\u00e9purer les mauvaises \u00e2mes (les \"Hollow\"). Au m\u00eame moment, la maison d'Ichigo se fait attaquer par un monstre, un de ces mauvais esprits. Le Shinigami, qui s'appelle Kuchiki Rukia en r\u00e9alit\u00e9, va tenter de l'an\u00e9antir, en vain. Elle explique \u00e0 notre h\u00e9ros que le Hollow en a apr\u00e8s lui, car il poss\u00e8de une grande force spirituelle: aussi pense-t-elle pouvoir lui transmettre ses pouvoirs afin qu'il devienne lui-m\u00eame un Shinigami. Ichigo h\u00e9rite de cette mani\u00e8re des pouvoirs de Kuchiki. A la grande stup\u00e9faction de cette derni\u00e8re, il semble non pas se contenter de la moiti\u00e9 de ses pouvoirs, mais de tous. Ichigo, devenu Shinigami \u00e0 son tour, est donc pr\u00eat \u00e0 faire la chasse aux Hollow!",
+    "seriesName": "Bleach",
+    "status": "Ended",
+    "banner": "graphical/74796-g3.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "78857",
+  "fields": {
+    "firstAired": "2002-10-03",
+    "network": "TV Tokyo",
+    "overview": "Dans le sympathique village cach\u00e9 de Konoha vit une tribu aux coutumes ancestrales. Les enfants sont entrain\u00e9s d\u00e8s leur plus jeune \u00e2ge pour devenir des ninjas, encourag\u00e9s en cela par le maitre Hogake, le guerrier le plus puissant de chaque g\u00e9n\u00e9ration. Il y a de cela plusieurs ann\u00e9es un d\u00e9mon renard \u00e0 neuf queues entreprit la destruction du village et c'est le maitre Hokage 4\u00e8me du nom qui permit la survie de son peuple, au prix de sa vie. Les enfants de l'\u00e9cole de ninjas essaient donc de devenir aussi forts si ce n'est plus que cet illustre anc\u00eatre.\r\nNaruto fait partie de ces jeunes pleins d'ambitions. Orphelin et \u00e9ternel farceur, il passe son temps \u00e0 jouer les pires blagues pour tromper sa solitude et se faire remarquer, n'\u00e9tant aim\u00e9 pour une raison inconnue par personne. Cela fait d\u00e9j\u00e0 deux fois qu'il \u00e9choue au dipl\u00f4me d'assistant ninja qui doit lui ouvrir les portes de l'entrainement de ninjutsu. Mais les choses vont peut-\u00eatre enfin changer, une nouvelle \u00e9preuve doit bient\u00f4t avoir lieu. Mais une surprise attend Naruto... \r\n",
+    "seriesName": "Naruto",
+    "status": "Ended",
+    "banner": "graphical/78857-g2.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "79637",
+  "fields": {
+    "firstAired": "2006-12-11",
+    "network": "SciFi",
+    "overview": "Juste avant de mourir, un jeune homme confie \u00e0 l'inspecteur Joe Miller la cl\u00e9 d'une chambre de l'h\u00f4tel Sunshine, situ\u00e9e aux abords de la mythique Route 66. Il ne sait pas encore qu'il vient d'entrer en possession d'un objet puissant et terriblement convo\u00eet\u00e9, ouvrant une porte vers un univers parall\u00e8le. Miller, qui s'est lanc\u00e9 \u00e0 la recherche de sa fille perdue dans cette chambre d'h\u00f4tel, devient la proie de tous et de tout ce qui d\u00e9sire son bien le plus pr\u00e9cieux : la cl\u00e9.",
+    "seriesName": "The Lost Room",
+    "status": "Ended",
+    "banner": "graphical/79637-g.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "79824",
+  "fields": {
+    "firstAired": "2007-02-15",
+    "network": "TV Tokyo",
+    "overview": "Naruto est de retour \u00e0 Konoha trois ans apr\u00e8s son voyage d'entra\u00eenement avec Jiraiya. Konoha n'a pas chang\u00e9, enfin presque. Notre cher h\u00e9ros retrouve une Sakura bien plus forte, un Kakashi toujours fid\u00e8le \u00e0 lui-m\u00eame, et des compagnons qui n'ont pas l'air d'avoir ch\u00f4m\u00e9 ces trois derni\u00e8res ann\u00e9es, mais les retrouvailles seront de courte dur\u00e9e... Akatsuki reprend aussi du service et, qui plus est, a l'air de sortir les grands moyens pour ex\u00e9cuter ses plans. Naruto et les autres \u00e9quipes sont d\u00e9p\u00each\u00e9s pour les contrer, un bon moyen pour voir les r\u00e9sultats d'entra\u00eenement de tous. Tout au long des ses aventures, Naruto devra faire face \u00e0 divers p\u00e9riples et choix bien plus difficiles qu'auparavant. Il devra fournir plus d'efforts et changer d'attitude pour prot\u00e9ger ses amis et surtout esp\u00e9rer ramener Sasuke...",
+    "seriesName": "Naruto Shippuuden",
+    "status": "Ended",
+    "banner": "graphical/79824-g4.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "80685",
+  "fields": {
+    "firstAired": "2006-07-10",
+    "network": "History",
+    "overview": "Une s\u00e9rie de documentaires qui raconte l'histoire des civilisations disparues gr\u00e2ce \u00e0 des reconstitutions et des interviews de sp\u00e9cialistes.",
+    "seriesName": "Lost Worlds - Les civilisations disparues",
+    "status": "Ended",
+    "banner": "graphical/80685-g2.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "80759",
+  "fields": {
+    "firstAired": "2005-04-05",
+    "network": "Tokyo MX",
+    "overview": "Manaka Junpei est un \u00e9tudiant de 3\u00e8me ann\u00e9e qui r\u00eave de faire du cin\u00e9ma. Comme chaque soir, il se rend sur le toit de son lyc\u00e9e : c'est l\u00e0 qu'il fait la rencontre d'une superbe jeune fille dont il tombe aussit\u00f4t amoureux. Malheureusement, celle-ci s'en va en courant, et le seul souvenir pr\u00e9cis que Junpei en garde est le motif de sa culotte : des fraises (ichigo). Junpei s'aper\u00e7oit que dans l'affolement, la jeune fille a perdu un carnet. Le lendemain, Toujou Aya, une fille ordinaire de sa classe, lui apprend que le carnet lui appartient. Okusa et Komiyama, les amis de notre h\u00e9ros pensent tous deux que la fille \u00e0 la culotte aux motifs de fraises n'est autre que Nishino Tsukasa, la fille la plus populaire du lyc\u00e9e, qui pr\u00e9tend porter ce genre de sous-v\u00eatements. Junpei d\u00e9cide alors de lui d\u00e9clarer sa flamme sans m\u00eame savoir s'il s'agit bien de la fille qu'il recherche. Nishino accepte de sortir avec lui, au grand bonheur de Junpei. Mais ce dernier d\u00e9couvre peu apr\u00e8s que Toujou poss\u00e8de \u00e9galement une culotte similaire. Commence alors sa qu\u00eate afin de d\u00e9couvrir qui est la fille dont il est r\u00e9ellement amoureux. ",
+    "seriesName": "Ichigo 100%",
+    "status": "Ended",
+    "banner": "graphical/80759-g.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "82834",
+  "fields": {
+    "firstAired": "2008-07-15",
+    "network": "MBS",
+    "overview": "\u00c9pargn\u00e9e par la guerre entre le gouvernement du Nord et la zone Libre du continent du Sud, l'\u00eele de Sentan, entour\u00e9e par la mer de Yuden, vit dans un \u00e9tat de relative tranquillit\u00e9. Le h\u00e9ros, Akiyuki Takehara, habite avec sa m\u00e8re sur cette \u00eele et est actuellement s\u00e9par\u00e9 de son p\u00e8re, Ryuzo, le m\u00e9decin du village, mais le lien p\u00e8re-fils reste. Le lyc\u00e9en apporte quotidiennement \u00e0 son p\u00e8re le repas que sa m\u00e8re a pr\u00e9par\u00e9. Un jour, Akiyuki et ses amis, Haru et Furuichi, sont victimes d'un attentat. L'explosion produit alors une myst\u00e9rieuse lumi\u00e8re qui p\u00e9n\u00e8tre le bras d'Akiyuki et cause une douleur atroce. Il se retrouve ainsi entrain\u00e9 dans une \u00e9trange histoire o\u00f9 il devra apprendre \u00e0 ma\u00eetriser ses nouveaux pouvoirs\u2026 ",
+    "seriesName": "Xam'd: Lost Memories",
+    "status": "Ended",
+    "banner": "graphical/82834-g2.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "83268",
+  "fields": {
+    "firstAired": "2008-10-03",
+    "network": "Netflix",
+    "overview": "La galaxie est en proie \u00e0 la Guerre des Clones qui oppose les mal\u00e9fiques S\u00e9paratistes et leurs immenses arm\u00e9es d'andro\u00efdes \u00e0 la R\u00e9publique. Les Chevaliers Jedi, protecteurs de la R\u00e9publique, luttent pour maintenir l'ordre et restaurer la paix tandis que de nouvelles plan\u00e8tes succombent chaque jour aux puissances du mal. Pour prendre l'avantage, le Chevalier Jedi Anakin Skywalker et sa jeune apprentie Padawan, Ahsoka Tano, sont charg\u00e9s d'une mission capitale qui va les confronter au redoutable \"parrain\" de Tatooine, Jabba the Hutt. Ces aventures se d\u00e9roulent durant la Guerre des Clones, entre les \u00e9v\u00e9n\u00e9ments de Star wars : \u00e9pisode II - L'Attaque des clones et Star wars : \u00e9pisode III - La Revanche des Sith.",
+    "seriesName": "Star Wars - The Clone Wars",
+    "status": "Ended",
+    "banner": "graphical/83268-g11.jpg"
+  }
+},
+{
+  "model": "blacksheep.serie",
+  "pk": "94581",
+  "fields": {
+    "firstAired": "2010-05-28",
+    "network": "NBC",
+    "overview": "A la recherche de l'Amour, Charlotte Payne a rencontr\u00e9 pas mal hommes, et a \u00e9t\u00e9 demand\u00e9e en mariage \u00e0 dix reprises. Elle n'a pourtant pas encore crois\u00e9 la route de celui dont elle r\u00eave. La jeune new-yorkaise d\u00e9cide alors de s'inscrire sur un site de rencontres, o\u00f9 elle doit r\u00e9pondre \u00e0 un test de compatibilit\u00e9 regroupant 100 questions. Des questions difficiles qui obligent Charlotte \u00e0 se replonger dans ses aventures sentimentales pass\u00e9es. Elle peut compter sur le soutien de ses amis Leslie, Jill, Mike et Wayne. Le test l'am\u00e8ne \u00e0 se d\u00e9couvrir et r\u00e9aliser ce qu'elle attend r\u00e9ellement d'une relation.",
+    "seriesName": "100 Questions",
+    "status": "Ended",
+    "banner": "graphical/94581-g.jpg"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 11,
+  "fields": {
+    "titre": "La Guerre des \u00e9toiles",
+    "synopsis": "Il y a bien longtemps, dans une galaxie tr\u00e8s lointaine... La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle. Captur\u00e9e par les troupes de choc de l'Empereur men\u00e9es par le sombre et impitoyable Dark Vador, la princesse Leia Organa dissimule les plans de l\u2019\u00c9toile Noire, une station spatiale invuln\u00e9rable, \u00e0 son dro\u00efde R2-D2 avec pour mission de les remettre au Jedi Obi-Wan Kenobi. Accompagn\u00e9 de son fid\u00e8le compagnon, le dro\u00efde de protocole C-3PO, R2-D2 s'\u00e9choue sur la plan\u00e8te Tatooine et termine sa qu\u00eate chez le jeune Luke Skywalker. R\u00eavant de devenir pilote mais confin\u00e9 aux travaux de la ferme, ce dernier se lance \u00e0 la recherche de ce myst\u00e9rieux Obi-Wan Kenobi, devenu ermite au c\u0153ur des montagnes d\u00e9sertiques de Tatooine...",
+    "note": "8.1",
+    "image": "/yVaQ34IvVDAZAWxScNdeIkaepDq.jpg",
+    "genre": "12/28",
+    "date_sortie": "1977-05-25"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 268,
+  "fields": {
+    "titre": "Batman",
+    "synopsis": "Violence et corruption r\u00e8gnent dans la ville de Gotham City. La mafia dirige la ville \u00e0 sa mani\u00e8re, au nez et \u00e0 la barbe des autorit\u00e9s, compl\u00e8tement d\u00e9pass\u00e9es par les \u00e9v\u00e9nements. Depuis quelques semaines cependant, un myst\u00e9rieux justicier, drap\u00e9 dans un costume de chauve-souris, terrorise les malfaiteurs et s\u00e8me l'inqui\u00e9tude dans les rangs de la mafia. Une jeune journaliste, Vicki Vale, m\u00e8ne l'enqu\u00eate. C'est ainsi qu'elle fait la connaissance d'un s\u00e9duisant mais excentrique milliardaire, Bruce Wayne. Celui-ci n'est autre que Batman, qui l'a d\u00e9j\u00e0 sauv\u00e9e. Elle rencontre \u00e9galement un odieux truand, Jack Napier, bras droit du parrain Carl Grissom...",
+    "note": "7",
+    "image": "/zH758204ON7UPfoFDne46OqdUtT.jpg",
+    "genre": "14/28",
+    "date_sortie": "1989-06-23"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 272,
+  "fields": {
+    "titre": "Batman Begins",
+    "synopsis": "Comment un homme seul peut-il changer le monde ? Telle est la question qui hante Bruce Wayne depuis cette nuit tragique o\u00f9 ses parents furent abattus sous ses yeux, dans une ruelle de Gotham City. Tortur\u00e9 par un profond sentiment de col\u00e8re et de culpabilit\u00e9, le jeune h\u00e9ritier de cette richissime famille fuit Gotham pour un long et discret voyage \u00e0 travers le monde. Le but de ses p\u00e9r\u00e9grinations : sublimer sa soif de vengeance en trouvant de nouveaux moyens de lutter contre l'injustice.",
+    "note": "7.5",
+    "image": "/zfVFOo2XCHbeA0mXbst42TAGhfC.jpg",
+    "genre": "28/80",
+    "date_sortie": "2005-06-10"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 364,
+  "fields": {
+    "titre": "Batman, le d\u00e9fi",
+    "synopsis": "Non seulement Batman doit affronter le Pingouin, monstre g\u00e9n\u00e9tique dot\u00e9 d'une intelligence \u00e0 toute \u00e9preuve, qui s\u00e8me la terreur mais, plus difficile encore, il doit faire face \u00e0 la s\u00e9duction de deux super-femmes, la douce Selina Kyle et la f\u00e9line Catwoman qui va lui donner bien du fil \u00e0 retordre. Si Bruce Wayne appr\u00e9cie Selina, Batman n'est pas insensible au charme de Catwoman.",
+    "note": "6.7",
+    "image": "/wYa8lSb2fQA5NcU79aOEFQCbVo6.jpg",
+    "genre": "28/14",
+    "date_sortie": "1992-06-19"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 414,
+  "fields": {
+    "titre": "Batman forever",
+    "synopsis": "Nul ne sait que Bruce Wayne, le patron d'un vaste et puissant consortium, l'homme le plus riche des \u00c9tats-Unis, rev\u00eat chaque nuit la combinaison et le masque de cuir de Batman pour voler au secours de ses concitoyens injustement opprim\u00e9s. Personne, hormis son fid\u00e8le majordome Alfred et son vieil ami, le commissaire Gordon.",
+    "note": "5.2",
+    "image": "/oxcsYzAO8tgVMBGe6N0iIB7sBjx.jpg",
+    "genre": "28/80",
+    "date_sortie": "1995-06-16"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 415,
+  "fields": {
+    "titre": "Batman & Robin",
+    "synopsis": "Dans cette nouvelle aventure, Batman aura bien besoin de son audacieux partenaire Robin, juch\u00e9 sur sa fringante moto turbo. En effet, le glacial M. Frezze fait r\u00e9gner une vague de froid polaire sur Gotham City avec la complicit\u00e9 de la belle et v\u00e9n\u00e9neuse Poison Ivy, au baiser mortel et aux formes sinueuses, qui r\u00eave de soumettre le monde au pouvoir des femmes-fleurs.",
+    "note": "4.2",
+    "image": "/tjQiGGNqzboXkDE394G3moWHYAs.jpg",
+    "genre": "878/28",
+    "date_sortie": "1997-06-20"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 1362,
+  "fields": {
+    "titre": "Bilbo le hobbit",
+    "synopsis": "L'histoire de Bilbon Sacquet, hobbit paisible de la Comt\u00e9, entrain\u00e9 malgr\u00e9 lui dans une formidable aventure. Accompagn\u00e9 du magicien Gandalf et de treize nains, il devra r\u00e9cup\u00e9rer un tr\u00e9sor d\u00e9rob\u00e9 par le terrible dragon Smaug...Adapt\u00e9 du roman de J.R.R. Tolkien \"Bilbo le hobbit ou l'Histoire d'un aller et retour\" (\"The Hobbit: There and back again\").",
+    "note": "6",
+    "image": "/xP93GoIe8MI23n5ZQ7aZLTzLE0g.jpg",
+    "genre": "12/16",
+    "date_sortie": "1977-11-27"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 1891,
+  "fields": {
+    "titre": "L'Empire contre-attaque",
+    "synopsis": "Malgr\u00e9 la destruction de l\u2019\u00c9toile Noire, l'Empire maintient son emprise sur la galaxie, et poursuit sans rel\u00e2che sa lutte contre l'Alliance rebelle. Bas\u00e9s sur la plan\u00e8te glac\u00e9e de Hoth, les rebelles essuient un assaut des troupes imp\u00e9riales. Parvenus \u00e0 s'\u00e9chapper, la princesse Leia, Han Solo, Chewbacca et C-3P0 se dirigent vers Bespin, la cit\u00e9 des nuages gouvern\u00e9e par Lando Calrissian, ancien compagnon de Han. Suivant les instructions d'Obi-Wan Kenobi, Luke Skywalker se rend quant \u00e0 lui vers le syst\u00e8me de Dagobah, plan\u00e8te mar\u00e9cageuse o\u00f9 il doit recevoir l'enseignement du dernier ma\u00eetre Jedi, Yoda. Apprenant l'arrestation de ses compagnons par les stormtroopers de Dark Vador apr\u00e8s la trahison de Lando, Luke d\u00e9cide d'interrompre son entra\u00eenement pour porter secours \u00e0 ses amis et affronter le sombre seigneur Sith...",
+    "note": "8.2",
+    "image": "/nqY9dJeRaSEJlmljOpPA5Tc9moQ.jpg",
+    "genre": "12/28",
+    "date_sortie": "1980-05-17"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 1892,
+  "fields": {
+    "titre": "Le Retour du Jedi",
+    "synopsis": "L'Empire galactique est plus puissant que jamais : la construction de la nouvelle arme, l\u2019\u00c9toile de la Mort, menace l'univers tout entier... Arr\u00eat\u00e9 apr\u00e8s la trahison de Lando Calrissian, Han Solo est remis \u00e0 l'ignoble contrebandier Jabba Le Hutt par le chasseur de primes Boba Fett. Apr\u00e8s l'\u00e9chec d'une premi\u00e8re tentative d'\u00e9vasion men\u00e9e par la princesse Leia, \u00e9galement arr\u00eat\u00e9e par Jabba, Luke Skywalker et Lando parviennent \u00e0 lib\u00e9rer leurs amis. Han, Leia, Chewbacca, C-3PO et Luke, devenu un Jedi, s'envolent d\u00e8s lors pour une mission d'extr\u00eame importance sur la lune foresti\u00e8re d'Endor, afin de d\u00e9truire le g\u00e9n\u00e9rateur du bouclier de l\u2019\u00c9toile de la Mort et permettre une attaque des pilotes de l'Alliance rebelle. Conscient d'\u00eatre un danger pour ses compagnons, Luke pr\u00e9f\u00e8re se rendre aux mains de Dark Vador, son p\u00e8re et ancien Jedi pass\u00e9 du c\u00f4t\u00e9 obscur de la Force.",
+    "note": "7.9",
+    "image": "/kBjuLfGqNRsby9TzWQaTlAUe3LB.jpg",
+    "genre": "12/28",
+    "date_sortie": "1983-05-23"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 1893,
+  "fields": {
+    "titre": "Star Wars, \u00e9pisode I - La Menace fant\u00f4me",
+    "synopsis": "Il y a bien longtemps, dans une galaxie tr\u00e8s lointaine... La R\u00e9publique conna\u00eet de nombreux tourments : la corruption fait vaciller ses bases, le S\u00e9nat s'embourbe dans des discussions politiques sans fin et de nombreux pouvoirs dissidents commencent \u00e0 \u00e9merger, annon\u00e7ant la chute d'un syst\u00e8me autrefois paisible. Puissante et intouchable, la F\u00e9d\u00e9ration du Commerce impose par la force la taxation des routes commerciales. Refusant de c\u00e9der, la pacifique plan\u00e8te Naboo, dirig\u00e9e par la jeune Reine Amidala, subit un blocus militaire de la F\u00e9d\u00e9ration. D\u00e9p\u00each\u00e9s par le S\u00e9nat pour r\u00e9gler cette affaire, les chevaliers Jedi Qui-Gon Jinn et Obi-Wan Kenobi d\u00e9couvrent qu'une v\u00e9ritable offensive de la F\u00e9d\u00e9ration est imminente. Lib\u00e9rant la Reine et ses proches, ils quittent la plan\u00e8te mais doivent se poser sur Tatooine pour r\u00e9parer leur vaisseau...",
+    "note": "6.4",
+    "image": "/etnrgeks0Al3wSo44Ji6xgaLBAW.jpg",
+    "genre": "12/28",
+    "date_sortie": "1999-05-19"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 1894,
+  "fields": {
+    "titre": "Star Wars, \u00e9pisode II - L'Attaque des clones",
+    "synopsis": "Depuis le blocus de la plan\u00e8te Naboo par la F\u00e9d\u00e9ration du commerce, la R\u00e9publique, gouvern\u00e9e par le Chancelier Palpatine, conna\u00eet une v\u00e9ritable crise. Un groupe de dissidents, men\u00e9 par le sombre Jedi comte Dooku, manifeste son m\u00e9contentement envers le fonctionnement du r\u00e9gime. Le S\u00e9nat et la population intergalactique se montrent pour leur part inquiets face \u00e0 l'\u00e9mergence d'une telle menace.Certains s\u00e9nateurs demandent \u00e0 ce que la R\u00e9publique soit dot\u00e9e d'une solide arm\u00e9e pour emp\u00eacher que la situation ne se d\u00e9t\u00e9riore davantage. Parall\u00e8lement, Padm\u00e9 Amidala, devenue s\u00e9natrice, est menac\u00e9e par les s\u00e9paratistes et \u00e9chappe de justesse \u00e0 un attentat. Le Padawan Anakin Skywalker est charg\u00e9 de sa protection. Son ma\u00eetre, Obi-Wan Kenobi, part enqu\u00eater sur cette tentative de meurtre et d\u00e9couvre la constitution d'une myst\u00e9rieuse arm\u00e9e de clones...",
+    "note": "6.4",
+    "image": "/rVYDjCnsqr0DD3pqziqEczEXv4R.jpg",
+    "genre": "12/28",
+    "date_sortie": "2002-05-15"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 1895,
+  "fields": {
+    "titre": "Star Wars, \u00e9pisode III - La Revanche des Sith",
+    "synopsis": "La Guerre des Clones fait rage. Une franche hostilit\u00e9 oppose d\u00e9sormais le Chancelier Palpatine au Conseil Jedi. Anakin Skywalker, jeune Chevalier Jedi pris entre deux feux, h\u00e9site sur la conduite \u00e0 tenir. S\u00e9duit par la promesse d'un pouvoir sans pr\u00e9c\u00e9dent, tent\u00e9 par le c\u00f4t\u00e9 obscur de la Force, il pr\u00eate all\u00e9geance au mal\u00e9fique Darth Sidious et devient Dark Vador. Les Seigneurs Sith s'unissent alors pour pr\u00e9parer leur revanche, qui commence par l'extermination des Jedi. Seuls rescap\u00e9s du massacre, Yoda et Obi-Wan se lancent \u00e0 la poursuite des Sith. La traque se conclut par un spectaculaire combat au sabre entre Anakin et Obi-Wan, qui d\u00e9cidera du sort de la galaxie...",
+    "note": "7.1",
+    "image": "/rxNnK6AfnqxGRJ8ehCqLKcUCtAG.jpg",
+    "genre": "878/12",
+    "date_sortie": "2005-05-17"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 2661,
+  "fields": {
+    "titre": "Batman",
+    "synopsis": "Batman et Robin combattent le Joker, Catwoman, le Pingouin et l'Homme-Myst\u00e8re, unis dans le vol d'une invention capable de d\u00e9shydrater enti\u00e8rement tout \u00eatre vivant.",
+    "note": "6.1",
+    "image": "/yhy4r6fGHXPRFRXksdg1nHGTzid.jpg",
+    "genre": "10751/12",
+    "date_sortie": "1966-07-30"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 8844,
+  "fields": {
+    "titre": "Jumanji",
+    "synopsis": "Lors d'une partie de Jumanji, un jeu tr\u00e8s ancien, le jeune Alan est propuls\u00e9 sous les yeux de son amie d'enfance, Sarah, dans un \u00e9trange pays. Il ne pourra s'en \u00e9chapper que lorsqu'un autre joueur reprendra la partie et le lib\u00e8rera sur un coup de d\u00e9s. Vingt-six ans plus tard, il retrouve le monde r\u00e9el par le coup de d\u00e9s de deux autres jeunes joueurs.",
+    "note": "6.9",
+    "image": "/nLXYV4WmYUF4i8pX0iE0H1rltmf.jpg",
+    "genre": "12/14/10751",
+    "date_sortie": "1995-12-15"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 12180,
+  "fields": {
+    "titre": "Star Wars : The Clone Wars",
+    "synopsis": "La galaxie est en proie \u00e0 la Guerre des Clones, un conflit \u00e0 grande \u00e9chelle qui oppose les mal\u00e9fiques S\u00e9paratistes et leurs immenses arm\u00e9es d'andro\u00efdes \u00e0 la R\u00e9publique. Les Chevaliers Jedi, protecteurs de la R\u00e9publique, luttent pour maintenir l'ordre et restaurer la paix tandis que de nouvelles plan\u00e8tes succombent chaque jour aux puissances du mal. Pour prendre l'avantage, le Chevalier Jedi Anakin Skywalker et sa jeune Padawan, Ahsoka Tano, sont charg\u00e9s d'une mission capitale qui va les confronter au redoutable \"parrain\" de Tatooine, Jabba le Hutt. D'autres \u00e9preuves et de nouveaux dangers attendent nos h\u00e9ros sur Tatooine, car le Comte Dooku ne tarde pas \u00e0 se lancer \u00e0 leur poursuite avec ses sinistres agents - dont la cruelle Asajj Ventress, pr\u00eate \u00e0 tout pour faire \u00e9chouer Anakin et Ahsoka. Pendant ce temps, sur le front, Obi-Wan Kenobi et Ma\u00eetre Yoda s'efforcent vaillamment de pr\u00e9parer l'arm\u00e9e des clones \u00e0 r\u00e9sister aux forces des T\u00e9n\u00e8bres...",
+    "note": "5.9",
+    "image": "/xd6yhmtS6mEURZLwUDT5raEMbf.jpg",
+    "genre": "53/16",
+    "date_sortie": "2008-08-05"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 22855,
+  "fields": {
+    "titre": "SuperMan/Batman: Ennemis publics",
+    "synopsis": "A situation d\u00e9sesp\u00e9r\u00e9e, mesures d\u00e9sesp\u00e9r\u00e9es: Lex Luthor est Pr\u00e9sident et la Ligue des Justiciers est au service du gouvernement. Seuls Batman et Superman se dressent contre ce nouveau r\u00e9gime et leur infid\u00e9lit\u00e9 se trouve \u00eatre exactement ce que Lex Luthor pr\u00e9voyait. Utilisant leur statut de paria pour fomenter une vendetta contre Superman, Luthor fait enfin un pas vers la victoire dans son complot contre l'Homme de Fer.",
+    "note": "6.7",
+    "image": "/3UwElaZFAMGSPQ7wmG0iS4SHgiM.jpg",
+    "genre": "16/28",
+    "date_sortie": "2009-09-29"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 42979,
+  "fields": {
+    "titre": "Robot Chicken: Star Wars",
+    "synopsis": "La c\u00e9l\u00e8bre trilogie de George Lucas revisit\u00e9e et parodi\u00e9e \u00e0 la mani\u00e8re de Robot Chicken de Seth Green !",
+    "note": "6.8",
+    "image": "/kWKspQ7YiQ82xXM1jVbIbqh5OyV.jpg",
+    "genre": "16/35",
+    "date_sortie": "2007-07-17"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 49051,
+  "fields": {
+    "titre": "Le Hobbit : Un voyage inattendu",
+    "synopsis": "Dans \"Un voyage inattendu\", Bilbon Sacquet cherche \u00e0 reprendre le Royaume perdu des Nains d'Erebor, conquis par le redoutable dragon Smaug. Alors qu'il croise par hasard la route du magicien Gandalf le Gris, Bilbon rejoint une bande de 13 nains dont le chef n'est autre que le l\u00e9gendaire guerrier Thorin \u00c9cu-de-Ch\u00eane. Leur p\u00e9riple les conduit au c\u0153ur du Pays Sauvage, o\u00f9 ils devront affronter des Gobelins, des Orques, des Ouargues meurtriers, des Araign\u00e9es g\u00e9antes, des M\u00e9tamorphes et des Sorciers\u2026",
+    "note": "7",
+    "image": "/VSWrSJDzAktJXyd2VbAggSIfyI.jpg",
+    "genre": "12/14",
+    "date_sortie": "2012-11-26"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 51888,
+  "fields": {
+    "titre": "Robot Chicken: Star Wars Episode III",
+    "synopsis": "La c\u00e9l\u00e8bre trilogie de George Lucas revisit\u00e9e et parodi\u00e9e \u00e0 la mani\u00e8re de Robot Chicken de Seth Green !",
+    "note": "7.1",
+    "image": "/gsKEyIOJzNgLdbGjTnFds8hI4rV.jpg",
+    "genre": "35/878",
+    "date_sortie": "2010-12-19"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 57158,
+  "fields": {
+    "titre": "Le Hobbit : La D\u00e9solation de Smaug",
+    "synopsis": "Bilbon Sacquet continue son voyage p\u00e9rilleux en compagnie des treize nains, dirig\u00e9s par Thorin Ecu-de-Ch\u00eane, afin de regagner la Montagne solitaire et le royaume perdu des nains d'Erebor. En chemin, ils rencontrent Beorn, \u00eatre \u00e9trange qui a la capacit\u00e9 de changer de peau, et subissent une attaque d'araign\u00e9es g\u00e9antes dans la For\u00eat Noire. Apr\u00e8s s'\u00eatre \u00e9chapp\u00e9s des mains des Elfes des bois, dont Tauriel et Legolas, les nains se rendent \u00e0 Lacville, avant de rejoindre La Montagne solitaire, o\u00f9 ils doivent encore affronter le dragon Smaug, d\u00e9tenteur d'un fabuleux Tr\u00e9sor. Entretemps, Bilbo aura mis la main sur l'anneau de pouvoir, \u00able pr\u00e9cieux\u00bb de Gollum...",
+    "note": "7.5",
+    "image": "/ht6Epa4tgPH4B1dOE5FPcvx2PsN.jpg",
+    "genre": "12/14",
+    "date_sortie": "2013-12-11"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 74849,
+  "fields": {
+    "titre": "Au temps de la guerre des \u00e9toiles",
+    "synopsis": "Son histoire se situe, dans la chronologie de la s\u00e9rie, entre les \u00e9pisodes IV et V. On y retrouve Chewbacca, Han Solo et Luke Skywalker, jou\u00e9s par les acteurs des films. C'est \u00e9galement la premi\u00e8re apparition de Boba Fett (du moins, avant que l'\u00e9pisode IV ne le r\u00e9int\u00e8gre depuis sa r\u00e9\u00e9dition de 1997).",
+    "note": "3.2",
+    "image": "/sNxgvnswaahOA3mdkjcuYYpLi7i.jpg",
+    "genre": "12/35",
+    "date_sortie": "1978-12-01"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 122917,
+  "fields": {
+    "titre": "Le Hobbit : La Bataille des cinq arm\u00e9es",
+    "synopsis": "Atteignant enfin la Montagne Solitaire, Thorin et les Nains, aid\u00e9s par Bilbon le Hobbit, ont r\u00e9ussi \u00e0 r\u00e9cup\u00e9rer leur royaume et leur tr\u00e9sor. Mais ils ont \u00e9galement r\u00e9veill\u00e9 le dragon Smaug qui d\u00e9cha\u00eene d\u00e9sormais sa col\u00e8re sur les habitants de Lac-ville. \u00c0 pr\u00e9sent, les Nains, les Elfes, les Humains mais aussi les Wrags et les Orques men\u00e9s par le N\u00e9cromancien, convoitent les richesses de la Montagne Solitaire. La bataille des cinq arm\u00e9es est imminente et Bilbon est le seul \u00e0 pouvoir unir ses amis contre les puissances obscures de Sauron.",
+    "note": "7.2",
+    "image": "/uCYyjSxv0dk8TDf2qQnwUSF3Nfy.jpg",
+    "genre": "28/12",
+    "date_sortie": "2014-12-10"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 136406,
+  "fields": {
+    "titre": "Lego Star Wars : L'Empire en vrac",
+    "synopsis": "L'Etoile Noire vient juste d'\u00eatre d\u00e9truite, mais nos h\u00e9ros Luke, Leia, Han, Chewbacca et l'alliance rebelle n'ont pas le temps de se reposer ! L'Empire menace de nouveau et ils doivent vite r\u00e9agir ! Mais Luke, apprenti Jedi, devenu une star pour avoir fait exploser l'Etoile Noire, d\u00e9couvre que la c\u00e9l\u00e9brit\u00e9 est un sabre laser \u00e0 double tranchant ! Sa mission ultra secr\u00e8te sur Naboo est mise en p\u00e9ril par une foule d'admiratrices en d\u00e9lire ! Pendant ce temps, la journ\u00e9e de Dark Vador commence mal et ne cesse de s'empirer avec l'arriv\u00e9e impr\u00e9vue du seigneur Sith, Dark Maul, qui perturbe sa relation avec son mentor, l'Empereur. Dans leur qu\u00eate de prouver de quoi ils sont capables, Luke et Vador se heurtent l'un \u00e0 l'autre et changent leur destin.",
+    "note": "5.8",
+    "image": "/wrVZbZZ4G198m5y2gBQICH1y4UZ.jpg",
+    "genre": "878/16",
+    "date_sortie": "2012-09-24"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 140607,
+  "fields": {
+    "titre": "Star Wars, \u00e9pisode VII : le R\u00e9veil de la Force",
+    "synopsis": "Il y a bien longtemps, dans une galaxie lointaine... Luke Skywalker est port\u00e9 disparu. Le pilote Poe est en mission secr\u00e8te sur une plan\u00e8te pour le retrouver. Au moment o\u00f9 la diabolique arm\u00e9e \"Premier Ordre\" appara\u00eet en d\u00e9truisant tout sur son passage, il arrive \u00e0 cacher la position g\u00e9ographique de l'ancien ma\u00eetre Jedi dans son dro\u00efde BB-8. Captur\u00e9 par les larbins du machiav\u00e9lique Kylo Ren, Poe est lib\u00e9r\u00e9 par le soldat ennemi Finn qui est en pleine crise existentielle. Pendant ce temps, BB-8 est recueillie par Rey, une pilleuse d'\u00e9paves qui sera bient\u00f4t plong\u00e9e dans une qu\u00eate qui la d\u00e9passe.",
+    "note": "7.5",
+    "image": "/sHOYrricE1K0JriQ74FeN794UEl.jpg",
+    "genre": "28/12",
+    "date_sortie": "2015-12-15"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 141052,
+  "fields": {
+    "titre": "Justice League",
+    "synopsis": "Apr\u00e8s avoir retrouv\u00e9 foi en l'humanit\u00e9, Bruce Wayne, inspir\u00e9 par l'altruisme de Superman, sollicite l'aide de sa nouvelle alli\u00e9e, Diana Prince, pour affronter un ennemi plus redoutable que jamais. Ensemble, Batman et Wonder Woman ne tardent pas \u00e0 recruter une \u00e9quipe de m\u00e9ta-humains pour faire face \u00e0 cette menace in\u00e9dite. Pourtant, malgr\u00e9 la force que repr\u00e9sente cette ligue de h\u00e9ros sans pr\u00e9c\u00e9dent \u2013 Batman, Wonder Woman, Aquaman, Cyborg et The Flash \u2013, il est peut-\u00eatre d\u00e9j\u00e0 trop tard pour sauver la plan\u00e8te d'une attaque apocalyptique\u2026",
+    "note": "6.6",
+    "image": "/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg",
+    "genre": "28/12/14/878",
+    "date_sortie": "2017-11-15"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 177572,
+  "fields": {
+    "titre": "Les Nouveaux H\u00e9ros",
+    "synopsis": "Un g\u00e9nie de la robotique nomm\u00e9 Hiro Hamada, se retrouve embarqu\u00e9 dans un complot criminel qui menace de d\u00e9truire la paisible ville high-tech de San Fransokyo. Avec l\u2019aide d\u2019un de ses plus proche compagnon \u2013 un robot nomm\u00e9 Baymax \u2013, Hiro s\u2019associe \u00e0 une \u00e9quipe de jeunes amateurs qui s\u2019est donn\u00e9e pour mission de sauver la population.",
+    "note": "7.8",
+    "image": "/7jAXeNgTPUY00txdsc5JloGCMBN.jpg",
+    "genre": "12/10751/16/28/35",
+    "date_sortie": "2014-10-24"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 181808,
+  "fields": {
+    "titre": "Star Wars, \u00e9pisode VIII : Les Derniers Jedi",
+    "synopsis": "Nouvel \u00e9pisode de la saga.  Les h\u00e9ros du R\u00e9veil de la force rejoignent les figures l\u00e9gendaires de la galaxie dans une aventure \u00e9pique qui r\u00e9v\u00e8le des secrets ancestraux sur la Force et entra\u00eene de choquantes r\u00e9v\u00e9lations sur le pass\u00e9\u2026",
+    "note": "5.7",
+    "image": "/eKMJDGvcqs63EHLpi3aLqMbK4CB.jpg",
+    "genre": "28/12",
+    "date_sortie": "2017-12-13"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 181812,
+  "fields": {
+    "titre": "Star Wars, \u00e9pisode IX",
+    "synopsis": "",
+    "note": "0",
+    "image": "/yVYTFvIiKyr6vsrPw3o5C6t2eoL.jpg",
+    "genre": "28/12",
+    "date_sortie": "2019-12-18"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 209112,
+  "fields": {
+    "titre": "Batman v Superman : L\u2019Aube de la justice",
+    "synopsis": "Craignant que Superman n'abuse de sa toute-puissance, le Chevalier noir d\u00e9cide de l'affronter : le monde a-t-il davantage besoin d'un super-h\u00e9ros aux pouvoirs sans limite ou d'un justicier \u00e0 la force redoutable mais d'origine humaine ? Pendant ce temps-l\u00e0, une terrible menace se profile \u00e0 l'horizon\u2026",
+    "note": "5.7",
+    "image": "/4s6qhbC8ocuy6g6HsrLCVLRGwPL.jpg",
+    "genre": "28/12",
+    "date_sortie": "2016-03-23"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 211672,
+  "fields": {
+    "titre": "Les Minions",
+    "synopsis": "\u00c0 la nuit des temps des temps. \u00c0 l'origine, de simples organismes monocellulaires de couleur jaune, les Minions ont \u00e9volu\u00e9 au cours des \u00e2ges au service de ma\u00eetres plus abjects les uns que les autres. Les disparitions r\u00e9p\u00e9titives de ceux-ci, des tyrannosaures \u00e0 Napol\u00e9on, ont plong\u00e9 nos mignons personnages dans une profonde d\u00e9pression. Mais l'un d'eux, pr\u00e9nomm\u00e9 Kevin, a une id\u00e9e. Flanqu\u00e9 de Stuart, l'adolescent rebelle et de l'adorable petit Bob, Kevin part \u00e0 la recherche d'un nouveau patron malfaisant pour guider les siens. Nos trois Minions se lancent dans un palpitant voyage qui va les conduire \u00e0 leur nouveau ma\u00eetre... qui s'av\u00e8re \u00eatre une ma\u00eetresse : Scarlet Overkill, la premi\u00e8re super-vilaine de l'histoire. De l'Antarctique au New York des ann\u00e9es 60, nos trois comp\u00e8res arrivent finalement \u00e0 Londres, \u00e0 l'apog\u00e9e des mods, o\u00f9 ils vont devoir faire face \u00e0 la plus terrible menace de leur existence : l'annihilation de leur esp\u00e8ce.",
+    "note": "6.4",
+    "image": "/sGuZHYvu0mXeQCwvJ5yzk2Yoytq.jpg",
+    "genre": "10751/16/12/35",
+    "date_sortie": "2015-06-17"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 242643,
+  "fields": {
+    "titre": "Batman, Assaut sur Arkham",
+    "synopsis": "Lorsque le gouvernement monte le Suicide Squad, une \u00e9quipe de super-vilains dont le but est d\u2019infiltrer l\u2019asile d\u2019Arkham afin de restituer des informations de tr\u00e8s haute importance que le Sphinx a vol\u00e9es, Batman se retrouve tr\u00e8s vite impliqu\u00e9. Mais les choses vont de mal en pire d\u00e8s lors qu\u2019un membre du Suicide Squad lib\u00e8re le Joker qui a tout ce qu\u2019il faut pour faire exploser l\u2019asile, mais aussi la majeure partie de la ville de Gotham\u2026",
+    "note": "7.3",
+    "image": "/cLXov0m76emcTNoaRHrp0JiDegl.jpg",
+    "genre": "53/16",
+    "date_sortie": "2014-08-12"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 245891,
+  "fields": {
+    "titre": "John Wick",
+    "synopsis": "Depuis la mort de sa femme bien-aim\u00e9e, John Wick passe ses journ\u00e9es \u00e0 retaper sa Ford Mustang de 1969, avec pour seule compagnie sa chienne Daisy. Il m\u00e8ne une vie sans histoire, jusqu\u2019\u00e0 ce qu\u2019un malfrat sadique nomm\u00e9 Iosef Tarasof remarque sa voiture. John refuse de la lui vendre. Iosef n\u2019acceptant pas qu\u2019on lui r\u00e9siste, s\u2019introduit chez John avec deux complices pour voler la Mustang, et tuer sauvagement Daisy\u2026  John remonte la piste de Iosef jusqu\u2019\u00e0 New York. Un ancien contact, Aurelio, lui apprend que le malfrat est le fils unique d\u2019un grand patron de la p\u00e8gre, Viggo Tarasof. La rumeur se r\u00e9pand rapidement dans le milieu : le l\u00e9gendaire tueur cherche Iosef. Viggo met \u00e0 prix la t\u00eate de John : quiconque l\u2019abattra touchera une \u00e9norme r\u00e9compense. John a d\u00e9sormais tous les assassins de New York aux trousses.",
+    "note": "7",
+    "image": "/tyPtD94Gx1JFkWgGO3nrmv1GmpL.jpg",
+    "genre": "28/53",
+    "date_sortie": "2014-10-22"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 251519,
+  "fields": {
+    "titre": "Le fils de Batman",
+    "synopsis": "Batman est choqu\u00e9 d'apprendre que non seulement il a un fils, mais que la m\u00e8re est Talia, fille du terroriste international Ra's Al Ghul. N\u00e9anmoins, le Chevalier Noir et son gar\u00e7on (qui devient le nouveau Robin) deviennent alli\u00e9s bien malgr\u00e9 eux lorsque Deathstoke recrute une \u00e9quipe de Man-Bats ninjas \u00e0 des fins criminelles...",
+    "note": "6.8",
+    "image": "/j3SFJqZPeeB9g5JMU7UFLgEqj2T.jpg",
+    "genre": "16/28",
+    "date_sortie": "2014-04-20"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 264170,
+  "fields": {
+    "titre": "Batman : Strange Days",
+    "synopsis": "L'homme chauve-souris part \u00e0 la rescousse d'une demoiselle kidnapp\u00e9e par Hugo Strange.",
+    "note": "7.5",
+    "image": "/qgsoPhctRPbP4UYYBDpjHmuXsYe.jpg",
+    "genre": "28/16",
+    "date_sortie": "2014-04-09"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 281338,
+  "fields": {
+    "titre": "La Plan\u00e8te des Singes - Supr\u00e9matie",
+    "synopsis": "C\u00e9sar et les Singes sont contraints de mener un combat dont ils ne veulent pas contre une arm\u00e9e d'Humains dirig\u00e9e par un Colonel impitoyable. Les Singes connaissent des pertes consid\u00e9rables et C\u00e9sar, dans sa qu\u00eate de vengeance, va devoir lutter contre ses instincts les plus noirs. Au terme d\u2019un p\u00e9riple qui le conduira \u00e0 un face \u00e0 face avec le Colonel, les Singes et les Humains vont se livrer une guerre sans merci \u00e0 l\u2019issue de laquelle une seule des deux esp\u00e8ces survivra - et dominera la plan\u00e8te.",
+    "note": "6.7",
+    "image": "/38qfEWsoTEP898vtSDge3UGhirS.jpg",
+    "genre": "18/878/10752",
+    "date_sortie": "2017-07-11"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 284053,
+  "fields": {
+    "titre": "Thor : Ragnarok",
+    "synopsis": "Thor est emprisonn\u00e9 de l\u2019autre c\u00f4t\u00e9 de l\u2019univers sans son puissant marteau et se retrouve engag\u00e9 dans une course contre le temps pour rejoindre Asgard et arr\u00eater Ragnarok \u2013 la destruction de son monde natal et la fin de la civilisation Asgardienne \u2013 des mains d\u2019une toute nouvelle menace, l\u2019impitoyable Hela. Mais d\u2019abord, il doit survivre \u00e0 une comp\u00e9tition meurtri\u00e8re de gladiateurs qui l\u2019oppose \u00e0 son ancien alli\u00e9 et compagnon Avenger \u2013 l\u2019Incroyable Hulk !",
+    "note": "7.5",
+    "image": "/ltQmtbg3lEVSQzbdVnRK3yi6Pk7.jpg",
+    "genre": "28/12/35/14/878",
+    "date_sortie": "2017-10-25"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 297762,
+  "fields": {
+    "titre": "Wonder Woman",
+    "synopsis": "Avant d'\u00eatre Wonder Woman, elle s'appelait Diana, princesse des Amazones, entra\u00een\u00e9e pour \u00eatre une guerri\u00e8re impossible \u00e0 conqu\u00e9rir. Elle est \u00e9lev\u00e9e sur une \u00eele isol\u00e9e et paradisiaque, mais lorsqu'un pilote am\u00e9ricain s'\u00e9crase sur leur rivage et annonce qu'un conflit \u00e0 grande \u00e9chelle fait rage dans le monde, Diana quitte son foyer, convaincue qu'elle doit arr\u00eater cette menace. Combattant aux c\u00f4t\u00e9s de cet homme et des siens pour mettre fin \u00e0 cette guerre et \u00e0 toutes les guerres, Diana d\u00e9couvre ses vrais pouvoirs... Et son v\u00e9ritable destin.",
+    "note": "7.2",
+    "image": "/lO1vEquZSWT9aF2Ij2OZaXKSwUh.jpg",
+    "genre": "28/12/14",
+    "date_sortie": "2017-05-30"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 321528,
+  "fields": {
+    "titre": "Batman vs. Robin",
+    "synopsis": "L\u2019ombre des buildings de Gotham City n\u2019est pas l\u2019endroit id\u00e9al pour un enfant, mais Damian Wayne est tout sauf un enfant ordinaire. C\u2019est sous les traits d\u2019un Robin tenace et t\u00e9m\u00e9raire qu\u2019il suit d\u00e9sormais les traces de son c\u00e9l\u00e8bre p\u00e8re, Batman. Alors qu\u2019il examine une sc\u00e8ne de crime, Robin fait la connaissance d\u2019un personnage myst\u00e9rieux, Talon, qui l\u2019entra\u00eene dans une course qui pourrait bien changer sa vie, dans les profondeurs de la soci\u00e9t\u00e9 secr\u00e8te de Gotham, La Cour des Hiboux. Commence alors une dangereuse aventure au cours de laquelle Batman et Robin vont devoir affronter leurs pires ennemis : eux-m\u00eames",
+    "note": "6.8",
+    "image": "/6g7iQJAgyDn9mep98RXhLI64RcA.jpg",
+    "genre": "28/12",
+    "date_sortie": "2015-04-14"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 321612,
+  "fields": {
+    "titre": "La Belle et la B\u00eate",
+    "synopsis": "Une nouvelle adaptation live du conte \"La Belle et la B\u00eate\".  Belle, jeune fille r\u00eaveuse et passionn\u00e9e de litt\u00e9rature, vit avec son p\u00e8re, un vieil inventeur farfelu. S'\u00e9tant perdu une nuit dans la f\u00f4ret, ce dernier se r\u00e9fugie au ch\u00e2teau de la B\u00eate, qui la jette au cachot. Ne pouvant supporter de voir son p\u00e8re emprisonn\u00e9, Belle accepte alors de prendre sa place, ignorant que sous le masque du monstre se cache un Prince Charmant tremblant d'amour pour elle, mais victime d'une terrible mal\u00e9diction.",
+    "note": "6.8",
+    "image": "/4RJaj2C4EZn1rCCTMwWGgv9ARUC.jpg",
+    "genre": "10751/14/10749",
+    "date_sortie": "2017-03-16"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 324849,
+  "fields": {
+    "titre": "LEGO Batman: Le film",
+    "synopsis": "Il en r\u00eavait depuis La Grande Aventure Lego : Batman est enfin le h\u00e9ros de son propre film ! Mais la situation a bien chang\u00e9 \u00e0 Gotham \u2013 et s'il veut sauver la ville des griffes du Joker, il lui faudra arr\u00eater de jouer au justicier masqu\u00e9 et d\u00e9couvrir le travail d'\u00e9quipe ! Peut-\u00eatre pourra-t-il alors se d\u00e9coincer un peu\u2026",
+    "note": "7.2",
+    "image": "/iGbEqeFC9tffYb4MkiaEP7uheU5.jpg",
+    "genre": "28/16",
+    "date_sortie": "2017-02-08"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 327418,
+  "fields": {
+    "titre": "Batman Unlimited : L'instinct animal",
+    "synopsis": "Quand Gotham City est victime d\u2019une s\u00e9rie de crimes bizarres perp\u00e9tr\u00e9s par un groupe de vilains qui s\u2019inspirent d\u2019animaux, l\u2019Animilitia \u2013 Silverback, Cheetah, Killer Croc et Man-Bat \u2013 Batman doit passer \u00e0 l\u2019action et enqu\u00eater. Ces vilains-animaux posent de nouveaux d\u00e9fis passionnants pour Batman, qui doit trouver un moyen d\u2019amener ces cr\u00e9atures criminelles devant la justice ! Mais, et si l\u2019Animilitia travaillait en r\u00e9alit\u00e9 pour le puissant homme d\u2019affaire Oswald Cobblepot, alias le Pingouin ? En fin de compte, il faudra les forces combin\u00e9es de Batman, Flash, Green Arrow, Nightwing et Red Robin pour combattre ces instincts bestiaux.",
+    "note": "5.5",
+    "image": "/1N7KJtdGqiwGbHTWgqt5dleP3rP.jpg",
+    "genre": "28/16",
+    "date_sortie": "2015-05-12"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 330459,
+  "fields": {
+    "titre": "Rogue One - A Star Wars Story",
+    "synopsis": "Situ\u00e9 entre les \u00e9pisodes III et IV de la saga Star Wars, le film nous entra\u00eene aux c\u00f4t\u00e9s d\u2019individus ordinaires qui, pour rester fid\u00e8les \u00e0 leurs valeurs, vont tenter l\u2019impossible au p\u00e9ril de leur vie. Ils n\u2019avaient pas pr\u00e9vu de devenir des h\u00e9ros, mais dans une \u00e9poque de plus en plus sombre, ils vont devoir d\u00e9rober les plans de l\u2019\u00c9toile de la Mort, l\u2019arme de destruction ultime de l\u2019Empire.",
+    "note": "7.4",
+    "image": "/mcwCNjqKUkebvknFkpj0UPdpSj.jpg",
+    "genre": "28/12",
+    "date_sortie": "2016-12-14"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 332479,
+  "fields": {
+    "titre": "Star Wars: Tie Fighter",
+    "synopsis": "TIE Fighter est un court-m\u00e9trage anim\u00e9 de plus de sept minutes r\u00e9alis\u00e9 par Paul Johnson (plus connu le pseudonyme d\u2019Otaking) qui se d\u00e9roule dans l\u2019univers de Star Wars.",
+    "note": "7.7",
+    "image": "/jwUexLOEBMFMbBoKzK4AT7hQYDw.jpg",
+    "genre": "878/28",
+    "date_sortie": "2015-03-24"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 333355,
+  "fields": {
+    "titre": "Star Wars - Clone Wars vol.1",
+    "synopsis": "Cette s\u00e9rie se situe entre l\u2019Episode II et III, et reprend les personnages des deux films. Un ensemble d\u2019aventures essentielles pour comprendre au mieux les enjeux de l\u2019Episode III et les secrets de la saga de George Lucas.",
+    "note": "7.9",
+    "image": "/2Bc0Ust8YlcJy6tSwiXTLu66xRa.jpg",
+    "genre": "28/12",
+    "date_sortie": "2005-03-21"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 346364,
+  "fields": {
+    "titre": "\u00c7a",
+    "synopsis": "\u00c0 Derry, dans le Maine, sept gamins ayant du mal \u00e0 s'int\u00e9grer se sont regroup\u00e9s au sein du \"Club des Rat\u00e9s\". Rejet\u00e9s par leurs camarades, ils sont les cibles favorites des gros durs de l'\u00e9cole. Ils ont aussi en commun d'avoir \u00e9prouv\u00e9 leur plus grande terreur face \u00e0 un terrible pr\u00e9dateur m\u00e9tamorphe qu'ils appellent \"\u00c7a\"\u2026",
+    "note": "7.2",
+    "image": "/3SUz0F0I2Bodcj9Ev2pYSWnE9zp.jpg",
+    "genre": "18/14/27/53",
+    "date_sortie": "2017-09-05"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 347882,
+  "fields": {
+    "titre": "Sleight",
+    "synopsis": "Un magicien de rues vend de la drogue pour maintenir un toit au dessus de la t\u00eate de sa petite s\u0153ur. Apr\u00e8s un deal qui a mal tourn\u00e9, l'enfant est kidnapp\u00e9e...",
+    "note": "5.4",
+    "image": "/wridRvGxDqGldhzAIh3IcZhHT5F.jpg",
+    "genre": "18/53/28/878",
+    "date_sortie": "2017-04-28"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 348350,
+  "fields": {
+    "titre": "Solo: A Star Wars Story",
+    "synopsis": "Spin-off de la saga Star Wars centr\u00e9 sur la jeunesse d'Han Solo, avant sa rencontre avec Luke Skywalker et Obi-Wan Kenobi dans la Cantina.",
+    "note": "0",
+    "image": "/xvCORNKtH84XoPBbFtgsJG6JxL6.jpg",
+    "genre": "28/12",
+    "date_sortie": "2018-05-23"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 354912,
+  "fields": {
+    "titre": "Coco",
+    "synopsis": "Malgr\u00e9 la d\u00e9cevante absence totale de musique dans sa famille depuis des g\u00e9n\u00e9rations, Miguel r\u00eave de devenir un grand musicien comme son idole Ernesto de la Cruz. D\u00e9sesp\u00e9r\u00e9 de pouvoir un jour montrer ses talents, il se retrouve \u00e0 la suite d'un myst\u00e9rieux encha\u00eenement d'\u00e9v\u00e8nements dans l'incroyavle et color\u00e9 Royaume des Morts. Sur sa route, il rencontre l'escroc charmeur Hector et ensemble, ils partent pour un voyage extraordinaire pour d\u00e9couvrir la v\u00e9ritable histoire cach\u00e9e de la famille de Miguel.",
+    "note": "7.7",
+    "image": "/6JVnm2509wgeLbKJzc2lZQKCsHz.jpg",
+    "genre": "10751/16/12",
+    "date_sortie": "2017-10-27"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 355547,
+  "fields": {
+    "titre": "L'\u00c9toile de No\u00ebl",
+    "synopsis": "L\u2019histoire d\u2019un petit \u00e2ne courageux, Bo, qui r\u00eave d\u2019une vie meilleure loin du train-train quotidien du moulin du village. Un jour, il trouve le courage de se lib\u00e9rer pour vivre enfin la grande aventure ! Sur sa route, il va faire \u00e9quipe avec Ruth, une adorable brebis qui a perdu son troupeau, et Dave, une colombe aux nobles aspirations. Rejoint par trois chameaux d\u00e9jant\u00e9s et quelques animaux de la ferme plus excentriques les uns que les autres, Bo et ses nouveaux amis suivent l\u2019\u00c9toile\u2026 et vont devenir les h\u00e9ros m\u00e9connus de la plus belle histoire jamais cont\u00e9e : celle du premier No\u00ebl.",
+    "note": "4.5",
+    "image": "/i9Nks7KwL8pbjzjV2Rze5krGZrF.jpg",
+    "genre": "35/16/12",
+    "date_sortie": "2017-11-15"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 366924,
+  "fields": {
+    "titre": "Batman: Mauvais Sang",
+    "synopsis": "Damian reprend sa place en tant que Robin pour d\u00e9couvrir que son p\u00e8re est port\u00e9 disparu et que c\u2019est Nightwing qui se d\u00e9guise en Batman pour sauver les apparences. Pendant son enq\u00fb\u00eate sur la disparition de Bruce Wayne, m\u00eame Alfred devient un infiltr\u00e9, et rapidement ils sont tous entrain\u00e9s aux c\u00f4t\u00e9s de la myst\u00e9rieuse Batwoman, qui est peut-\u00eatre la derni\u00e8re personne \u00e0 avoir vu Batman en vie. Mais alors que la \u00ab\u202fBat Family\u202f\u00bb continue de suivre sa trace, ils arrivent \u00e0 la conclusion in\u00e9luctable que le Chevalier Noir a sombr\u00e9 du c\u00f4t\u00e9 obscur, devenant ainsi le nouveau patron du crime le plus dangereux de Gotham.",
+    "note": "6.8",
+    "image": "/xp65MaH8bycr5v14f8jPO2NEXlX.jpg",
+    "genre": "28/16",
+    "date_sortie": "2016-03-22"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 371638,
+  "fields": {
+    "titre": "The Disaster Artist",
+    "synopsis": "Adaptation du livre \"The Disaster Artist: My Life Inside The Room\", qui revient sur la cr\u00e9ation du film \"The Room\", r\u00e9alis\u00e9 par Tommy Wiseau en 2003.",
+    "note": "7.7",
+    "image": "/uCH6FOFsDW6pfvbbmIIswuvuNtM.jpg",
+    "genre": "18/35/36",
+    "date_sortie": "2017-12-01"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 382322,
+  "fields": {
+    "titre": "Batman: The Killing Joke",
+    "synopsis": "Adaptation de l'un des plus c\u00e9l\u00e8bres comic books sur Batman, qui revient sur la naissance du Joker et la fa\u00e7on dont celui-ci paralyse la fille du Commissaire Gordon.",
+    "note": "6.1",
+    "image": "/zm0ODjtfJfJW0W269LqsQl5OhJ8.jpg",
+    "genre": "28/16",
+    "date_sortie": "2016-07-21"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 392044,
+  "fields": {
+    "titre": "Le Crime de l'Orient-Express",
+    "synopsis": "Le luxe et le calme d\u2019un voyage en Orient Express est soudainement boulevers\u00e9 par un meurtre. Les 13 passagers sont tous suspects et le fameux d\u00e9tective Hercule Poirot se lance dans une course contre la montre pour identifier l\u2019assassin, avant qu\u2019il ne frappe \u00e0 nouveau. D\u2019apr\u00e8s le c\u00e9l\u00e8bre roman d\u2019Agatha Christie.",
+    "note": "6.8",
+    "image": "/a8AwyQ6ueGL9YcddZ6nrZUlRzNt.jpg",
+    "genre": "80/18/9648",
+    "date_sortie": "2017-11-03"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 399057,
+  "fields": {
+    "titre": "Mise \u00e0 Mort du Cerf Sacr\u00e9",
+    "synopsis": "Un brillant chirurgien prend sous son aile un jeune adolescent. Dans un premier temps, ce dernier s\u2019immisce au sein de cette famille et en perturbe progressivement le quotidien. Il devient de plus en plus inqui\u00e9tant, mena\u00e7ant. Une seule issue possible : un impensable sacrifice.",
+    "note": "6.1",
+    "image": "/fbCY7Cwgvzs6LGmwr0QFrkcApMn.jpg",
+    "genre": "18/27/53",
+    "date_sortie": "2017-10-20"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 408648,
+  "fields": {
+    "titre": "Batman et Harley Quinn",
+    "synopsis": "La patience de Batman est mise \u00e0 l\u2019\u00e9preuve lorsqu\u2019il part avec Harley Quinn \u00e0 la poursuite de sa vieille co\u00e9quipi\u00e8re  : Poison Ivy\u2026",
+    "note": "5.8",
+    "image": "/A7mzdcy8Cbr123RfDYaNqZXEqW8.jpg",
+    "genre": "12/28",
+    "date_sortie": "2017-08-14"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 419680,
+  "fields": {
+    "titre": "Very Bad Dads 2",
+    "synopsis": "Dusty et Brad unissent leurs forces pour donner le meilleur No\u00ebl possible aux enfants. Mais un jour, leurs propres p\u00e8res d\u00e9barquent, un gros macho et un hyper-\u00e9motif, et les vacances se transforment en v\u00e9ritable chaos.",
+    "note": "5.8",
+    "image": "/rF2IoKL0IFmumEXQFUuB8LajTYP.jpg",
+    "genre": "18/35",
+    "date_sortie": "2017-11-09"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 440021,
+  "fields": {
+    "titre": "Happy Birthdead",
+    "synopsis": "Teresa, une jeune lyc\u00e9enne, est perturb\u00e9e lorsqu'elle d\u00e9couvre qu'elle revit inlassablement la m\u00eame journ\u00e9e. Une journ\u00e9e apparamment ordinaire mais qui s'ach\u00e8ve toujours par sa mort brutale...",
+    "note": "6.4",
+    "image": "/3T1ZkYURrIbUSVQ1d0m1vEsizg3.jpg",
+    "genre": "27",
+    "date_sortie": "2017-10-12"
+  }
+},
+{
+  "model": "blacksheep.film",
+  "pk": 464882,
+  "fields": {
+    "titre": "Batman vs. Two-Face",
+    "synopsis": "Two-Face, le myst\u00e9rieux ma\u00eetre du crime dont on ne conna\u00eet que le nom, se sert du Roi Tut comme d\u2019un pion et lance une vague de crimes. Batman et Robin sont pris par surprise et tout Gotham City est menac\u00e9 ! Bruce Wayne se doutera-t-il qu\u2019un de ses plus proches amis est peut-\u00eatre le plus grand ennemi de Batman ? Avec l\u2019aide de Catwoman, les Justiciers Masqu\u00e9s arriveront-ils \u00e0 d\u00e9couvrir la v\u00e9ritable identit\u00e9 de ce sournois truand Jekyll/Hyde avant qu\u2019il ne d\u00e9couvre la leur ?",
+    "note": "8",
+    "image": "/yTbj8Kcp4WFwMRdEejnn55KIsfH.jpg",
+    "genre": "28/16",
+    "date_sortie": "2017-11-14"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 12,
+  "fields": {
+    "name": "Aventure"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 14,
+  "fields": {
+    "name": "Fantastique"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 16,
+  "fields": {
+    "name": "Animation"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 18,
+  "fields": {
+    "name": "Drame"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 27,
+  "fields": {
+    "name": "Horreur"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 28,
+  "fields": {
+    "name": "Action"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 35,
+  "fields": {
+    "name": "Com\u00e9die"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 36,
+  "fields": {
+    "name": "Histoire"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 37,
+  "fields": {
+    "name": "Western"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 53,
+  "fields": {
+    "name": "Thriller"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 80,
+  "fields": {
+    "name": "Crime"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 99,
+  "fields": {
+    "name": "Documentaire"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 878,
+  "fields": {
+    "name": "Science-Fiction"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 9648,
+  "fields": {
+    "name": "Myst\u00e8re"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 10402,
+  "fields": {
+    "name": "Musique"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 10749,
+  "fields": {
+    "name": "Romance"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 10751,
+  "fields": {
+    "name": "Familial"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 10752,
+  "fields": {
+    "name": "Guerre"
+  }
+},
+{
+  "model": "blacksheep.genre",
+  "pk": 10770,
+  "fields": {
+    "name": "T\u00e9l\u00e9film"
+  }
+}
+]
