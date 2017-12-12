@@ -20,3 +20,7 @@
  - bs4
  - coreapi
  ( voir requirements.txt )
+
+Installation des fixtures :
+- ./manage.py migrate
+- ./manage.py loaddata fixtures.json
