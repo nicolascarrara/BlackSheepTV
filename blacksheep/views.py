@@ -23,19 +23,21 @@ def loginAPI(request):
     return HttpResponse(data['token'])
 
 def discoverAPI(request):
-    req = urllib.request.Request('https://api.themoviedb.org/3/genre/movie/list?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr')
-    resp = urllib.request.urlopen(req)
-    string = resp.read().decode('utf-8')
-    content = json.loads(string)
-    for genree in content['genres']:
-        genre=Genre()
-        genre.name=genree['name']
-        genre.id=genree['id']
-        if Genre.objects.filter(name=genre.name):
-            pass
-        else:
-            query = Genre(name = genre.name, id=genre.id)
-            query.save()
+    genres=Genre.objects.all()
+    if genres.count()==0:
+        req = urllib.request.Request('https://api.themoviedb.org/3/genre/movie/list?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr')
+        resp = urllib.request.urlopen(req)
+        string = resp.read().decode('utf-8')
+        content = json.loads(string)
+        for genree in content['genres']:
+            genre=Genre()
+            genre.name=genree['name']
+            genre.id=genree['id']
+            if Genre.objects.filter(name=genre.name):
+                pass
+            else:
+                query = Genre(name = genre.name, id=genre.id)
+                query.save()
 
     req = urllib.request.Request('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&language=fr&api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec')
     resp = urllib.request.urlopen(req)
@@ -73,6 +75,25 @@ def discoverAPI(request):
     }
     return render(request, 'blacksheep/v_filmList.html', context)
 
+def TrailerFilmAPI(request):
+    query = request.GET.get('id')
+    req = urllib.request.Request('https://api.themoviedb.org/3/movie/'+query+'/videos?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr')
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    key=''
+    for trailer in content['results']:
+        if trailer['site']=="YouTube":
+            if key =='':
+                key=trailer['key']
+    context = {
+
+        'trailer': key
+
+    }
+    return render(request, 'blacksheep/film_trailer.html', context)
+
+
 def FilmList(request):
     films_list = Film.objects.all()
     film_form=[]
@@ -93,18 +114,46 @@ def FilmList(request):
 
 def SerieList(request):
     series_list = Serie.objects.all()
-    paginator = Paginator(series_list, 10)
+    paginator = Paginator(series_list, 18)
     page = request.GET.get('page')
     try:
         series = paginator.page(page)
     except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
         series = paginator.page(1)
     except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
         series = paginator.page(paginator.num_pages)
 
-    return render(request, 'blacksheep/serie_list.html', {'object_list': series, 'range':paginator.page_range})
+    return render(request, 'blacksheep/serie_list.html', {'object_list': series,'range':paginator.page_range})
+
+def SaisonDetailAPI(request):
+    query = request.GET.get('id')
+    req = urllib.request.Request('https://api.thetvdb.com/series/' + query + '/episodes/summary')
+    req.add_header('Accept', 'application/json')
+    #req.add_header('Accept-Language', 'fr')
+    req.add_header('Authorization','Bearer '+request.session['tokenapi'])
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    content['data']['airedSeasons'].sort()
+    context = {
+        'infosaison': content['data']
+    }
+    return render(request, 'blacksheep/saison_detail.html', context)
+
+def EpisodeDetailAPI(request):
+    serie = request.GET.get('id')
+    saison = request.GET.get('saison')
+    req = urllib.request.Request('https://api.thetvdb.com/series/' + serie + '/episodes/query?airedSeason='+saison)
+    req.add_header('Accept', 'application/json')
+    req.add_header('Accept-Language', 'fr')
+    req.add_header('Authorization','Bearer '+request.session['tokenapi'])
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    context = {
+        'episodes': content['data']
+    }
+    return render(request, 'blacksheep/episode_detail.html', context)
 
 class FilmDetailView(DetailView):
     model = Film
@@ -130,25 +179,20 @@ class SerieDetailView(DetailView):
     model = Serie
     template_name = "blacksheep/serie_detail.html"
 
-
-class SaisonDetailView(DetailView):
-    model = Film
-    template_name = "blacksheep/saison_detail.html"
-
-
-class EpisodeDetailView(DetailView):
-    model = Film
-    template_name = "blacksheep/episode_detail.html"
-
-
 def rechercheFilm(request):
     liste_param=[]
     query = request.GET.get('query')
     querygenre = request.GET.get('genre')
     content=''
-    liste_param.append(query)
-    liste_param.append(querygenre)
     list_genre = Genre.objects.all()
+    if query != '':
+        search=query
+    else:
+        search=''
+    if querygenre:
+        paramgenre=Genre()
+        paramgenre=Genre.objects.get(id=querygenre)
+        liste_param.append(paramgenre)
     if not query and not querygenre:
 
         films = Film.objects.all()
@@ -156,65 +200,6 @@ def rechercheFilm(request):
 
     elif not query and querygenre!='':
         films = Film.objects.filter(genre__contains=querygenre)
-        paramgenre=Genre()
-        paramgenre=Genre.objects.get(id=querygenre)
-        liste_param.append(paramgenre)
-
-    elif query and not querygenre:
-        if not films.exists():
-            query = urllib.request.pathname2url(query)
-            req = urllib.request.Request('https://api.themoviedb.org/3/search/movie?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr&query='+query)
-            resp = urllib.request.urlopen(req)
-            string = resp.read().decode('utf-8')
-            content = json.loads(string)
-            films=[]
-            for film in content['results']:
-                movie=Film()
-                i=0
-                if querygenre != '':
-                    if querygenre in film['genre_ids']:
-                        for genre in film['genre_ids']:
-                            if i==0:
-                                movie.genre=genre
-                                i=i+1
-                            else:
-                                movie.genre=str(movie.genre)+'/'+str(genre)
-                        movie.titre=film['title']
-                        movie.id=film['id']
-                        movie.image=film['poster_path']
-                        movie.note=film['vote_average']
-                        movie.synopsis=film['overview']
-                        movie.date_sortie=film['release_date']
-                        films.append(movie)
-                        if Film.objects.filter(id=movie.id):
-                            pass
-                        else:
-                            query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
-                            query.save()
-                else:
-                    paramgenre=''
-                    for genre in film['genre_ids']:
-                        if i==0:
-                            movie.genre=genre
-                            i=i+1
-                        else:
-                            movie.genre=str(movie.genre)+'/'+str(genre)
-                            movie.titre=film['title']
-                            movie.id=film['id']
-                            movie.image=film['poster_path']
-                            movie.note=film['vote_average']
-                            movie.synopsis=film['overview']
-                            if film['release_date']=='':
-                                    pass
-                            else:
-                                movie.date_sortie=film['release_date']
-                            if movie not in (films):
-                                films.append(movie)
-                                if Film.objects.filter(id=movie.id):
-                                    pass
-                                else:
-                                    query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
-                                    query.save()
 
     else:
 
@@ -222,19 +207,18 @@ def rechercheFilm(request):
             paramgenre=Genre()
             paramgenre=Genre.objects.get(id=querygenre)
             liste_param.append(paramgenre)
-            films = Film.objects.filter(titre__icontains=query,genre__contains=querygenre)
+            films = Film.objects.filter(titre__icontains=query,genre__contains=paramgenre.id)
             if films=='':
-                films = Film.objects.filter(titre__icontains=query,genre__contains='%'+querygenre)
+                films = Film.objects.filter(titre__icontains=query,genre__contains='%'+paramgenre.id)
             if films=='':
-                films = Film.objects.filter(titre__icontains=query,genre__contains='%'+querygenre+'%')
+                films = Film.objects.filter(titre__icontains=query,genre__contains='%'+paramgenre.id+'%')
             if films=='':
-                films = Film.objects.filter(titre__icontains=query,genre__contains=querygenre+'%')
+                films = Film.objects.filter(titre__icontains=query,genre__contains=paramgenre.id+'%')
         else :
             films = Film.objects.filter(titre__icontains=query)
             paramgenre=''
 
         if not films.exists():
-
             query = urllib.request.pathname2url(query)
             req = urllib.request.Request('https://api.themoviedb.org/3/search/movie?api_key=e1bf1e9eda0b0070cc6a8ff1796ca8ec&language=fr&query='+query)
             resp = urllib.request.urlopen(req)
@@ -245,7 +229,7 @@ def rechercheFilm(request):
                 movie=Film()
                 i=0
                 if querygenre != '':
-                    if querygenre in film['genre_ids']:
+                    if paramgenre.id in film['genre_ids']:
                         for genre in film['genre_ids']:
                             if i==0:
                                 movie.genre=genre
@@ -305,7 +289,8 @@ def rechercheFilm(request):
         'object_list': films,
         'range':paginator.page_range,
         'genres':list_genre,
-        'param': paramgenre
+        'param': paramgenre,
+        'query':search
 
     }
     return render(request, 'blacksheep/film_search.html', context)
@@ -319,7 +304,18 @@ def rechercheSerie(request):
     content = ''
 
     if not query:
-        series = Serie.objects.all()
+        series_list = Serie.objects.all()
+        paginator = Paginator(series_list, 10)
+        page = request.GET.get('page')
+        try:
+            series = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            series = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            series = paginator.page(paginator.num_pages)
+
     else:
         query = urllib.request.pathname2url(query)
         req = urllib.request.Request('https://api.thetvdb.com/search/series?name='+query)
@@ -357,16 +353,9 @@ def rechercheSerie(request):
     if series=='':
         series=""
 
-    paginator = Paginator(series, 10)
-    page = request.GET.get('page')
-    try:
-        series = paginator.page(page)
-    except PageNotAnInteger:
-        series = paginator.page(1)
-    except EmptyPage:
-        series = paginator.page(paginator.num_pages)
+    context = {
 
-    context = {'object_list': series,'range':paginator.page_range}
+        'object_list': series
 
-
+    }
     return render(request, 'blacksheep/serie_search.html', context)
