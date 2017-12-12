@@ -1,72 +1,21 @@
-
 <div class="row">
-
-{% for film in object_list %}
-
-
-<div class="col-xs-12 col-sm-4 col-lg-2">
-  <a href="{% url 'blacksheep:film-detail' film.id %}" class="btn">
-  <div class="thumbnail">
-      <div class="text-center">
-    <h4 class="filmtitle">{{ film.titre | truncatechars:15}}</h4>
-  {% if film.image %}
-    <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="image {{ film.titre }}"  class="img-fluid img-thumbnail minifilm">
-  {% else %}
-      {% load static %}
-        <img src="{% static 'images/imgfilmnotfound.png' %}" alt="image non trouvée"  class="img-fluid img-thumbnail minifilm">
-  {% endif %}
-      <br><br>
-      <p> Voir détails</p>
+  {% for film in object_list %}
+  <div class="col-xs-12 col-sm-4 col-lg-2">
+    <a href="{% url 'blacksheep:film-detail' film.id %}" class="btn">
+      <div class="thumbnail">
+        <div class="text-center">
+          <h4 class="filmtitle">{{ film.titre | truncatechars:15}}</h4> {% if film.image %}
+          <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{ film.image }}" alt="image {{ film.titre }}" class="img-fluid img-thumbnail minifilm"> {% else %} {% load static %}
+          <img src="{% static 'images/imgfilmnotfound.png' %}" alt="image non trouvée" class="img-fluid img-thumbnail minifilm"> {% endif %}
+          <br><br>
+          <p> Voir détails</p>
+        </div>
+      </div>
+    </a>
   </div>
-</div>
-</a>
-</div>
-
-
-
-
   {% empty %}
-
-    <p>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de film existant ?</p>
-
-{% endfor %}
-</div>
-<div class="row">
-
-{% if object_list.has_next or object_list.has_previous %}
-<div class="text-center pages">
-<nav>
-    <ul class="pagination pg-darkgrey">
-
-        <!--Arrow left-->
-        {% if object_list.has_previous %}
-        <li class="page-item">
-            <a href="?page={{ object_list.previous_page_number }}" class="page-link" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Précédent</span>
-            </a>
-        </li>
-        {% endif %}
-{% for i in range %}
-        {% if object_list.number == i %}
-        <li class="page-item active"><a class="page-link">{{ object_list.number }}</a></li>
-        {% else %}
-        <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
-        {% endif %}
-{% endfor %}
-        <!--Arrow right-->
-          {% if object_list.has_next %}
-        <li class="page-item">
-            <a href="?page={{ object_list.next_page_number }}" class="page-link" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Suivant</span>
-            </a>
-        </li>
-        {% endif %}
-    </ul>
-</nav>
-
-</div>
-{% endif %}
-
+  <div class="text-center">
+    <h2>Ooops aucun résultat, êtes-vous sûr d'avoir entrer un nom de film existant ?</h2>
+  </div>
+  {% endfor %}
 </div>

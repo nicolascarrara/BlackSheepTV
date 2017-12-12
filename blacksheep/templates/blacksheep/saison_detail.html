@@ -1,5 +1,13 @@
-{% extends "blacksheep/baseModele.html" %}
-{% block contenu %}
-
-saison
-{% endblock %}
+<nav>
+  <ul class="pagination">
+    <style>
+      .pagination li a {
+        color: #333 !important;
+        background-color: rgb(251, 251, 251) !important;
+      }
+    </style>
+    {% for saisons in infosaison.airedSeasons %} {% if saisons != "0"%}
+    <li><a href="#" onclick="searchepisode({{saisons}})">{{saisons}}</a></li>
+    {%endif%} {% endfor %}
+  </ul>
+</nav>

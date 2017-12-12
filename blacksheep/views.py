@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from BlackSheepTV import settings
 from django.views.generic import DetailView, CreateView, UpdateView, ListView, DeleteView
 from blacksheep.models import Film, Serie,Saison,Episode,Genre
-import requests,string,urllib,json,time
+import requests,string,urllib,json,time,datetime
 # Create your views here.
 
 
@@ -119,13 +119,41 @@ def SerieList(request):
     try:
         series = paginator.page(page)
     except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
         series = paginator.page(1)
     except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
         series = paginator.page(paginator.num_pages)
 
-    return render(request, 'blacksheep/serie_list.html', {'object_list': series})
+    return render(request, 'blacksheep/serie_list.html', {'object_list': series,'range':paginator.page_range})
+
+def SaisonDetailAPI(request):
+    query = request.GET.get('id')
+    req = urllib.request.Request('https://api.thetvdb.com/series/' + query + '/episodes/summary')
+    req.add_header('Accept', 'application/json')
+    #req.add_header('Accept-Language', 'fr')
+    req.add_header('Authorization','Bearer '+request.session['tokenapi'])
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    content['data']['airedSeasons'].sort()
+    context = {
+        'infosaison': content['data']
+    }
+    return render(request, 'blacksheep/saison_detail.html', context)
+
+def EpisodeDetailAPI(request):
+    serie = request.GET.get('id')
+    saison = request.GET.get('saison')
+    req = urllib.request.Request('https://api.thetvdb.com/series/' + serie + '/episodes/query?airedSeason='+saison)
+    req.add_header('Accept', 'application/json')
+    req.add_header('Accept-Language', 'fr')
+    req.add_header('Authorization','Bearer '+request.session['tokenapi'])
+    resp = urllib.request.urlopen(req)
+    string = resp.read().decode('utf-8')
+    content = json.loads(string)
+    context = {
+        'episodes': content['data']
+    }
+    return render(request, 'blacksheep/episode_detail.html', context)
 
 class FilmDetailView(DetailView):
     model = Film
@@ -151,21 +179,11 @@ class SerieDetailView(DetailView):
     model = Serie
     template_name = "blacksheep/serie_detail.html"
 
-
-class SaisonDetailView(DetailView):
-    model = Film
-    template_name = "blacksheep/saison_detail.html"
-
-
-class EpisodeDetailView(DetailView):
-    model = Film
-    template_name = "blacksheep/episode_detail.html"
-
-
 def rechercheFilm(request):
     liste_param=[]
     query = request.GET.get('query')
     querygenre = request.GET.get('genre')
+    querydate = request.GET.get('date')
     content=''
     list_genre = Genre.objects.all()
     if query != '':
@@ -183,7 +201,6 @@ def rechercheFilm(request):
 
     elif not query and querygenre!='':
         films = Film.objects.filter(genre__contains=querygenre)
-
     else:
 
         if querygenre != '':
@@ -255,28 +272,41 @@ def rechercheFilm(request):
                                 else:
                                     query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
                                     query.save()
+
+    if querydate!='':
+        swap=[]
+        for film in films:
+            if not isinstance(film.date_sortie, datetime.date):
+                film.date_sortie = datetime.datetime.strptime(film.date_sortie,'%Y-%m-%d')
+            if str(film.date_sortie.strftime('%Y'))==str(querydate):
+                swap.append(film)
+        films=swap
+        paramdate=querydate
+    else:
+        paramdate=''
     paginator = Paginator(films, 18)
 
     page = request.GET.get('page')
     try:
         films = paginator.page(page)
     except PageNotAnInteger:
-                # If page is not an integer, deliver first page.
         films = paginator.page(1)
     except EmptyPage:
-                # If page is out of range (e.g. 9999), deliver last page of results.
         films = paginator.page(paginator.num_pages)
-
     context = {
 
         'object_list': films,
         'range':paginator.page_range,
         'genres':list_genre,
         'param': paramgenre,
-        'query':search
+        'query':search,
+        'paramdate':str(paramdate),
+        'rangeannee': range(1900,2020)
 
     }
     return render(request, 'blacksheep/film_search.html', context)
+
+
 
 def serieAPI(nom):
     context=nom
