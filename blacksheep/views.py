@@ -180,7 +180,6 @@ class SerieDetailView(DetailView):
     template_name = "blacksheep/serie_detail.html"
 
 def rechercheFilm(request):
-    liste_param=[]
     query = request.GET.get('query')
     querygenre = request.GET.get('genre')
     querydate = request.GET.get('date')
@@ -193,20 +192,19 @@ def rechercheFilm(request):
     if querygenre:
         paramgenre=Genre()
         paramgenre=Genre.objects.get(id=querygenre)
-        liste_param.append(paramgenre)
-    if not query and not querygenre:
+    else:
+        paramgenre = ''
 
+    if query == None and querygenre == None:
         films = Film.objects.all()
         paramgenre=''
 
-    elif not query and querygenre!='':
+    elif not query and querygenre!=None:
         films = Film.objects.filter(genre__contains=querygenre)
     else:
-
         if querygenre != '':
             paramgenre=Genre()
             paramgenre=Genre.objects.get(id=querygenre)
-            liste_param.append(paramgenre)
             films = Film.objects.filter(titre__icontains=query,genre__contains=paramgenre.id)
             if films=='':
                 films = Film.objects.filter(titre__icontains=query,genre__contains='%'+paramgenre.id)
@@ -273,7 +271,7 @@ def rechercheFilm(request):
                                     query = Film(id = movie.id , titre = movie.titre ,image= movie.image,synopsis=movie.synopsis,note=movie.note,genre=movie.genre,date_sortie=movie.date_sortie)
                                     query.save()
 
-    if querydate!='':
+    if querydate!='' and querydate != None :
         swap=[]
         for film in films:
             if not isinstance(film.date_sortie, datetime.date):
@@ -284,8 +282,8 @@ def rechercheFilm(request):
         paramdate=querydate
     else:
         paramdate=''
-    paginator = Paginator(films, 18)
 
+    paginator = Paginator(films, 18)
     page = request.GET.get('page')
     try:
         films = paginator.page(page)
@@ -293,8 +291,8 @@ def rechercheFilm(request):
         films = paginator.page(1)
     except EmptyPage:
         films = paginator.page(paginator.num_pages)
-    context = {
 
+    context = {
         'object_list': films,
         'range':paginator.page_range,
         'genres':list_genre,
@@ -302,7 +300,6 @@ def rechercheFilm(request):
         'query':search,
         'paramdate':str(paramdate),
         'rangeannee': range(1900,2020)
-
     }
     return render(request, 'blacksheep/film_search.html', context)
 
