@@ -1,0 +1,14 @@
+{% extends "blacksheep/baseModele.html" %}
+
+ {% block contenu %}
+ {% load static %}
+ <style>
+ nav {
+   margin-bottom: 0px!important;}</style>
+ <img class="img-responsive align-top" src="{% static 'images/404.png' %}" alt="">
+ <div class="text-center"><br>
+  <h1> Ooooops cette page n'existe pas </h1>
+  <br><br>
+  <a class="sol-sm-6 btn btn-primary btn-lg" href="{% url 'blacksheep:accueil' %}" role="button">Retourner à l'accueil</a>
+</div>
+{% endblock %}
